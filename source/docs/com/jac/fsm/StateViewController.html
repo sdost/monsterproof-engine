@@ -1,0 +1,647 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+<head>
+<META http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<link rel="stylesheet" href="../../../style.css" type="text/css" media="screen">
+<link rel="stylesheet" href="../../../print.css" type="text/css" media="print">
+<meta content="StateViewController,com.jac.fsm.StateViewController,container,stateViews,addToDisplayList,enter,exitComplete,handleExitComplete,registerSubObject,removeFromDisplayList,toString,unregisterSubObject" name="keywords">
+<title>com.jac.fsm.StateViewController</title>
+</head>
+<body>
+<script type="text/javascript" language="javascript" src="../../../asdoc.js"></script><script type="text/javascript" language="javascript" src="../../../cookies.js"></script><script type="text/javascript" language="javascript">
+<!--
+				asdocTitle = 'StateViewController - API Documentation';
+				var baseRef = '../../../';
+				window.onload = configPage;
+			--></script>
+<table style="display:none" id="titleTable" cellspacing="0" cellpadding="0" class="titleTable">
+<tr>
+<td align="left" class="titleTableTitle">API Documentation</td><td align="right" class="titleTableTopNav"><a onclick="loadClassListFrame('../../../all-classes.html')" href="../../../package-summary.html">All&nbsp;Packages</a>&nbsp;|&nbsp;<a onclick="loadClassListFrame('../../../all-classes.html')" href="../../../class-summary.html">All&nbsp;Classes</a>&nbsp;|&nbsp;<a onclick="loadClassListFrame('../../../index-list.html')" href="../../../all-index-A.html">Index</a>&nbsp;|&nbsp;<a href="../../../index.html?com/jac/fsm/StateViewController.html&amp;com/jac/fsm/class-list.html" id="framesLink1">Frames</a><a onclick="parent.location=document.location" href="" style="display:none" id="noFramesLink1">No&nbsp;Frames</a></td><td rowspan="3" align="right" class="titleTableLogo"><img alt="Adobe Logo" title="Adobe Logo" class="logoImage" src="../../../images/logo.jpg"></td>
+</tr>
+<tr class="titleTableRow2">
+<td align="left" id="subTitle" class="titleTableSubTitle">Class&nbsp;StateViewController</td><td align="right" id="subNav" class="titleTableSubNav"><a href="#propertySummary">Properties</a>&nbsp;| <a href="#methodSummary">Methods</a>&nbsp;| <a href="#eventSummary">Events</a></td>
+</tr>
+<tr class="titleTableRow3">
+<td colspan="2">&nbsp;</td>
+</tr>
+</table>
+<script type="text/javascript" language="javascript">
+<!--
+if (!isEclipse() || window.name != ECLIPSE_FRAME_NAME) {titleBar_setSubTitle("Class StateViewController"); titleBar_setSubNav(false,true,false,false,true,false,true,false,false,false,false,false,false,false);}
+--></script>
+<div class="MainContent">
+<table cellspacing="0" cellpadding="0" class="classHeaderTable">
+<tr>
+<td class="classHeaderTableLabel">Package</td><td><a onclick="javascript:loadClassListFrame('class-list.html')" href="package-detail.html">com.jac.fsm</a></td>
+</tr>
+<tr>
+<td class="classHeaderTableLabel">Class</td><td class="classSignature">public class StateViewController</td>
+</tr>
+<tr>
+<td class="classHeaderTableLabel">Inheritance</td><td class="inheritanceList">StateViewController <img class="inheritArrow" alt="Inheritance" title="Inheritance" src="../../../images/inherit-arrow.gif"> <a href="StateController.html">StateController</a> <img class="inheritArrow" alt="Inheritance" title="Inheritance" src="../../../images/inherit-arrow.gif"> flash.events.EventDispatcher</td>
+</tr>
+<tr>
+<td class="classHeaderTableLabel">Implements</td><td><a href="interfaces/IState.html">IState</a></td>
+</tr>
+</table>
+<p></p>
+  This is the controller for each display state of type <code>StateView</code>.  This must contain a <code>StateView</code> object that it controls.
+  <p></p>
+<br>
+<hr>
+</div>
+<a name="propertySummary"></a>
+<div class="summarySection">
+<div class="summaryTableTitle">Public Properties</div>
+<div class="showHideLinks">
+<div class="hideInheritedProperty" id="hideInheritedProperty">
+<a onclick="javascript:setInheritedVisible(false,'Property');" href="#propertySummary" class="showHideLink"><img src="../../../images/expanded.gif" class="showHideLinkImage"> Hide Inherited Public Properties</a>
+</div>
+<div class="showInheritedProperty" id="showInheritedProperty">
+<a onclick="javascript:setInheritedVisible(true,'Property');" href="#propertySummary" class="showHideLink"><img src="../../../images/collapsed.gif" class="showHideLinkImage"> Show Inherited Public Properties</a>
+</div>
+</div>
+<table id="summaryTableProperty" class="summaryTable " cellpadding="3" cellspacing="0">
+<tr>
+<th>&nbsp;</th><th colspan="2">Property</th><th class="summaryTableOwnerCol">Defined&nbsp;by</th>
+</tr>
+<tr class="">
+<td class="summaryTablePaddingCol">&nbsp;</td><td class="summaryTableInheritanceCol">&nbsp;</td><td class="summaryTableSignatureCol"><a class="signatureLink" href="#container">container</a> : MovieClip<div class="summaryTableDescription">
+   Returns or sets the container object of all of the sub views.</div>
+</td><td class="summaryTableOwnerCol">StateViewController</td>
+</tr>
+<tr class="">
+<td class="summaryTablePaddingCol">&nbsp;</td><td class="summaryTableInheritanceCol">&nbsp;</td><td class="summaryTableSignatureCol"><a class="signatureLink" href="#stateViews">stateViews</a> : Array<div class="summaryTableDescription">[read-only]
+   returns a list of the sub views.</div>
+</td><td class="summaryTableOwnerCol">StateViewController</td>
+</tr>
+<tr class="hideInheritedProperty">
+<td class="summaryTablePaddingCol">&nbsp;</td><td class="summaryTableInheritanceCol"><img class="inheritedSummaryImage" title="Inherited" alt="Inherited" src="../../../images/inheritedSummary.gif"></td><td class="summaryTableSignatureCol"><a class="signatureLink" href="StateController.html#subObjList">subObjList</a> : Array<div class="summaryTableDescription">
+   Returns the list of sub-objects
+   </div>
+</td><td class="summaryTableOwnerCol"><a href="StateController.html">StateController</a></td>
+</tr>
+</table>
+</div>
+<a name="protectedPropertySummary"></a>
+<div class="summarySection">
+<div class="summaryTableTitle">Protected Properties</div>
+<div class="showHideLinks">
+<div class="hideInheritedProtectedProperty" id="hideInheritedProtectedProperty">
+<a onclick="javascript:setInheritedVisible(false,'ProtectedProperty');" href="#protectedPropertySummary" class="showHideLink"><img src="../../../images/expanded.gif" class="showHideLinkImage"> Hide Inherited Protected Properties</a>
+</div>
+<div class="showInheritedProtectedProperty" id="showInheritedProtectedProperty">
+<a onclick="javascript:setInheritedVisible(true,'ProtectedProperty');" href="#protectedPropertySummary" class="showHideLink"><img src="../../../images/collapsed.gif" class="showHideLinkImage"> Show Inherited Protected Properties</a>
+</div>
+</div>
+<table id="summaryTableProtectedProperty" class="summaryTable hideInheritedProtectedProperty" cellpadding="3" cellspacing="0">
+<tr>
+<th>&nbsp;</th><th colspan="2">Property</th><th class="summaryTableOwnerCol">Defined&nbsp;by</th>
+</tr>
+<tr class="hideInheritedProtectedProperty">
+<td class="summaryTablePaddingCol">&nbsp;</td><td class="summaryTableInheritanceCol"><img class="inheritedSummaryImage" title="Inherited" alt="Inherited" src="../../../images/inheritedSummary.gif"></td><td class="summaryTableSignatureCol"><a class="signatureLink" href="StateController.html#_disableCount">_disableCount</a> : int = 0<div class="summaryTableDescription"></div>
+</td><td class="summaryTableOwnerCol"><a href="StateController.html">StateController</a></td>
+</tr>
+<tr class="hideInheritedProtectedProperty">
+<td class="summaryTablePaddingCol">&nbsp;</td><td class="summaryTableInheritanceCol"><img class="inheritedSummaryImage" title="Inherited" alt="Inherited" src="../../../images/inheritedSummary.gif"></td><td class="summaryTableSignatureCol"><a class="signatureLink" href="StateController.html#_enableCount">_enableCount</a> : int = 0<div class="summaryTableDescription"></div>
+</td><td class="summaryTableOwnerCol"><a href="StateController.html">StateController</a></td>
+</tr>
+<tr class="hideInheritedProtectedProperty">
+<td class="summaryTablePaddingCol">&nbsp;</td><td class="summaryTableInheritanceCol"><img class="inheritedSummaryImage" title="Inherited" alt="Inherited" src="../../../images/inheritedSummary.gif"></td><td class="summaryTableSignatureCol"><a class="signatureLink" href="StateController.html#_enterCount">_enterCount</a> : int = 0<div class="summaryTableDescription"></div>
+</td><td class="summaryTableOwnerCol"><a href="StateController.html">StateController</a></td>
+</tr>
+<tr class="hideInheritedProtectedProperty">
+<td class="summaryTablePaddingCol">&nbsp;</td><td class="summaryTableInheritanceCol"><img class="inheritedSummaryImage" title="Inherited" alt="Inherited" src="../../../images/inheritedSummary.gif"></td><td class="summaryTableSignatureCol"><a class="signatureLink" href="StateController.html#_exitCount">_exitCount</a> : int = 0<div class="summaryTableDescription"></div>
+</td><td class="summaryTableOwnerCol"><a href="StateController.html">StateController</a></td>
+</tr>
+<tr class="hideInheritedProtectedProperty">
+<td class="summaryTablePaddingCol">&nbsp;</td><td class="summaryTableInheritanceCol"><img class="inheritedSummaryImage" title="Inherited" alt="Inherited" src="../../../images/inheritedSummary.gif"></td><td class="summaryTableSignatureCol"><a class="signatureLink" href="StateController.html#_subObjList">_subObjList</a> : Array<div class="summaryTableDescription"></div>
+</td><td class="summaryTableOwnerCol"><a href="StateController.html">StateController</a></td>
+</tr>
+</table>
+</div>
+<a name="methodSummary"></a>
+<div class="summarySection">
+<div class="summaryTableTitle">Public Methods</div>
+<div class="showHideLinks">
+<div class="hideInheritedMethod" id="hideInheritedMethod">
+<a onclick="javascript:setInheritedVisible(false,'Method');" href="#methodSummary" class="showHideLink"><img src="../../../images/expanded.gif" class="showHideLinkImage"> Hide Inherited Public Methods</a>
+</div>
+<div class="showInheritedMethod" id="showInheritedMethod">
+<a onclick="javascript:setInheritedVisible(true,'Method');" href="#methodSummary" class="showHideLink"><img src="../../../images/collapsed.gif" class="showHideLinkImage"> Show Inherited Public Methods</a>
+</div>
+</div>
+<table id="summaryTableMethod" class="summaryTable " cellpadding="3" cellspacing="0">
+<tr>
+<th>&nbsp;</th><th colspan="2">Method</th><th class="summaryTableOwnerCol">Defined&nbsp;by</th>
+</tr>
+<tr class="">
+<td class="summaryTablePaddingCol">&nbsp;</td><td class="summaryTableInheritanceCol">&nbsp;</td><td class="summaryTableSignatureCol">
+<div class="summarySignature">
+<a class="signatureLink" href="#StateViewController()">StateViewController</a>(stateViewList:Array, container:MovieClip)</div>
+<div class="summaryTableDescription">
+    This is the controller for each display state of type <code>StateView</code>.</div>
+</td><td class="summaryTableOwnerCol">StateViewController</td>
+</tr>
+<tr class="">
+<td class="summaryTablePaddingCol">&nbsp;</td><td class="summaryTableInheritanceCol">&nbsp;</td><td class="summaryTableSignatureCol">
+<div class="summarySignature">
+<a class="signatureLink" href="#addToDisplayList()">addToDisplayList</a>():void</div>
+<div class="summaryTableDescription">
+   Adds all of the views and subviews to the <code>_container</code> clip, essentially adding them to the display list.</div>
+</td><td class="summaryTableOwnerCol">StateViewController</td>
+</tr>
+<tr class="hideInheritedMethod">
+<td class="summaryTablePaddingCol">&nbsp;</td><td class="summaryTableInheritanceCol"><img class="inheritedSummaryImage" title="Inherited" alt="Inherited" src="../../../images/inheritedSummary.gif"></td><td class="summaryTableSignatureCol">
+<div class="summarySignature">
+<a class="signatureLink" href="StateController.html#disable()">disable</a>():void</div>
+<div class="summaryTableDescription">
+   Calls <code>disableSubObjects()</code> when the controller is told to disable.</div>
+</td><td class="summaryTableOwnerCol"><a href="StateController.html">StateController</a></td>
+</tr>
+<tr class="hideInheritedMethod">
+<td class="summaryTablePaddingCol">&nbsp;</td><td class="summaryTableInheritanceCol"><img class="inheritedSummaryImage" title="Inherited" alt="Inherited" src="../../../images/inheritedSummary.gif"></td><td class="summaryTableSignatureCol">
+<div class="summarySignature">
+<a class="signatureLink" href="StateController.html#enable()">enable</a>():void</div>
+<div class="summaryTableDescription">
+   Calls <code>enableSubObjects()</code> when the controller is told to disable.</div>
+</td><td class="summaryTableOwnerCol"><a href="StateController.html">StateController</a></td>
+</tr>
+<tr class="">
+<td class="summaryTablePaddingCol">&nbsp;</td><td class="summaryTableInheritanceCol">&nbsp;</td><td class="summaryTableSignatureCol">
+<div class="summarySignature">
+<a class="signatureLink" href="#enter()">enter</a>():void</div>
+<div class="summaryTableDescription">
+   When called, this will add all of the views and subviews to the display list.</div>
+</td><td class="summaryTableOwnerCol">StateViewController</td>
+</tr>
+<tr class="hideInheritedMethod">
+<td class="summaryTablePaddingCol">&nbsp;</td><td class="summaryTableInheritanceCol"><img class="inheritedSummaryImage" title="Inherited" alt="Inherited" src="../../../images/inheritedSummary.gif"></td><td class="summaryTableSignatureCol">
+<div class="summarySignature">
+<a class="signatureLink" href="StateController.html#exit()">exit</a>():void</div>
+<div class="summaryTableDescription">
+   Calls <code>exitSubObjects()</code> when the controller is told to exit.</div>
+</td><td class="summaryTableOwnerCol"><a href="StateController.html">StateController</a></td>
+</tr>
+<tr class="">
+<td class="summaryTablePaddingCol">&nbsp;</td><td class="summaryTableInheritanceCol">&nbsp;</td><td class="summaryTableSignatureCol">
+<div class="summarySignature">
+<a class="signatureLink" href="#registerSubObject()">registerSubObject</a>(newStateView:<a href="interfaces/IState.html">IState</a>):void</div>
+<div class="summaryTableDescription">
+   
+   Adds objects to the <code>_subObjectList</code> for control by this controller.</div>
+</td><td class="summaryTableOwnerCol">StateViewController</td>
+</tr>
+<tr class="">
+<td class="summaryTablePaddingCol">&nbsp;</td><td class="summaryTableInheritanceCol">&nbsp;</td><td class="summaryTableSignatureCol">
+<div class="summarySignature">
+<a class="signatureLink" href="#removeFromDisplayList()">removeFromDisplayList</a>():void</div>
+<div class="summaryTableDescription">
+   Removes all of the children of <code>_container</code> from the display list.</div>
+</td><td class="summaryTableOwnerCol">StateViewController</td>
+</tr>
+<tr class="hideInheritedMethod">
+<td class="summaryTablePaddingCol">&nbsp;</td><td class="summaryTableInheritanceCol"><img class="inheritedSummaryImage" title="Inherited" alt="Inherited" src="../../../images/inheritedSummary.gif"></td><td class="summaryTableSignatureCol">
+<div class="summarySignature">
+<a class="signatureLink" href="StateController.html#reset()">reset</a>():void</div>
+<div class="summaryTableDescription">
+   </div>
+</td><td class="summaryTableOwnerCol"><a href="StateController.html">StateController</a></td>
+</tr>
+<tr class="">
+<td class="summaryTablePaddingCol">&nbsp;</td><td class="summaryTableInheritanceCol">&nbsp;</td><td class="summaryTableSignatureCol">
+<div class="summarySignature">
+<a class="signatureLink" href="#toString()">toString</a>():String</div>
+<div class="summaryTableDescription">
+   
+   Traces the name of this controller class
+   </div>
+</td><td class="summaryTableOwnerCol">StateViewController</td>
+</tr>
+<tr class="">
+<td class="summaryTablePaddingCol">&nbsp;</td><td class="summaryTableInheritanceCol">&nbsp;</td><td class="summaryTableSignatureCol">
+<div class="summarySignature">
+<a class="signatureLink" href="#unregisterSubObject()">unregisterSubObject</a>(oldStateView:<a href="interfaces/IState.html">IState</a>):void</div>
+<div class="summaryTableDescription">
+   
+   Removes oldController from list of objects that are controlled by this controller.</div>
+</td><td class="summaryTableOwnerCol">StateViewController</td>
+</tr>
+<tr class="hideInheritedMethod">
+<td class="summaryTablePaddingCol">&nbsp;</td><td class="summaryTableInheritanceCol"><img class="inheritedSummaryImage" title="Inherited" alt="Inherited" src="../../../images/inheritedSummary.gif"></td><td class="summaryTableSignatureCol">
+<div class="summarySignature">
+<a class="signatureLink" href="StateController.html#update()">update</a>():void</div>
+<div class="summaryTableDescription">
+   Calls <code>update</code> on all of the sub-objects.</div>
+</td><td class="summaryTableOwnerCol"><a href="StateController.html">StateController</a></td>
+</tr>
+</table>
+</div>
+<a name="protectedMethodSummary"></a>
+<div class="summarySection">
+<div class="summaryTableTitle">Protected Methods</div>
+<div class="showHideLinks">
+<div class="hideInheritedProtectedMethod" id="hideInheritedProtectedMethod">
+<a onclick="javascript:setInheritedVisible(false,'ProtectedMethod');" href="#protectedMethodSummary" class="showHideLink"><img src="../../../images/expanded.gif" class="showHideLinkImage"> Hide Inherited Protected Methods</a>
+</div>
+<div class="showInheritedProtectedMethod" id="showInheritedProtectedMethod">
+<a onclick="javascript:setInheritedVisible(true,'ProtectedMethod');" href="#protectedMethodSummary" class="showHideLink"><img src="../../../images/collapsed.gif" class="showHideLinkImage"> Show Inherited Protected Methods</a>
+</div>
+</div>
+<table id="summaryTableProtectedMethod" class="summaryTable " cellpadding="3" cellspacing="0">
+<tr>
+<th>&nbsp;</th><th colspan="2">Method</th><th class="summaryTableOwnerCol">Defined&nbsp;by</th>
+</tr>
+<tr class="hideInheritedProtectedMethod">
+<td class="summaryTablePaddingCol">&nbsp;</td><td class="summaryTableInheritanceCol"><img class="inheritedSummaryImage" title="Inherited" alt="Inherited" src="../../../images/inheritedSummary.gif"></td><td class="summaryTableSignatureCol">
+<div class="summarySignature">
+<a class="signatureLink" href="StateController.html#disableComplete()">disableComplete</a>(e:<a href="stateEvents/StateEvent.html">StateEvent</a>):void</div>
+<div class="summaryTableDescription">
+    Handles a <code>StateEvent.DISABLE_COMPLETE</code> event when a
+   sub-object has finished disabling.</div>
+</td><td class="summaryTableOwnerCol"><a href="StateController.html">StateController</a></td>
+</tr>
+<tr class="hideInheritedProtectedMethod">
+<td class="summaryTablePaddingCol">&nbsp;</td><td class="summaryTableInheritanceCol"><img class="inheritedSummaryImage" title="Inherited" alt="Inherited" src="../../../images/inheritedSummary.gif"></td><td class="summaryTableSignatureCol">
+<div class="summarySignature">
+<a class="signatureLink" href="StateController.html#disableSubObjects()">disableSubObjects</a>():void</div>
+<div class="summaryTableDescription">
+   Calls <code>disable()</code> on each sub object in the <code>_subObjectList</code>, and sets up
+   the proper listeners to keep track of the each sub-object's completion.</div>
+</td><td class="summaryTableOwnerCol"><a href="StateController.html">StateController</a></td>
+</tr>
+<tr class="hideInheritedProtectedMethod">
+<td class="summaryTablePaddingCol">&nbsp;</td><td class="summaryTableInheritanceCol"><img class="inheritedSummaryImage" title="Inherited" alt="Inherited" src="../../../images/inheritedSummary.gif"></td><td class="summaryTableSignatureCol">
+<div class="summarySignature">
+<a class="signatureLink" href="StateController.html#enableComplete()">enableComplete</a>(e:<a href="stateEvents/StateEvent.html">StateEvent</a>):void</div>
+<div class="summaryTableDescription">
+   Handles the <code>StateEvent.ENABLE_COMPLETE</code> event for each sub object, keeping track of
+   how many objects have finished.</div>
+</td><td class="summaryTableOwnerCol"><a href="StateController.html">StateController</a></td>
+</tr>
+<tr class="hideInheritedProtectedMethod">
+<td class="summaryTablePaddingCol">&nbsp;</td><td class="summaryTableInheritanceCol"><img class="inheritedSummaryImage" title="Inherited" alt="Inherited" src="../../../images/inheritedSummary.gif"></td><td class="summaryTableSignatureCol">
+<div class="summarySignature">
+<a class="signatureLink" href="StateController.html#enableSubObjects()">enableSubObjects</a>():void</div>
+<div class="summaryTableDescription">
+   Calls <code>enable()</code> on each sub object in the <code>_subObjectList</code>, and sets up
+   the proper listeners to keep track of the each sub-object's completion.</div>
+</td><td class="summaryTableOwnerCol"><a href="StateController.html">StateController</a></td>
+</tr>
+<tr class="hideInheritedProtectedMethod">
+<td class="summaryTablePaddingCol">&nbsp;</td><td class="summaryTableInheritanceCol"><img class="inheritedSummaryImage" title="Inherited" alt="Inherited" src="../../../images/inheritedSummary.gif"></td><td class="summaryTableSignatureCol">
+<div class="summarySignature">
+<a class="signatureLink" href="StateController.html#enterComplete()">enterComplete</a>(e:<a href="stateEvents/StateEvent.html">StateEvent</a>):void</div>
+<div class="summaryTableDescription">
+   Handles the <code>StateEvent.ENTER_COMPLETE</code> notification from each sub-object, keeping track of
+   how many objects have finished.</div>
+</td><td class="summaryTableOwnerCol"><a href="StateController.html">StateController</a></td>
+</tr>
+<tr class="hideInheritedProtectedMethod">
+<td class="summaryTablePaddingCol">&nbsp;</td><td class="summaryTableInheritanceCol"><img class="inheritedSummaryImage" title="Inherited" alt="Inherited" src="../../../images/inheritedSummary.gif"></td><td class="summaryTableSignatureCol">
+<div class="summarySignature">
+<a class="signatureLink" href="StateController.html#enterSubObjects()">enterSubObjects</a>():void</div>
+<div class="summaryTableDescription">
+   Calls <code>enter()</code> on all of the items in the <code>_subObjectList</code>.</div>
+</td><td class="summaryTableOwnerCol"><a href="StateController.html">StateController</a></td>
+</tr>
+<tr class="">
+<td class="summaryTablePaddingCol">&nbsp;</td><td class="summaryTableInheritanceCol">&nbsp;</td><td class="summaryTableSignatureCol">
+<div class="summarySignature">
+<a class="signatureLink" href="#exitComplete()">exitComplete</a>(e:<a href="stateEvents/StateEvent.html">StateEvent</a>):void</div>
+<div class="summaryTableDescription">
+   
+   Handles the <code>StateEvent.EXIT_COMPLETE</code> event from each sub object, keeping track of
+   how many objects have finished.</div>
+</td><td class="summaryTableOwnerCol">StateViewController</td>
+</tr>
+<tr class="hideInheritedProtectedMethod">
+<td class="summaryTablePaddingCol">&nbsp;</td><td class="summaryTableInheritanceCol"><img class="inheritedSummaryImage" title="Inherited" alt="Inherited" src="../../../images/inheritedSummary.gif"></td><td class="summaryTableSignatureCol">
+<div class="summarySignature">
+<a class="signatureLink" href="StateController.html#exitSubObjects()">exitSubObjects</a>():void</div>
+<div class="summaryTableDescription">
+   Calls <code>exit()</code> on all of the items in the <code>_subObjectList</code>.</div>
+</td><td class="summaryTableOwnerCol"><a href="StateController.html">StateController</a></td>
+</tr>
+<tr class="hideInheritedProtectedMethod">
+<td class="summaryTablePaddingCol">&nbsp;</td><td class="summaryTableInheritanceCol"><img class="inheritedSummaryImage" title="Inherited" alt="Inherited" src="../../../images/inheritedSummary.gif"></td><td class="summaryTableSignatureCol">
+<div class="summarySignature">
+<a class="signatureLink" href="StateController.html#handleDisableComplete()">handleDisableComplete</a>(e:<a href="stateEvents/StateEvent.html">StateEvent</a>):void</div>
+<div class="summaryTableDescription">
+   Calls <code>disableComplete()</code> which handles a <code>StateEvent.DISABLE_COMPLETE</code> event when a
+   sub-object has finished disabling.</div>
+</td><td class="summaryTableOwnerCol"><a href="StateController.html">StateController</a></td>
+</tr>
+<tr class="hideInheritedProtectedMethod">
+<td class="summaryTablePaddingCol">&nbsp;</td><td class="summaryTableInheritanceCol"><img class="inheritedSummaryImage" title="Inherited" alt="Inherited" src="../../../images/inheritedSummary.gif"></td><td class="summaryTableSignatureCol">
+<div class="summarySignature">
+<a class="signatureLink" href="StateController.html#handleEnableComplete()">handleEnableComplete</a>(e:<a href="stateEvents/StateEvent.html">StateEvent</a>):void</div>
+<div class="summaryTableDescription">
+   Calls <code>enableComplete</code> which handles the <code>StateEvent.ENABLE_COMPLETE</code> event for each sub object.</div>
+</td><td class="summaryTableOwnerCol"><a href="StateController.html">StateController</a></td>
+</tr>
+<tr class="hideInheritedProtectedMethod">
+<td class="summaryTablePaddingCol">&nbsp;</td><td class="summaryTableInheritanceCol"><img class="inheritedSummaryImage" title="Inherited" alt="Inherited" src="../../../images/inheritedSummary.gif"></td><td class="summaryTableSignatureCol">
+<div class="summarySignature">
+<a class="signatureLink" href="StateController.html#handleEnterComplete()">handleEnterComplete</a>(e:<a href="stateEvents/StateEvent.html">StateEvent</a>):void</div>
+<div class="summaryTableDescription">
+   Calls <code>enterComplete()</code> which handles the <code>StateEvent.ENTER_COMPLETE</code> notification for each sub-object.</div>
+</td><td class="summaryTableOwnerCol"><a href="StateController.html">StateController</a></td>
+</tr>
+<tr class="">
+<td class="summaryTablePaddingCol">&nbsp;</td><td class="summaryTableInheritanceCol">&nbsp;</td><td class="summaryTableSignatureCol">
+<div class="summarySignature">
+<a class="signatureLink" href="#handleExitComplete()">handleExitComplete</a>(e:<a href="stateEvents/StateEvent.html">StateEvent</a>):void</div>
+<div class="summaryTableDescription">
+   
+   Calls <code>exitComplete()</code> which handles the <code>StateEvent.EXIT_COMPLETE</code> notification from each sub-object.</div>
+</td><td class="summaryTableOwnerCol">StateViewController</td>
+</tr>
+<tr class="hideInheritedProtectedMethod">
+<td class="summaryTablePaddingCol">&nbsp;</td><td class="summaryTableInheritanceCol"><img class="inheritedSummaryImage" title="Inherited" alt="Inherited" src="../../../images/inheritedSummary.gif"></td><td class="summaryTableSignatureCol">
+<div class="summarySignature">
+<a class="signatureLink" href="StateController.html#notifyDisableComplete()">notifyDisableComplete</a>(e:<a href="stateEvents/StateEvent.html">StateEvent</a>):void</div>
+<div class="summaryTableDescription">
+   A convenience method for notifying of a DISABLE_COMPLETE.</div>
+</td><td class="summaryTableOwnerCol"><a href="StateController.html">StateController</a></td>
+</tr>
+<tr class="hideInheritedProtectedMethod">
+<td class="summaryTablePaddingCol">&nbsp;</td><td class="summaryTableInheritanceCol"><img class="inheritedSummaryImage" title="Inherited" alt="Inherited" src="../../../images/inheritedSummary.gif"></td><td class="summaryTableSignatureCol">
+<div class="summarySignature">
+<a class="signatureLink" href="StateController.html#notifyEnableComplete()">notifyEnableComplete</a>(e:<a href="stateEvents/StateEvent.html">StateEvent</a>):void</div>
+<div class="summaryTableDescription">
+   A convenience method for notifying of a ENABLE_COMPLETE.</div>
+</td><td class="summaryTableOwnerCol"><a href="StateController.html">StateController</a></td>
+</tr>
+<tr class="hideInheritedProtectedMethod">
+<td class="summaryTablePaddingCol">&nbsp;</td><td class="summaryTableInheritanceCol"><img class="inheritedSummaryImage" title="Inherited" alt="Inherited" src="../../../images/inheritedSummary.gif"></td><td class="summaryTableSignatureCol">
+<div class="summarySignature">
+<a class="signatureLink" href="StateController.html#notifyEnterComplete()">notifyEnterComplete</a>(e:<a href="stateEvents/StateEvent.html">StateEvent</a>):void</div>
+<div class="summaryTableDescription">
+   A convenience method for notifying of a ENTER_COMPLETE.</div>
+</td><td class="summaryTableOwnerCol"><a href="StateController.html">StateController</a></td>
+</tr>
+<tr class="hideInheritedProtectedMethod">
+<td class="summaryTablePaddingCol">&nbsp;</td><td class="summaryTableInheritanceCol"><img class="inheritedSummaryImage" title="Inherited" alt="Inherited" src="../../../images/inheritedSummary.gif"></td><td class="summaryTableSignatureCol">
+<div class="summarySignature">
+<a class="signatureLink" href="StateController.html#notifyExitComplete()">notifyExitComplete</a>(e:<a href="stateEvents/StateEvent.html">StateEvent</a>):void</div>
+<div class="summaryTableDescription">
+   A convenience method for notifying of a EXIT_COMPLETE.</div>
+</td><td class="summaryTableOwnerCol"><a href="StateController.html">StateController</a></td>
+</tr>
+</table>
+</div>
+<a name="eventSummary"></a>
+<div class="summarySection">
+<div class="summaryTableTitle">Events</div>
+<div class="showHideLinks">
+<div class="hideInheritedEvent" id="hideInheritedEvent">
+<a onclick="javascript:setInheritedVisible(false,'Event');" href="#eventSummary" class="showHideLink"><img src="../../../images/expanded.gif" class="showHideLinkImage"> Hide Inherited Events</a>
+</div>
+<div class="showInheritedEvent" id="showInheritedEvent">
+<a onclick="javascript:setInheritedVisible(true,'Event');" href="#eventSummary" class="showHideLink"><img src="../../../images/collapsed.gif" class="showHideLinkImage"> Show Inherited Events</a>
+</div>
+</div>
+<table id="summaryTableEvent" class="summaryTable hideInheritedEvent" cellpadding="3" cellspacing="0">
+<tr>
+<th>&nbsp;</th><th colspan="2">Event</th><th>Summary</th><th class="summaryTableOwnerCol">Defined&nbsp;by</th>
+</tr>
+<tr class="hideInheritedEvent">
+<td class="summaryTablePaddingCol">&nbsp;</td><td class="summaryTableInheritanceCol"><img class="inheritedSummaryImage" title="Inherited" alt="Inherited" src="../../../images/inheritedSummary.gif"></td><td class="summaryTableSignatureCol">
+<div class="summarySignature">
+<a class="signatureLink" href="StateController.html#event:DISABLE_COMPLETE">DISABLE_COMPLETE</a>
+</div>
+</td><td class="summaryTableDescription summaryTableCol">
+ Dispatched when the disable procedure of this controller and all sub views have completed.</td><td class="summaryTableOwnerCol"><a href="StateController.html">StateController</a></td>
+</tr>
+<tr class="hideInheritedEvent">
+<td class="summaryTablePaddingCol">&nbsp;</td><td class="summaryTableInheritanceCol"><img class="inheritedSummaryImage" title="Inherited" alt="Inherited" src="../../../images/inheritedSummary.gif"></td><td class="summaryTableSignatureCol">
+<div class="summarySignature">
+<a class="signatureLink" href="StateController.html#event:ENABLE_COMPLETE">ENABLE_COMPLETE</a>
+</div>
+</td><td class="summaryTableDescription summaryTableCol">
+ Dispatched when the enable procedure of this controller and all sub views have completed.</td><td class="summaryTableOwnerCol"><a href="StateController.html">StateController</a></td>
+</tr>
+<tr class="hideInheritedEvent">
+<td class="summaryTablePaddingCol">&nbsp;</td><td class="summaryTableInheritanceCol"><img class="inheritedSummaryImage" title="Inherited" alt="Inherited" src="../../../images/inheritedSummary.gif"></td><td class="summaryTableSignatureCol">
+<div class="summarySignature">
+<a class="signatureLink" href="StateController.html#event:ENTER_COMPLETE">ENTER_COMPLETE</a>
+</div>
+</td><td class="summaryTableDescription summaryTableCol">
+ Dispatched when the enter procedure of this controller and all sub views have completed.</td><td class="summaryTableOwnerCol"><a href="StateController.html">StateController</a></td>
+</tr>
+<tr class="hideInheritedEvent">
+<td class="summaryTablePaddingCol">&nbsp;</td><td class="summaryTableInheritanceCol"><img class="inheritedSummaryImage" title="Inherited" alt="Inherited" src="../../../images/inheritedSummary.gif"></td><td class="summaryTableSignatureCol">
+<div class="summarySignature">
+<a class="signatureLink" href="StateController.html#event:EXIT_COMPLETE">EXIT_COMPLETE</a>
+</div>
+</td><td class="summaryTableDescription summaryTableCol">
+ Dispatched when the exit procedure of this controller and all sub views have completed.</td><td class="summaryTableOwnerCol"><a href="StateController.html">StateController</a></td>
+</tr>
+</table>
+</div>
+<script type="text/javascript" language="javascript">
+<!--
+showHideInherited();
+--></script>
+<div class="MainContent">
+<a name="propertyDetail"></a>
+<div class="detailSectionHeader">Property detail</div>
+<a name="container"></a>
+<table cellspacing="0" cellpadding="0" class="detailHeader">
+<tr>
+<td class="detailHeaderName">container</td><td class="detailHeaderType">property</td>
+</tr>
+</table>
+<div class="detailBody">
+<code>container:MovieClip</code>&nbsp;&nbsp;[read-write]<p>
+   Returns or sets the container object of all of the sub views.
+   </p><span class="label">Implementation</span>
+<br>
+<code>&nbsp;&nbsp;&nbsp;&nbsp;public function get container():MovieClip</code>
+<br>
+<code>&nbsp;&nbsp;&nbsp;&nbsp;public function set container(value:MovieClip):void</code>
+<br>
+</div>
+<a name="stateViews"></a>
+<table cellspacing="0" cellpadding="0" class="detailHeader">
+<tr>
+<td class="detailHeaderName">stateViews</td><td class="detailHeaderType">property</td><td class="detailHeaderRule">&nbsp;</td>
+</tr>
+</table>
+<div class="detailBody">
+<code>stateViews:Array</code>&nbsp;&nbsp;[read-only]<p>
+   returns a list of the sub views.
+   </p><span class="label">Implementation</span>
+<br>
+<code>&nbsp;&nbsp;&nbsp;&nbsp;public function get stateViews():Array</code>
+<br>
+</div>
+<a name="constructorDetail"></a>
+<div class="detailSectionHeader">Constructor detail</div>
+<a name="StateViewController()"></a>
+<table cellspacing="0" cellpadding="0" class="detailHeader">
+<tr>
+<td class="detailHeaderName">StateViewController</td><td class="detailHeaderParens">()</td><td class="detailHeaderType">constructor</td>
+</tr>
+</table>
+<div class="detailBody">
+<code>public function StateViewController(stateViewList:Array, container:MovieClip)</code><p>
+    This is the controller for each display state of type <code>StateView</code>.  This must contain a <code>StateView</code> object that it controls.
+    
+    </p><span class="label">Parameters</span>
+<table border="0" cellspacing="0" cellpadding="0">
+<tr>
+<td width="20px"></td><td><code><span class="label">stateViewList</span>:Array</code> &mdash; an array of views to be controlled by this controller.
+    </td>
+</tr>
+<tr>
+<td class="paramSpacer">&nbsp;</td>
+</tr>
+<tr>
+<td width="20px"></td><td><code><span class="label">container</span>:MovieClip</code> &mdash; a MovieClip that will be used to contain and be the parent of the items in the <code>stateViewList</code> parameter.
+    </td>
+</tr>
+</table>
+</div>
+<a name="methodDetail"></a>
+<div class="detailSectionHeader">Method detail</div>
+<a name="addToDisplayList()"></a>
+<table cellspacing="0" cellpadding="0" class="detailHeader">
+<tr>
+<td class="detailHeaderName">addToDisplayList</td><td class="detailHeaderParens">()</td><td class="detailHeaderType">method</td>
+</tr>
+</table>
+<div class="detailBody">
+<code>public function addToDisplayList():void</code><p>
+   Adds all of the views and subviews to the <code>_container</code> clip, essentially adding them to the display list.
+   
+   </p><p>
+<span class="label">See also</span>
+</p>
+<div class="seeAlso">_container</div>
+</div>
+<a name="enter()"></a>
+<table cellspacing="0" cellpadding="0" class="detailHeader">
+<tr>
+<td class="detailHeaderName">enter</td><td class="detailHeaderParens">()</td><td class="detailHeaderType">method</td><td class="detailHeaderRule">&nbsp;</td>
+</tr>
+</table>
+<div class="detailBody">
+<code>public override function enter():void</code><p>
+   When called, this will add all of the views and subviews to the display list. Once that has completed, it 
+   calls <code>enter()</code> on each of those added views.
+   </p></div>
+<a name="exitComplete()"></a>
+<table cellspacing="0" cellpadding="0" class="detailHeader">
+<tr>
+<td class="detailHeaderName">exitComplete</td><td class="detailHeaderParens">()</td><td class="detailHeaderType">method</td><td class="detailHeaderRule">&nbsp;</td>
+</tr>
+</table>
+<div class="detailBody">
+<code>protected override function exitComplete(e:<a href="stateEvents/StateEvent.html">StateEvent</a>):void</code><p>
+   
+   Handles the <code>StateEvent.EXIT_COMPLETE</code> event from each sub object, keeping track of
+   how many objects have finished.  When each sub-object has finished, a <code>StateEvent.EXIT_COMPLETE</code> event is dispatched.
+   </p><span class="label">Parameters</span>
+<table border="0" cellspacing="0" cellpadding="0">
+<tr>
+<td width="20px"></td><td><code><span class="label">e</span>:<a href="stateEvents/StateEvent.html">StateEvent</a></code></td>
+</tr>
+</table>
+</div>
+<a name="handleExitComplete()"></a>
+<table cellspacing="0" cellpadding="0" class="detailHeader">
+<tr>
+<td class="detailHeaderName">handleExitComplete</td><td class="detailHeaderParens">()</td><td class="detailHeaderType">method</td><td class="detailHeaderRule">&nbsp;</td>
+</tr>
+</table>
+<div class="detailBody">
+<code>protected override function handleExitComplete(e:<a href="stateEvents/StateEvent.html">StateEvent</a>):void</code><p>
+   
+   Calls <code>exitComplete()</code> which handles the <code>StateEvent.EXIT_COMPLETE</code> notification from each sub-object.
+   </p><span class="label">Parameters</span>
+<table border="0" cellspacing="0" cellpadding="0">
+<tr>
+<td width="20px"></td><td><code><span class="label">e</span>:<a href="stateEvents/StateEvent.html">StateEvent</a></code></td>
+</tr>
+</table>
+</div>
+<a name="registerSubObject()"></a>
+<table cellspacing="0" cellpadding="0" class="detailHeader">
+<tr>
+<td class="detailHeaderName">registerSubObject</td><td class="detailHeaderParens">()</td><td class="detailHeaderType">method</td><td class="detailHeaderRule">&nbsp;</td>
+</tr>
+</table>
+<div class="detailBody">
+<code>public override function registerSubObject(newStateView:<a href="interfaces/IState.html">IState</a>):void</code><p>
+   
+   Adds objects to the <code>_subObjectList</code> for control by this controller.
+   <B>There is currently no checking for duplicates in the list</B>
+   
+   </p><span class="label">Parameters</span>
+<table border="0" cellspacing="0" cellpadding="0">
+<tr>
+<td width="20px"></td><td><code><span class="label">newStateView</span>:<a href="interfaces/IState.html">IState</a></code> &mdash; a compliant sub object
+   </td>
+</tr>
+</table>
+</div>
+<a name="removeFromDisplayList()"></a>
+<table cellspacing="0" cellpadding="0" class="detailHeader">
+<tr>
+<td class="detailHeaderName">removeFromDisplayList</td><td class="detailHeaderParens">()</td><td class="detailHeaderType">method</td><td class="detailHeaderRule">&nbsp;</td>
+</tr>
+</table>
+<div class="detailBody">
+<code>public function removeFromDisplayList():void</code><p>
+   Removes all of the children of <code>_container</code> from the display list.
+   </p></div>
+<a name="toString()"></a>
+<table cellspacing="0" cellpadding="0" class="detailHeader">
+<tr>
+<td class="detailHeaderName">toString</td><td class="detailHeaderParens">()</td><td class="detailHeaderType">method</td><td class="detailHeaderRule">&nbsp;</td>
+</tr>
+</table>
+<div class="detailBody">
+<code>public override function toString():String</code><p>
+   
+   Traces the name of this controller class
+   </p><p></p>
+<span class="label">Returns</span>
+<table border="0" cellspacing="0" cellpadding="0">
+<tr>
+<td width="20"></td><td><code>String</code> &mdash; returns the name of this controller's class as a string.
+   </td>
+</tr>
+</table>
+</div>
+<a name="unregisterSubObject()"></a>
+<table cellspacing="0" cellpadding="0" class="detailHeader">
+<tr>
+<td class="detailHeaderName">unregisterSubObject</td><td class="detailHeaderParens">()</td><td class="detailHeaderType">method</td><td class="detailHeaderRule">&nbsp;</td>
+</tr>
+</table>
+<div class="detailBody">
+<code>public override function unregisterSubObject(oldStateView:<a href="interfaces/IState.html">IState</a>):void</code><p>
+   
+   Removes oldController from list of objects that are controlled by this controller.
+   If that object is not found in the list, a warning will be traced out.
+      </p><span class="label">Parameters</span>
+<table border="0" cellspacing="0" cellpadding="0">
+<tr>
+<td width="20px"></td><td><code><span class="label">oldStateView</span>:<a href="interfaces/IState.html">IState</a></code> &mdash; an IState object that will be removed from the list.
+   </td>
+</tr>
+</table>
+</div>
+<br>
+<br>
+<hr>
+<br>
+<p></p>
+<center class="copyright">DartsApp</center>
+</div>
+</body>
+</html>
+<!--DartsApp-->

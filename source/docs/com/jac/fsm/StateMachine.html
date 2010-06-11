@@ -1,0 +1,758 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+<head>
+<META http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<link rel="stylesheet" href="../../../style.css" type="text/css" media="screen">
+<link rel="stylesheet" href="../../../print.css" type="text/css" media="print">
+<meta content="StateMachine,com.jac.fsm.StateMachine,_blendTransitions,_blockDuringTransitions,_currentState,_disableDuringTransitions,_inTransition,_nextState,_numDisables,_numEnables,_previousState,_waitForDisableCount,_waitForEnableCount,currentState,previousState,nextState,changeCompleted,changeState,clearStates,disableStates,enableStates,enterNextState,notifyOfStateExit,stateEntered,switchStates,toString,update" name="keywords">
+<title>com.jac.fsm.StateMachine</title>
+</head>
+<body>
+<script type="text/javascript" language="javascript" src="../../../asdoc.js"></script><script type="text/javascript" language="javascript" src="../../../cookies.js"></script><script type="text/javascript" language="javascript">
+<!--
+				asdocTitle = 'StateMachine - API Documentation';
+				var baseRef = '../../../';
+				window.onload = configPage;
+			--></script>
+<table style="display:none" id="titleTable" cellspacing="0" cellpadding="0" class="titleTable">
+<tr>
+<td align="left" class="titleTableTitle">API Documentation</td><td align="right" class="titleTableTopNav"><a onclick="loadClassListFrame('../../../all-classes.html')" href="../../../package-summary.html">All&nbsp;Packages</a>&nbsp;|&nbsp;<a onclick="loadClassListFrame('../../../all-classes.html')" href="../../../class-summary.html">All&nbsp;Classes</a>&nbsp;|&nbsp;<a onclick="loadClassListFrame('../../../index-list.html')" href="../../../all-index-A.html">Index</a>&nbsp;|&nbsp;<a href="../../../index.html?com/jac/fsm/StateMachine.html&amp;com/jac/fsm/class-list.html" id="framesLink1">Frames</a><a onclick="parent.location=document.location" href="" style="display:none" id="noFramesLink1">No&nbsp;Frames</a></td><td rowspan="3" align="right" class="titleTableLogo"><img alt="Adobe Logo" title="Adobe Logo" class="logoImage" src="../../../images/logo.jpg"></td>
+</tr>
+<tr class="titleTableRow2">
+<td align="left" id="subTitle" class="titleTableSubTitle">Class&nbsp;StateMachine</td><td align="right" id="subNav" class="titleTableSubNav"><a href="#propertySummary">Properties</a>&nbsp;| <a href="#methodSummary">Methods</a>&nbsp;| <a href="#eventSummary">Events</a></td>
+</tr>
+<tr class="titleTableRow3">
+<td colspan="2">&nbsp;</td>
+</tr>
+</table>
+<script type="text/javascript" language="javascript">
+<!--
+if (!isEclipse() || window.name != ECLIPSE_FRAME_NAME) {titleBar_setSubTitle("Class StateMachine"); titleBar_setSubNav(false,true,false,false,true,false,true,false,false,false,false,false,false,false);}
+--></script>
+<div class="MainContent">
+<table cellspacing="0" cellpadding="0" class="classHeaderTable">
+<tr>
+<td class="classHeaderTableLabel">Package</td><td><a onclick="javascript:loadClassListFrame('class-list.html')" href="package-detail.html">com.jac.fsm</a></td>
+</tr>
+<tr>
+<td class="classHeaderTableLabel">Class</td><td class="classSignature">public class StateMachine</td>
+</tr>
+<tr>
+<td class="classHeaderTableLabel">Inheritance</td><td class="inheritanceList">StateMachine <img class="inheritArrow" alt="Inheritance" title="Inheritance" src="../../../images/inherit-arrow.gif"> flash.events.EventDispatcher</td>
+</tr>
+</table>
+<p></p>
+  A Class that handles the actual state switching.  It deals with two <code>StateControllers</code>, the previous state, and the next state.
+  It calls disable and exit on the previous state, then disable, enter, and enable on the next state.  Each state is responsible for notifiying
+  the state machine that it has completed, entering, exiting, enabling and disabling.
+  <p>
+  A StateMachine execution of changeState looks like this:
+  <ul>
+   <li>Disable Previous StateController if such state exists</li>
+  <li>Disable Next State StateController (before state is switched)</li>
+  <li>Wait for the previous StateController to report all of its sub objects have been disabled.</li>
+  <li>Wait for the next state StateController to report all of its sub objects have been disabled.</li>
+  <li>Exit Previous State</li>
+  <li>Wait for previous state to report all of its sub objects have finished exiting.</li>
+  <li>Enter Next State</li>
+  <li>Wait for next state to report all of its sub objects have finished entering.</li>
+  <li>Enable next state.</li>
+  <li>Wait for next state to report all of its sub objects have finished enabling.</li>
+  </ul>
+  </p>
+  <p></p>
+<br>
+<hr>
+</div>
+<a name="propertySummary"></a>
+<div class="summarySection">
+<div class="summaryTableTitle">Public Properties</div>
+<table id="summaryTableProperty" class="summaryTable " cellpadding="3" cellspacing="0">
+<tr>
+<th>&nbsp;</th><th colspan="2">Property</th><th class="summaryTableOwnerCol">Defined&nbsp;by</th>
+</tr>
+<tr class="">
+<td class="summaryTablePaddingCol">&nbsp;</td><td class="summaryTableInheritanceCol">&nbsp;</td><td class="summaryTableSignatureCol"><a class="signatureLink" href="#currentState">currentState</a> : <a href="../fsm/StateController.html">StateController</a>
+<div class="summaryTableDescription">[read-only]
+   Returns reference to the current StateController
+   </div>
+</td><td class="summaryTableOwnerCol">StateMachine</td>
+</tr>
+<tr class="">
+<td class="summaryTablePaddingCol">&nbsp;</td><td class="summaryTableInheritanceCol">&nbsp;</td><td class="summaryTableSignatureCol"><a class="signatureLink" href="#nextState">nextState</a> : <a href="../fsm/StateController.html">StateController</a>
+<div class="summaryTableDescription">
+   Returns reference to the next StateController
+   <p>Force the next state property.</div>
+</td><td class="summaryTableOwnerCol">StateMachine</td>
+</tr>
+<tr class="">
+<td class="summaryTablePaddingCol">&nbsp;</td><td class="summaryTableInheritanceCol">&nbsp;</td><td class="summaryTableSignatureCol"><a class="signatureLink" href="#previousState">previousState</a> : <a href="../fsm/StateController.html">StateController</a>
+<div class="summaryTableDescription">[read-only]
+   Returns the previous StateController (please note the object this references may no longer exist)
+   </div>
+</td><td class="summaryTableOwnerCol">StateMachine</td>
+</tr>
+</table>
+</div>
+<a name="protectedPropertySummary"></a>
+<div class="summarySection">
+<div class="summaryTableTitle">Protected Properties</div>
+<table id="summaryTableProtectedProperty" class="summaryTable " cellpadding="3" cellspacing="0">
+<tr>
+<th>&nbsp;</th><th colspan="2">Property</th><th class="summaryTableOwnerCol">Defined&nbsp;by</th>
+</tr>
+<tr class="">
+<td class="summaryTablePaddingCol">&nbsp;</td><td class="summaryTableInheritanceCol">&nbsp;</td><td class="summaryTableSignatureCol"><a class="signatureLink" href="#_blendTransitions">_blendTransitions</a> : Boolean = false<div class="summaryTableDescription"></div>
+</td><td class="summaryTableOwnerCol">StateMachine</td>
+</tr>
+<tr class="">
+<td class="summaryTablePaddingCol">&nbsp;</td><td class="summaryTableInheritanceCol">&nbsp;</td><td class="summaryTableSignatureCol"><a class="signatureLink" href="#_blockDuringTransitions">_blockDuringTransitions</a> : Boolean<div class="summaryTableDescription"></div>
+</td><td class="summaryTableOwnerCol">StateMachine</td>
+</tr>
+<tr class="">
+<td class="summaryTablePaddingCol">&nbsp;</td><td class="summaryTableInheritanceCol">&nbsp;</td><td class="summaryTableSignatureCol"><a class="signatureLink" href="#_currentState">_currentState</a> : <a href="../fsm/StateController.html">StateController</a>
+<div class="summaryTableDescription"></div>
+</td><td class="summaryTableOwnerCol">StateMachine</td>
+</tr>
+<tr class="">
+<td class="summaryTablePaddingCol">&nbsp;</td><td class="summaryTableInheritanceCol">&nbsp;</td><td class="summaryTableSignatureCol"><a class="signatureLink" href="#_disableDuringTransitions">_disableDuringTransitions</a> : Boolean<div class="summaryTableDescription"></div>
+</td><td class="summaryTableOwnerCol">StateMachine</td>
+</tr>
+<tr class="">
+<td class="summaryTablePaddingCol">&nbsp;</td><td class="summaryTableInheritanceCol">&nbsp;</td><td class="summaryTableSignatureCol"><a class="signatureLink" href="#_inTransition">_inTransition</a> : Boolean<div class="summaryTableDescription"></div>
+</td><td class="summaryTableOwnerCol">StateMachine</td>
+</tr>
+<tr class="">
+<td class="summaryTablePaddingCol">&nbsp;</td><td class="summaryTableInheritanceCol">&nbsp;</td><td class="summaryTableSignatureCol"><a class="signatureLink" href="#_nextState">_nextState</a> : <a href="../fsm/StateController.html">StateController</a>
+<div class="summaryTableDescription"></div>
+</td><td class="summaryTableOwnerCol">StateMachine</td>
+</tr>
+<tr class="">
+<td class="summaryTablePaddingCol">&nbsp;</td><td class="summaryTableInheritanceCol">&nbsp;</td><td class="summaryTableSignatureCol"><a class="signatureLink" href="#_numDisables">_numDisables</a> : int = 0<div class="summaryTableDescription"></div>
+</td><td class="summaryTableOwnerCol">StateMachine</td>
+</tr>
+<tr class="">
+<td class="summaryTablePaddingCol">&nbsp;</td><td class="summaryTableInheritanceCol">&nbsp;</td><td class="summaryTableSignatureCol"><a class="signatureLink" href="#_numEnables">_numEnables</a> : int = 0<div class="summaryTableDescription"></div>
+</td><td class="summaryTableOwnerCol">StateMachine</td>
+</tr>
+<tr class="">
+<td class="summaryTablePaddingCol">&nbsp;</td><td class="summaryTableInheritanceCol">&nbsp;</td><td class="summaryTableSignatureCol"><a class="signatureLink" href="#_previousState">_previousState</a> : <a href="../fsm/StateController.html">StateController</a>
+<div class="summaryTableDescription"></div>
+</td><td class="summaryTableOwnerCol">StateMachine</td>
+</tr>
+<tr class="">
+<td class="summaryTablePaddingCol">&nbsp;</td><td class="summaryTableInheritanceCol">&nbsp;</td><td class="summaryTableSignatureCol"><a class="signatureLink" href="#_waitForDisableCount">_waitForDisableCount</a> : int = 0<div class="summaryTableDescription"></div>
+</td><td class="summaryTableOwnerCol">StateMachine</td>
+</tr>
+<tr class="">
+<td class="summaryTablePaddingCol">&nbsp;</td><td class="summaryTableInheritanceCol">&nbsp;</td><td class="summaryTableSignatureCol"><a class="signatureLink" href="#_waitForEnableCount">_waitForEnableCount</a> : int = 0<div class="summaryTableDescription"></div>
+</td><td class="summaryTableOwnerCol">StateMachine</td>
+</tr>
+</table>
+</div>
+<a name="methodSummary"></a>
+<div class="summarySection">
+<div class="summaryTableTitle">Public Methods</div>
+<table id="summaryTableMethod" class="summaryTable " cellpadding="3" cellspacing="0">
+<tr>
+<th>&nbsp;</th><th colspan="2">Method</th><th class="summaryTableOwnerCol">Defined&nbsp;by</th>
+</tr>
+<tr class="">
+<td class="summaryTablePaddingCol">&nbsp;</td><td class="summaryTableInheritanceCol">&nbsp;</td><td class="summaryTableSignatureCol">
+<div class="summarySignature">
+<a class="signatureLink" href="#StateMachine()">StateMachine</a>(blockDuringTransitions:Boolean = true, disableDuringTransitions:Boolean = true)</div>
+<div class="summaryTableDescription">
+   Constructor to initialize a new StateMachine.</div>
+</td><td class="summaryTableOwnerCol">StateMachine</td>
+</tr>
+<tr class="">
+<td class="summaryTablePaddingCol">&nbsp;</td><td class="summaryTableInheritanceCol">&nbsp;</td><td class="summaryTableSignatureCol">
+<div class="summarySignature">
+<a class="signatureLink" href="#changeState()">changeState</a>(newState:<a href="StateController.html">StateController</a>, blendTransitions:Boolean = false):Boolean</div>
+<div class="summaryTableDescription">
+    Switches the currentState to the newState.</div>
+</td><td class="summaryTableOwnerCol">StateMachine</td>
+</tr>
+<tr class="">
+<td class="summaryTablePaddingCol">&nbsp;</td><td class="summaryTableInheritanceCol">&nbsp;</td><td class="summaryTableSignatureCol">
+<div class="summarySignature">
+<a class="signatureLink" href="#clearStates()">clearStates</a>():void</div>
+<div class="summaryTableDescription">
+   Sets _previousState, _nextState, _currentState to null.</div>
+</td><td class="summaryTableOwnerCol">StateMachine</td>
+</tr>
+<tr class="">
+<td class="summaryTablePaddingCol">&nbsp;</td><td class="summaryTableInheritanceCol">&nbsp;</td><td class="summaryTableSignatureCol">
+<div class="summarySignature">
+<a class="signatureLink" href="#toString()">toString</a>():String</div>
+<div class="summaryTableDescription">
+   Returns class name of the StateMachine.</div>
+</td><td class="summaryTableOwnerCol">StateMachine</td>
+</tr>
+<tr class="">
+<td class="summaryTablePaddingCol">&nbsp;</td><td class="summaryTableInheritanceCol">&nbsp;</td><td class="summaryTableSignatureCol">
+<div class="summarySignature">
+<a class="signatureLink" href="#update()">update</a>():void</div>
+<div class="summaryTableDescription">
+   Calls the update function on the currentState.</div>
+</td><td class="summaryTableOwnerCol">StateMachine</td>
+</tr>
+</table>
+</div>
+<a name="protectedMethodSummary"></a>
+<div class="summarySection">
+<div class="summaryTableTitle">Protected Methods</div>
+<table id="summaryTableProtectedMethod" class="summaryTable " cellpadding="3" cellspacing="0">
+<tr>
+<th>&nbsp;</th><th colspan="2">Method</th><th class="summaryTableOwnerCol">Defined&nbsp;by</th>
+</tr>
+<tr class="">
+<td class="summaryTablePaddingCol">&nbsp;</td><td class="summaryTableInheritanceCol">&nbsp;</td><td class="summaryTableSignatureCol">
+<div class="summarySignature">
+<a class="signatureLink" href="#changeCompleted()">changeCompleted</a>(e:<a href="stateEvents/StateEvent.html">StateEvent</a>):void</div>
+<div class="summaryTableDescription">
+    Final step for state change.</div>
+</td><td class="summaryTableOwnerCol">StateMachine</td>
+</tr>
+<tr class="">
+<td class="summaryTablePaddingCol">&nbsp;</td><td class="summaryTableInheritanceCol">&nbsp;</td><td class="summaryTableSignatureCol">
+<div class="summarySignature">
+<a class="signatureLink" href="#disableStates()">disableStates</a>():void</div>
+<div class="summaryTableDescription">
+     Calls disable on the current StateController during a state switch.</div>
+</td><td class="summaryTableOwnerCol">StateMachine</td>
+</tr>
+<tr class="">
+<td class="summaryTablePaddingCol">&nbsp;</td><td class="summaryTableInheritanceCol">&nbsp;</td><td class="summaryTableSignatureCol">
+<div class="summarySignature">
+<a class="signatureLink" href="#enableStates()">enableStates</a>():void</div>
+<div class="summaryTableDescription">
+   Calls enable on the current StateController during a state switch.</div>
+</td><td class="summaryTableOwnerCol">StateMachine</td>
+</tr>
+<tr class="">
+<td class="summaryTablePaddingCol">&nbsp;</td><td class="summaryTableInheritanceCol">&nbsp;</td><td class="summaryTableSignatureCol">
+<div class="summarySignature">
+<a class="signatureLink" href="#enterNextState()">enterNextState</a>(e:<a href="stateEvents/StateEvent.html">StateEvent</a> = null):void</div>
+<div class="summaryTableDescription">
+    Intermediate step during a state change.</div>
+</td><td class="summaryTableOwnerCol">StateMachine</td>
+</tr>
+<tr class="">
+<td class="summaryTablePaddingCol">&nbsp;</td><td class="summaryTableInheritanceCol">&nbsp;</td><td class="summaryTableSignatureCol">
+<div class="summarySignature">
+<a class="signatureLink" href="#notifyOfStateExit()">notifyOfStateExit</a>(e:<a href="stateEvents/StateEvent.html">StateEvent</a> = null):void</div>
+<div class="summaryTableDescription">
+   Dispatches a <code>StateEvent.EXIT_COMPLETE</code> event.</div>
+</td><td class="summaryTableOwnerCol">StateMachine</td>
+</tr>
+<tr class="">
+<td class="summaryTablePaddingCol">&nbsp;</td><td class="summaryTableInheritanceCol">&nbsp;</td><td class="summaryTableSignatureCol">
+<div class="summarySignature">
+<a class="signatureLink" href="#stateEntered()">stateEntered</a>(e:<a href="stateEvents/StateEvent.html">StateEvent</a>):void</div>
+<div class="summaryTableDescription">
+   Second to last step for state change.</div>
+</td><td class="summaryTableOwnerCol">StateMachine</td>
+</tr>
+<tr class="">
+<td class="summaryTablePaddingCol">&nbsp;</td><td class="summaryTableInheritanceCol">&nbsp;</td><td class="summaryTableSignatureCol">
+<div class="summarySignature">
+<a class="signatureLink" href="#switchStates()">switchStates</a>(e:<a href="stateEvents/StateEvent.html">StateEvent</a>):void</div>
+<div class="summaryTableDescription">
+    This function is called during a state change, generally after Disable has finished.</div>
+</td><td class="summaryTableOwnerCol">StateMachine</td>
+</tr>
+</table>
+</div>
+<a name="eventSummary"></a>
+<div class="summarySection">
+<div class="summaryTableTitle">Events</div>
+<table id="summaryTableEvent" class="summaryTable " cellpadding="3" cellspacing="0">
+<tr>
+<th>&nbsp;</th><th colspan="2">Event</th><th>Summary</th><th class="summaryTableOwnerCol">Defined&nbsp;by</th>
+</tr>
+<tr class="">
+<td class="summaryTablePaddingCol">&nbsp;</td><td class="summaryTableInheritanceCol">&nbsp;</td><td class="summaryTableSignatureCol">
+<div class="summarySignature">
+<a class="signatureLink" href="#event:CHANGE">CHANGE</a>
+</div>
+</td><td class="summaryTableDescription summaryTableCol">
+ Dispatched just before a state change is about to take place, but just after the <code>_nextState</code> property is populated.</td><td class="summaryTableOwnerCol">StateMachine</td>
+</tr>
+<tr class="">
+<td class="summaryTablePaddingCol">&nbsp;</td><td class="summaryTableInheritanceCol">&nbsp;</td><td class="summaryTableSignatureCol">
+<div class="summarySignature">
+<a class="signatureLink" href="#event:ENTER_COMPLETE">ENTER_COMPLETE</a>
+</div>
+</td><td class="summaryTableDescription summaryTableCol">
+ Dispatched when the enter procedure of this controller and all sub views have completed.</td><td class="summaryTableOwnerCol">StateMachine</td>
+</tr>
+<tr class="">
+<td class="summaryTablePaddingCol">&nbsp;</td><td class="summaryTableInheritanceCol">&nbsp;</td><td class="summaryTableSignatureCol">
+<div class="summarySignature">
+<a class="signatureLink" href="#event:EXIT_COMPLETE">EXIT_COMPLETE</a>
+</div>
+</td><td class="summaryTableDescription summaryTableCol">
+ Dispatched when the exit procedure of this controller and all sub views have completed.</td><td class="summaryTableOwnerCol">StateMachine</td>
+</tr>
+</table>
+</div>
+<script type="text/javascript" language="javascript">
+<!--
+showHideInherited();
+--></script>
+<div class="MainContent">
+<a name="propertyDetail"></a>
+<div class="detailSectionHeader">Property detail</div>
+<a name="_blendTransitions"></a>
+<table cellspacing="0" cellpadding="0" class="detailHeader">
+<tr>
+<td class="detailHeaderName">_blendTransitions</td><td class="detailHeaderType">property</td>
+</tr>
+</table>
+<div class="detailBody">
+<code>protected var _blendTransitions:Boolean = false</code>
+</div>
+<a name="_blockDuringTransitions"></a>
+<table cellspacing="0" cellpadding="0" class="detailHeader">
+<tr>
+<td class="detailHeaderName">_blockDuringTransitions</td><td class="detailHeaderType">property</td><td class="detailHeaderRule">&nbsp;</td>
+</tr>
+</table>
+<div class="detailBody">
+<code>protected var _blockDuringTransitions:Boolean</code>
+</div>
+<a name="_currentState"></a>
+<table cellspacing="0" cellpadding="0" class="detailHeader">
+<tr>
+<td class="detailHeaderName">_currentState</td><td class="detailHeaderType">property</td><td class="detailHeaderRule">&nbsp;</td>
+</tr>
+</table>
+<div class="detailBody">
+<code>protected var _currentState:<a href="../fsm/StateController.html">StateController</a></code>
+</div>
+<a name="currentState"></a>
+<table cellspacing="0" cellpadding="0" class="detailHeader">
+<tr>
+<td class="detailHeaderName">currentState</td><td class="detailHeaderType">property</td><td class="detailHeaderRule">&nbsp;</td>
+</tr>
+</table>
+<div class="detailBody">
+<code>currentState:<a href="../fsm/StateController.html">StateController</a></code>&nbsp;&nbsp;[read-only]<p>
+   Returns reference to the current StateController
+   </p><span class="label">Implementation</span>
+<br>
+<code>&nbsp;&nbsp;&nbsp;&nbsp;public function get currentState():<a href="../fsm/StateController.html">StateController</a></code>
+<br>
+</div>
+<a name="_disableDuringTransitions"></a>
+<table cellspacing="0" cellpadding="0" class="detailHeader">
+<tr>
+<td class="detailHeaderName">_disableDuringTransitions</td><td class="detailHeaderType">property</td><td class="detailHeaderRule">&nbsp;</td>
+</tr>
+</table>
+<div class="detailBody">
+<code>protected var _disableDuringTransitions:Boolean</code>
+</div>
+<a name="_inTransition"></a>
+<table cellspacing="0" cellpadding="0" class="detailHeader">
+<tr>
+<td class="detailHeaderName">_inTransition</td><td class="detailHeaderType">property</td><td class="detailHeaderRule">&nbsp;</td>
+</tr>
+</table>
+<div class="detailBody">
+<code>protected var _inTransition:Boolean</code>
+</div>
+<a name="_nextState"></a>
+<table cellspacing="0" cellpadding="0" class="detailHeader">
+<tr>
+<td class="detailHeaderName">_nextState</td><td class="detailHeaderType">property</td><td class="detailHeaderRule">&nbsp;</td>
+</tr>
+</table>
+<div class="detailBody">
+<code>protected var _nextState:<a href="../fsm/StateController.html">StateController</a></code>
+</div>
+<a name="nextState"></a>
+<table cellspacing="0" cellpadding="0" class="detailHeader">
+<tr>
+<td class="detailHeaderName">nextState</td><td class="detailHeaderType">property</td><td class="detailHeaderRule">&nbsp;</td>
+</tr>
+</table>
+<div class="detailBody">
+<code>nextState:<a href="../fsm/StateController.html">StateController</a></code>&nbsp;&nbsp;[read-write]<p>
+   Returns reference to the next StateController
+   </p><p>Force the next state property.  Very rare that this will ever need to be set outside of this class.</p>
+   <span class="label">Implementation</span>
+<br>
+<code>&nbsp;&nbsp;&nbsp;&nbsp;public function get nextState():<a href="../fsm/StateController.html">StateController</a></code>
+<br>
+<code>&nbsp;&nbsp;&nbsp;&nbsp;public function set nextState(value:<a href="../fsm/StateController.html">StateController</a>):void</code>
+<br>
+</div>
+<a name="_numDisables"></a>
+<table cellspacing="0" cellpadding="0" class="detailHeader">
+<tr>
+<td class="detailHeaderName">_numDisables</td><td class="detailHeaderType">property</td><td class="detailHeaderRule">&nbsp;</td>
+</tr>
+</table>
+<div class="detailBody">
+<code>protected var _numDisables:int = 0</code>
+</div>
+<a name="_numEnables"></a>
+<table cellspacing="0" cellpadding="0" class="detailHeader">
+<tr>
+<td class="detailHeaderName">_numEnables</td><td class="detailHeaderType">property</td><td class="detailHeaderRule">&nbsp;</td>
+</tr>
+</table>
+<div class="detailBody">
+<code>protected var _numEnables:int = 0</code>
+</div>
+<a name="_previousState"></a>
+<table cellspacing="0" cellpadding="0" class="detailHeader">
+<tr>
+<td class="detailHeaderName">_previousState</td><td class="detailHeaderType">property</td><td class="detailHeaderRule">&nbsp;</td>
+</tr>
+</table>
+<div class="detailBody">
+<code>protected var _previousState:<a href="../fsm/StateController.html">StateController</a></code>
+</div>
+<a name="previousState"></a>
+<table cellspacing="0" cellpadding="0" class="detailHeader">
+<tr>
+<td class="detailHeaderName">previousState</td><td class="detailHeaderType">property</td><td class="detailHeaderRule">&nbsp;</td>
+</tr>
+</table>
+<div class="detailBody">
+<code>previousState:<a href="../fsm/StateController.html">StateController</a></code>&nbsp;&nbsp;[read-only]<p>
+   Returns the previous StateController (please note the object this references may no longer exist)
+   </p><span class="label">Implementation</span>
+<br>
+<code>&nbsp;&nbsp;&nbsp;&nbsp;public function get previousState():<a href="../fsm/StateController.html">StateController</a></code>
+<br>
+</div>
+<a name="_waitForDisableCount"></a>
+<table cellspacing="0" cellpadding="0" class="detailHeader">
+<tr>
+<td class="detailHeaderName">_waitForDisableCount</td><td class="detailHeaderType">property</td><td class="detailHeaderRule">&nbsp;</td>
+</tr>
+</table>
+<div class="detailBody">
+<code>protected var _waitForDisableCount:int = 0</code>
+</div>
+<a name="_waitForEnableCount"></a>
+<table cellspacing="0" cellpadding="0" class="detailHeader">
+<tr>
+<td class="detailHeaderName">_waitForEnableCount</td><td class="detailHeaderType">property</td><td class="detailHeaderRule">&nbsp;</td>
+</tr>
+</table>
+<div class="detailBody">
+<code>protected var _waitForEnableCount:int = 0</code>
+</div>
+<a name="constructorDetail"></a>
+<div class="detailSectionHeader">Constructor detail</div>
+<a name="StateMachine()"></a>
+<table cellspacing="0" cellpadding="0" class="detailHeader">
+<tr>
+<td class="detailHeaderName">StateMachine</td><td class="detailHeaderParens">()</td><td class="detailHeaderType">constructor</td>
+</tr>
+</table>
+<div class="detailBody">
+<code>public function StateMachine(blockDuringTransitions:Boolean = true, disableDuringTransitions:Boolean = true)</code><p>
+   Constructor to initialize a new StateMachine.
+   
+   </p><span class="label">Parameters</span>
+<table border="0" cellspacing="0" cellpadding="0">
+<tr>
+<td width="20px"></td><td><code><span class="label">blockDuringTransitions</span>:Boolean</code> (default = <code>true</code>)<code></code> &mdash; if true, disallows state switching while in transition (true is recommended)
+   </td>
+</tr>
+<tr>
+<td class="paramSpacer">&nbsp;</td>
+</tr>
+<tr>
+<td width="20px"></td><td><code><span class="label">disableDuringTransitions</span>:Boolean</code> (default = <code>true</code>)<code></code> &mdash; if true, calls disable on the current state and the next state until the transition ends, which then calls enable
+   </td>
+</tr>
+</table>
+</div>
+<a name="methodDetail"></a>
+<div class="detailSectionHeader">Method detail</div>
+<a name="changeCompleted()"></a>
+<table cellspacing="0" cellpadding="0" class="detailHeader">
+<tr>
+<td class="detailHeaderName">changeCompleted</td><td class="detailHeaderParens">()</td><td class="detailHeaderType">method</td>
+</tr>
+</table>
+<div class="detailBody">
+<code>protected function changeCompleted(e:<a href="stateEvents/StateEvent.html">StateEvent</a>):void</code><p>
+    Final step for state change.
+        Updates internal properties (_previousState, _currentState, _inTransition)
+    
+    Dispatches <code>StateEvent.ENTER_COMPLETE</code> when finished.
+    
+    Called repeatedly until all sub objects have entered. 
+    
+    </p><span class="label">Parameters</span>
+<table border="0" cellspacing="0" cellpadding="0">
+<tr>
+<td width="20px"></td><td><code><span class="label">e</span>:<a href="stateEvents/StateEvent.html">StateEvent</a></code> &mdash; StateEvent (probably ENABLE_COMPLETE)
+    </td>
+</tr>
+</table>
+</div>
+<a name="changeState()"></a>
+<table cellspacing="0" cellpadding="0" class="detailHeader">
+<tr>
+<td class="detailHeaderName">changeState</td><td class="detailHeaderParens">()</td><td class="detailHeaderType">method</td><td class="detailHeaderRule">&nbsp;</td>
+</tr>
+</table>
+<div class="detailBody">
+<code>public function changeState(newState:<a href="StateController.html">StateController</a>, blendTransitions:Boolean = false):Boolean</code><p>
+    Switches the currentState to the newState.
+    The operational flow is as follows:
+    <ul>
+    <li>Disable Previous StateController if such state exists </li>
+    <li>Disable Next State StateController (before state is switched)</li>
+    <li>Wait for the previous StateController to report all of its sub objects have been disabled.</li>
+    <li>Wait for the next state StateController to report all of its sub objects have been disabled.</li>
+    <li>Exit Previous State</li>
+    <li>Wait for previous state to report all of its sub objects have finished exiting.</li>
+    <li>Enter Next State</li>
+    <li>Wait for next state to report all of its sub objects have finished entering.</li>
+    <li>Wait for next state to report all of its sub objects have finished enter.</li>
+    <li>Enable next state.</li>
+    </ul>
+    
+    </p><p>Dispatches a <code>StateChangeEvent.CHANGE</code> event just before the change starts</p>
+    
+    <span class="label">Parameters</span>
+<table border="0" cellspacing="0" cellpadding="0">
+<tr>
+<td width="20px"></td><td><code><span class="label">newState</span>:<a href="StateController.html">StateController</a></code> &mdash; A StateController object to enter into after the current state has exited.
+    </td>
+</tr>
+<tr>
+<td class="paramSpacer">&nbsp;</td>
+</tr>
+<tr>
+<td width="20px"></td><td><code><span class="label">blendTransitions</span>:Boolean</code> (default = <code>false</code>)<code></code> &mdash; if set to <code>true</code> the current state will be told to exit(), and the next state will be told to enter() at the same time.
+    
+    </td>
+</tr>
+</table>
+<p></p>
+<span class="label">Returns</span>
+<table border="0" cellspacing="0" cellpadding="0">
+<tr>
+<td width="20"></td><td><code>Boolean</code> &mdash; True is returned if the change was started <code>(!newState || (_inTransition &#38;&#38; _blockDuringTransitions))</code> resulted in true.
+      Returns False if the change wasn't started because of <code>(!newState || (_inTransition &#38;&#38; _blockDuringTransitions))</code> resulted in false.
+    </td>
+</tr>
+</table>
+</div>
+<a name="clearStates()"></a>
+<table cellspacing="0" cellpadding="0" class="detailHeader">
+<tr>
+<td class="detailHeaderName">clearStates</td><td class="detailHeaderParens">()</td><td class="detailHeaderType">method</td><td class="detailHeaderRule">&nbsp;</td>
+</tr>
+</table>
+<div class="detailBody">
+<code>public function clearStates():void</code><p>
+   Sets _previousState, _nextState, _currentState to null.
+   
+   This should not really be needed, but is left in for convenience.
+   </p></div>
+<a name="disableStates()"></a>
+<table cellspacing="0" cellpadding="0" class="detailHeader">
+<tr>
+<td class="detailHeaderName">disableStates</td><td class="detailHeaderParens">()</td><td class="detailHeaderType">method</td><td class="detailHeaderRule">&nbsp;</td>
+</tr>
+</table>
+<div class="detailBody">
+<code>protected function disableStates():void</code><p>
+     Calls disable on the current StateController during a state switch.  Execution continues after a <code>StateEvent.DISABLE_COMPLETE</code> event is caught.
+     This is an intermediate step in a state switch and can be overriden if needed when being subclassed.
+    </p></div>
+<a name="enableStates()"></a>
+<table cellspacing="0" cellpadding="0" class="detailHeader">
+<tr>
+<td class="detailHeaderName">enableStates</td><td class="detailHeaderParens">()</td><td class="detailHeaderType">method</td><td class="detailHeaderRule">&nbsp;</td>
+</tr>
+</table>
+<div class="detailBody">
+<code>protected function enableStates():void</code><p>
+   Calls enable on the current StateController during a state switch.  Execution continues after a <code>StateEvent.ENABLE_COMPLETE</code> event is caught at <code>changeCompleted()</code>.
+   This is an intermediate step in a state switch and can be overriden if needed when being subclassed.
+   
+   </p><p>
+<span class="label">See also</span>
+</p>
+<div class="seeAlso">
+<a href="../fsm/StateMachine.html#changeCompleted()" target="">changeCompleted()</a>
+</div>
+</div>
+<a name="enterNextState()"></a>
+<table cellspacing="0" cellpadding="0" class="detailHeader">
+<tr>
+<td class="detailHeaderName">enterNextState</td><td class="detailHeaderParens">()</td><td class="detailHeaderType">method</td><td class="detailHeaderRule">&nbsp;</td>
+</tr>
+</table>
+<div class="detailBody">
+<code>protected function enterNextState(e:<a href="stateEvents/StateEvent.html">StateEvent</a> = null):void</code><p>
+    Intermediate step during a state change.
+    Calls <code>enter()</code> on the next StateController.
+    
+    </p><p>Generally called after Disable and Exit has completed on the previous state.</p>
+    
+    <span class="label">Parameters</span>
+<table border="0" cellspacing="0" cellpadding="0">
+<tr>
+<td width="20px"></td><td><code><span class="label">e</span>:<a href="stateEvents/StateEvent.html">StateEvent</a></code> (default = <code>null</code>)<code></code></td>
+</tr>
+</table>
+</div>
+<a name="notifyOfStateExit()"></a>
+<table cellspacing="0" cellpadding="0" class="detailHeader">
+<tr>
+<td class="detailHeaderName">notifyOfStateExit</td><td class="detailHeaderParens">()</td><td class="detailHeaderType">method</td><td class="detailHeaderRule">&nbsp;</td>
+</tr>
+</table>
+<div class="detailBody">
+<code>protected function notifyOfStateExit(e:<a href="stateEvents/StateEvent.html">StateEvent</a> = null):void</code><p>
+   Dispatches a <code>StateEvent.EXIT_COMPLETE</code> event.
+   </p><span class="label">Parameters</span>
+<table border="0" cellspacing="0" cellpadding="0">
+<tr>
+<td width="20px"></td><td><code><span class="label">e</span>:<a href="stateEvents/StateEvent.html">StateEvent</a></code> (default = <code>null</code>)<code></code></td>
+</tr>
+</table>
+</div>
+<a name="stateEntered()"></a>
+<table cellspacing="0" cellpadding="0" class="detailHeader">
+<tr>
+<td class="detailHeaderName">stateEntered</td><td class="detailHeaderParens">()</td><td class="detailHeaderType">method</td><td class="detailHeaderRule">&nbsp;</td>
+</tr>
+</table>
+<div class="detailBody">
+<code>protected function stateEntered(e:<a href="stateEvents/StateEvent.html">StateEvent</a>):void</code><p>
+   Second to last step for state change.
+   
+   Generally called after switchStates has completed.
+   
+   </p><span class="label">Parameters</span>
+<table border="0" cellspacing="0" cellpadding="0">
+<tr>
+<td width="20px"></td><td><code><span class="label">e</span>:<a href="stateEvents/StateEvent.html">StateEvent</a></code> &mdash; StateEvent (probably from ENTER_COMPLETE)
+   </td>
+</tr>
+</table>
+</div>
+<a name="switchStates()"></a>
+<table cellspacing="0" cellpadding="0" class="detailHeader">
+<tr>
+<td class="detailHeaderName">switchStates</td><td class="detailHeaderParens">()</td><td class="detailHeaderType">method</td><td class="detailHeaderRule">&nbsp;</td>
+</tr>
+</table>
+<div class="detailBody">
+<code>protected function switchStates(e:<a href="stateEvents/StateEvent.html">StateEvent</a>):void</code><p>
+    This function is called during a state change, generally after Disable has finished.
+    This exits the current StateController (if there is one) and waits for <code>StateEvent.EXIT_COMPLETE</code> to continue execution.
+    
+    </p><span class="label">Parameters</span>
+<table border="0" cellspacing="0" cellpadding="0">
+<tr>
+<td width="20px"></td><td><code><span class="label">e</span>:<a href="stateEvents/StateEvent.html">StateEvent</a></code> &mdash; StateEvent, usually after disable has completed.
+    </td>
+</tr>
+</table>
+</div>
+<a name="toString()"></a>
+<table cellspacing="0" cellpadding="0" class="detailHeader">
+<tr>
+<td class="detailHeaderName">toString</td><td class="detailHeaderParens">()</td><td class="detailHeaderType">method</td><td class="detailHeaderRule">&nbsp;</td>
+</tr>
+</table>
+<div class="detailBody">
+<code>public override function toString():String</code><p>
+   Returns class name of the StateMachine.
+   
+   </p><p></p>
+<span class="label">Returns</span>
+<table border="0" cellspacing="0" cellpadding="0">
+<tr>
+<td width="20"></td><td><code>String</code> &mdash; the Class name of the stateMachine.
+   </td>
+</tr>
+</table>
+</div>
+<a name="update()"></a>
+<table cellspacing="0" cellpadding="0" class="detailHeader">
+<tr>
+<td class="detailHeaderName">update</td><td class="detailHeaderParens">()</td><td class="detailHeaderType">method</td><td class="detailHeaderRule">&nbsp;</td>
+</tr>
+</table>
+<div class="detailBody">
+<code>public function update():void</code><p>
+   Calls the update function on the currentState.  This can be used to run a "tick" system such as for a game loop.  Each state
+   could be notified of the "tick" and update as necessary for that particular frame.
+   </p></div>
+<div class="detailSectionHeader">Event detail</div>
+<a name="event:CHANGE"></a>
+<table cellspacing="0" cellpadding="0" class="detailHeader">
+<tr>
+<td class="detailHeaderName">CHANGE</td><td class="detailHeaderType">event&nbsp;</td>
+</tr>
+</table>
+<div class="detailBody">
+<span class="label">Event object type: </span><a href="stateEvents/StateChangeEvent.html"><code>com.jac.fsm.stateEvents.StateChangeEvent</code></a>
+<br>
+<p></p><p>
+ Dispatched just before a state change is about to take place, but just after the <code>_nextState</code> property is populated.
+ 
+ </p><p>
+ To determine when the state change is complete listen for the <code>StateEvent.ENTER_COMPLETE</code> notification.
+ </p>
+ 
+ <p>
+<span class="label">See also</span>
+</p>
+<div class="seeAlso">
+<a href="stateEvents/StateEvent.html" target="">StateEvent.ENTER_COMPLETE</a>
+</div>
+</div>
+<a name="event:ENTER_COMPLETE"></a>
+<table cellspacing="0" cellpadding="0" class="detailHeader">
+<tr>
+<td class="detailHeaderName">ENTER_COMPLETE</td><td class="detailHeaderType">event&nbsp;</td><td class="detailHeaderRule">&nbsp;</td>
+</tr>
+</table>
+<div class="detailBody">
+<span class="label">Event object type: </span><a href="stateEvents/StateEvent.html"><code>com.jac.fsm.stateEvents.StateEvent</code></a>
+<br>
+<p></p><p>
+ Dispatched when the enter procedure of this controller and all sub views have completed.
+ 
+ </p></div>
+<a name="event:EXIT_COMPLETE"></a>
+<table cellspacing="0" cellpadding="0" class="detailHeader">
+<tr>
+<td class="detailHeaderName">EXIT_COMPLETE</td><td class="detailHeaderType">event&nbsp;</td><td class="detailHeaderRule">&nbsp;</td>
+</tr>
+</table>
+<div class="detailBody">
+<span class="label">Event object type: </span><a href="stateEvents/StateEvent.html"><code>com.jac.fsm.stateEvents.StateEvent</code></a>
+<br>
+<p></p><p>
+ Dispatched when the exit procedure of this controller and all sub views have completed.
+ 
+ </p></div>
+<br>
+<br>
+<hr>
+<br>
+<p></p>
+<center class="copyright">DartsApp</center>
+</div>
+</body>
+</html>
+<!--DartsApp-->

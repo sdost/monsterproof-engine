@@ -1,0 +1,974 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+<head>
+<META http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<link rel="stylesheet" href="../../../style.css" type="text/css" media="screen">
+<link rel="stylesheet" href="../../../print.css" type="text/css" media="print">
+<meta content="StateController,com.jac.fsm.StateController,_disableCount,_enableCount,_enterCount,_exitCount,_subObjList,subObjList,disable,disableComplete,disableSubObjects,enable,enableComplete,enableSubObjects,enter,enterComplete,enterSubObjects,exit,exitComplete,exitSubObjects,handleDisableComplete,handleEnableComplete,handleEnterComplete,handleExitComplete,notifyDisableComplete,notifyEnableComplete,notifyEnterComplete,notifyExitComplete,registerSubObject,reset,toString,unregisterSubObject,update" name="keywords">
+<title>com.jac.fsm.StateController</title>
+</head>
+<body>
+<script type="text/javascript" language="javascript" src="../../../asdoc.js"></script><script type="text/javascript" language="javascript" src="../../../cookies.js"></script><script type="text/javascript" language="javascript">
+<!--
+				asdocTitle = 'StateController - API Documentation';
+				var baseRef = '../../../';
+				window.onload = configPage;
+			--></script>
+<table style="display:none" id="titleTable" cellspacing="0" cellpadding="0" class="titleTable">
+<tr>
+<td align="left" class="titleTableTitle">API Documentation</td><td align="right" class="titleTableTopNav"><a onclick="loadClassListFrame('../../../all-classes.html')" href="../../../package-summary.html">All&nbsp;Packages</a>&nbsp;|&nbsp;<a onclick="loadClassListFrame('../../../all-classes.html')" href="../../../class-summary.html">All&nbsp;Classes</a>&nbsp;|&nbsp;<a onclick="loadClassListFrame('../../../index-list.html')" href="../../../all-index-A.html">Index</a>&nbsp;|&nbsp;<a href="../../../index.html?com/jac/fsm/StateController.html&amp;com/jac/fsm/class-list.html" id="framesLink1">Frames</a><a onclick="parent.location=document.location" href="" style="display:none" id="noFramesLink1">No&nbsp;Frames</a></td><td rowspan="3" align="right" class="titleTableLogo"><img alt="Adobe Logo" title="Adobe Logo" class="logoImage" src="../../../images/logo.jpg"></td>
+</tr>
+<tr class="titleTableRow2">
+<td align="left" id="subTitle" class="titleTableSubTitle">Class&nbsp;StateController</td><td align="right" id="subNav" class="titleTableSubNav"><a href="#propertySummary">Properties</a>&nbsp;| <a href="#methodSummary">Methods</a>&nbsp;| <a href="#eventSummary">Events</a></td>
+</tr>
+<tr class="titleTableRow3">
+<td colspan="2">&nbsp;</td>
+</tr>
+</table>
+<script type="text/javascript" language="javascript">
+<!--
+if (!isEclipse() || window.name != ECLIPSE_FRAME_NAME) {titleBar_setSubTitle("Class StateController"); titleBar_setSubNav(false,true,false,false,true,false,true,false,false,false,false,false,false,false);}
+--></script>
+<div class="MainContent">
+<table cellspacing="0" cellpadding="0" class="classHeaderTable">
+<tr>
+<td class="classHeaderTableLabel">Package</td><td><a onclick="javascript:loadClassListFrame('class-list.html')" href="package-detail.html">com.jac.fsm</a></td>
+</tr>
+<tr>
+<td class="classHeaderTableLabel">Class</td><td class="classSignature">public class StateController</td>
+</tr>
+<tr>
+<td class="classHeaderTableLabel">Inheritance</td><td class="inheritanceList">StateController <img class="inheritArrow" alt="Inheritance" title="Inheritance" src="../../../images/inherit-arrow.gif"> flash.events.EventDispatcher</td>
+</tr>
+<tr>
+<td class="classHeaderTableLabel">Subclasses</td><td><a href="../fsm/GroupController.html">GroupController</a>, <a href="../fsm/StateViewController.html">StateViewController</a></td>
+</tr>
+</table>
+<p></p>
+  A <code>StateController</code> is a management interface for a list of state sub objects.  When a StateController is told to exit or enter,
+  the controller then in return tells all of its sub objects to exit or enter.  It then waits until all of the sub objects have finished their exits/enters
+  and dispatches and event notifying of its completion.  All commands directed at a <code>State</code> should go through a <code>StateController</code>
+  
+  <p></p>
+<p>
+<span class="classHeaderTableLabel">See also</span>
+</p>
+<div class="seeAlso">
+<a href="State.html" target="">State</a>
+<br>
+<a href="StateView.html" target="">StateView</a>
+<br>
+<a href="StateViewController.html" target="">StateViewController</a>
+</div>
+<br>
+<hr>
+</div>
+<a name="propertySummary"></a>
+<div class="summarySection">
+<div class="summaryTableTitle">Public Properties</div>
+<table id="summaryTableProperty" class="summaryTable " cellpadding="3" cellspacing="0">
+<tr>
+<th>&nbsp;</th><th colspan="2">Property</th><th class="summaryTableOwnerCol">Defined&nbsp;by</th>
+</tr>
+<tr class="">
+<td class="summaryTablePaddingCol">&nbsp;</td><td class="summaryTableInheritanceCol">&nbsp;</td><td class="summaryTableSignatureCol"><a class="signatureLink" href="#subObjList">subObjList</a> : Array<div class="summaryTableDescription">[read-only]
+   Returns the list of sub-objects
+   </div>
+</td><td class="summaryTableOwnerCol">StateController</td>
+</tr>
+</table>
+</div>
+<a name="protectedPropertySummary"></a>
+<div class="summarySection">
+<div class="summaryTableTitle">Protected Properties</div>
+<table id="summaryTableProtectedProperty" class="summaryTable " cellpadding="3" cellspacing="0">
+<tr>
+<th>&nbsp;</th><th colspan="2">Property</th><th class="summaryTableOwnerCol">Defined&nbsp;by</th>
+</tr>
+<tr class="">
+<td class="summaryTablePaddingCol">&nbsp;</td><td class="summaryTableInheritanceCol">&nbsp;</td><td class="summaryTableSignatureCol"><a class="signatureLink" href="#_disableCount">_disableCount</a> : int = 0<div class="summaryTableDescription"></div>
+</td><td class="summaryTableOwnerCol">StateController</td>
+</tr>
+<tr class="">
+<td class="summaryTablePaddingCol">&nbsp;</td><td class="summaryTableInheritanceCol">&nbsp;</td><td class="summaryTableSignatureCol"><a class="signatureLink" href="#_enableCount">_enableCount</a> : int = 0<div class="summaryTableDescription"></div>
+</td><td class="summaryTableOwnerCol">StateController</td>
+</tr>
+<tr class="">
+<td class="summaryTablePaddingCol">&nbsp;</td><td class="summaryTableInheritanceCol">&nbsp;</td><td class="summaryTableSignatureCol"><a class="signatureLink" href="#_enterCount">_enterCount</a> : int = 0<div class="summaryTableDescription"></div>
+</td><td class="summaryTableOwnerCol">StateController</td>
+</tr>
+<tr class="">
+<td class="summaryTablePaddingCol">&nbsp;</td><td class="summaryTableInheritanceCol">&nbsp;</td><td class="summaryTableSignatureCol"><a class="signatureLink" href="#_exitCount">_exitCount</a> : int = 0<div class="summaryTableDescription"></div>
+</td><td class="summaryTableOwnerCol">StateController</td>
+</tr>
+<tr class="">
+<td class="summaryTablePaddingCol">&nbsp;</td><td class="summaryTableInheritanceCol">&nbsp;</td><td class="summaryTableSignatureCol"><a class="signatureLink" href="#_subObjList">_subObjList</a> : Array<div class="summaryTableDescription"></div>
+</td><td class="summaryTableOwnerCol">StateController</td>
+</tr>
+</table>
+</div>
+<a name="methodSummary"></a>
+<div class="summarySection">
+<div class="summaryTableTitle">Public Methods</div>
+<table id="summaryTableMethod" class="summaryTable " cellpadding="3" cellspacing="0">
+<tr>
+<th>&nbsp;</th><th colspan="2">Method</th><th class="summaryTableOwnerCol">Defined&nbsp;by</th>
+</tr>
+<tr class="">
+<td class="summaryTablePaddingCol">&nbsp;</td><td class="summaryTableInheritanceCol">&nbsp;</td><td class="summaryTableSignatureCol">
+<div class="summarySignature">
+<a class="signatureLink" href="#StateController()">StateController</a>()</div>
+<div class="summaryTableDescription">
+   Creates a new <code>StateController</code> and sets up a new arraw for sub-objects
+   </div>
+</td><td class="summaryTableOwnerCol">StateController</td>
+</tr>
+<tr class="">
+<td class="summaryTablePaddingCol">&nbsp;</td><td class="summaryTableInheritanceCol">&nbsp;</td><td class="summaryTableSignatureCol">
+<div class="summarySignature">
+<a class="signatureLink" href="#disable()">disable</a>():void</div>
+<div class="summaryTableDescription">
+   Calls <code>disableSubObjects()</code> when the controller is told to disable.</div>
+</td><td class="summaryTableOwnerCol">StateController</td>
+</tr>
+<tr class="">
+<td class="summaryTablePaddingCol">&nbsp;</td><td class="summaryTableInheritanceCol">&nbsp;</td><td class="summaryTableSignatureCol">
+<div class="summarySignature">
+<a class="signatureLink" href="#enable()">enable</a>():void</div>
+<div class="summaryTableDescription">
+   Calls <code>enableSubObjects()</code> when the controller is told to disable.</div>
+</td><td class="summaryTableOwnerCol">StateController</td>
+</tr>
+<tr class="">
+<td class="summaryTablePaddingCol">&nbsp;</td><td class="summaryTableInheritanceCol">&nbsp;</td><td class="summaryTableSignatureCol">
+<div class="summarySignature">
+<a class="signatureLink" href="#enter()">enter</a>():void</div>
+<div class="summaryTableDescription">
+   Calls <code>enterSubObjects()</code> when the controller is told to enter.</div>
+</td><td class="summaryTableOwnerCol">StateController</td>
+</tr>
+<tr class="">
+<td class="summaryTablePaddingCol">&nbsp;</td><td class="summaryTableInheritanceCol">&nbsp;</td><td class="summaryTableSignatureCol">
+<div class="summarySignature">
+<a class="signatureLink" href="#exit()">exit</a>():void</div>
+<div class="summaryTableDescription">
+   Calls <code>exitSubObjects()</code> when the controller is told to exit.</div>
+</td><td class="summaryTableOwnerCol">StateController</td>
+</tr>
+<tr class="">
+<td class="summaryTablePaddingCol">&nbsp;</td><td class="summaryTableInheritanceCol">&nbsp;</td><td class="summaryTableSignatureCol">
+<div class="summarySignature">
+<a class="signatureLink" href="#registerSubObject()">registerSubObject</a>(newController:<a href="interfaces/IState.html">IState</a>):void</div>
+<div class="summaryTableDescription">
+   Adds objects to the <code>_subObjectList</code> for control by this controller.</div>
+</td><td class="summaryTableOwnerCol">StateController</td>
+</tr>
+<tr class="">
+<td class="summaryTablePaddingCol">&nbsp;</td><td class="summaryTableInheritanceCol">&nbsp;</td><td class="summaryTableSignatureCol">
+<div class="summarySignature">
+<a class="signatureLink" href="#reset()">reset</a>():void</div>
+<div class="summaryTableDescription">
+   </div>
+</td><td class="summaryTableOwnerCol">StateController</td>
+</tr>
+<tr class="">
+<td class="summaryTablePaddingCol">&nbsp;</td><td class="summaryTableInheritanceCol">&nbsp;</td><td class="summaryTableSignatureCol">
+<div class="summarySignature">
+<a class="signatureLink" href="#toString()">toString</a>():String</div>
+<div class="summaryTableDescription">
+   Traces the name of this controller class
+   </div>
+</td><td class="summaryTableOwnerCol">StateController</td>
+</tr>
+<tr class="">
+<td class="summaryTablePaddingCol">&nbsp;</td><td class="summaryTableInheritanceCol">&nbsp;</td><td class="summaryTableSignatureCol">
+<div class="summarySignature">
+<a class="signatureLink" href="#unregisterSubObject()">unregisterSubObject</a>(oldController:<a href="interfaces/IState.html">IState</a>):void</div>
+<div class="summaryTableDescription">
+   Removes oldController from list of objects that are controlled by this controller.</div>
+</td><td class="summaryTableOwnerCol">StateController</td>
+</tr>
+<tr class="">
+<td class="summaryTablePaddingCol">&nbsp;</td><td class="summaryTableInheritanceCol">&nbsp;</td><td class="summaryTableSignatureCol">
+<div class="summarySignature">
+<a class="signatureLink" href="#update()">update</a>():void</div>
+<div class="summaryTableDescription">
+   Calls <code>update</code> on all of the sub-objects.</div>
+</td><td class="summaryTableOwnerCol">StateController</td>
+</tr>
+</table>
+</div>
+<a name="protectedMethodSummary"></a>
+<div class="summarySection">
+<div class="summaryTableTitle">Protected Methods</div>
+<table id="summaryTableProtectedMethod" class="summaryTable " cellpadding="3" cellspacing="0">
+<tr>
+<th>&nbsp;</th><th colspan="2">Method</th><th class="summaryTableOwnerCol">Defined&nbsp;by</th>
+</tr>
+<tr class="">
+<td class="summaryTablePaddingCol">&nbsp;</td><td class="summaryTableInheritanceCol">&nbsp;</td><td class="summaryTableSignatureCol">
+<div class="summarySignature">
+<a class="signatureLink" href="#disableComplete()">disableComplete</a>(e:<a href="stateEvents/StateEvent.html">StateEvent</a>):void</div>
+<div class="summaryTableDescription">
+    Handles a <code>StateEvent.DISABLE_COMPLETE</code> event when a
+   sub-object has finished disabling.</div>
+</td><td class="summaryTableOwnerCol">StateController</td>
+</tr>
+<tr class="">
+<td class="summaryTablePaddingCol">&nbsp;</td><td class="summaryTableInheritanceCol">&nbsp;</td><td class="summaryTableSignatureCol">
+<div class="summarySignature">
+<a class="signatureLink" href="#disableSubObjects()">disableSubObjects</a>():void</div>
+<div class="summaryTableDescription">
+   Calls <code>disable()</code> on each sub object in the <code>_subObjectList</code>, and sets up
+   the proper listeners to keep track of the each sub-object's completion.</div>
+</td><td class="summaryTableOwnerCol">StateController</td>
+</tr>
+<tr class="">
+<td class="summaryTablePaddingCol">&nbsp;</td><td class="summaryTableInheritanceCol">&nbsp;</td><td class="summaryTableSignatureCol">
+<div class="summarySignature">
+<a class="signatureLink" href="#enableComplete()">enableComplete</a>(e:<a href="stateEvents/StateEvent.html">StateEvent</a>):void</div>
+<div class="summaryTableDescription">
+   Handles the <code>StateEvent.ENABLE_COMPLETE</code> event for each sub object, keeping track of
+   how many objects have finished.</div>
+</td><td class="summaryTableOwnerCol">StateController</td>
+</tr>
+<tr class="">
+<td class="summaryTablePaddingCol">&nbsp;</td><td class="summaryTableInheritanceCol">&nbsp;</td><td class="summaryTableSignatureCol">
+<div class="summarySignature">
+<a class="signatureLink" href="#enableSubObjects()">enableSubObjects</a>():void</div>
+<div class="summaryTableDescription">
+   Calls <code>enable()</code> on each sub object in the <code>_subObjectList</code>, and sets up
+   the proper listeners to keep track of the each sub-object's completion.</div>
+</td><td class="summaryTableOwnerCol">StateController</td>
+</tr>
+<tr class="">
+<td class="summaryTablePaddingCol">&nbsp;</td><td class="summaryTableInheritanceCol">&nbsp;</td><td class="summaryTableSignatureCol">
+<div class="summarySignature">
+<a class="signatureLink" href="#enterComplete()">enterComplete</a>(e:<a href="stateEvents/StateEvent.html">StateEvent</a>):void</div>
+<div class="summaryTableDescription">
+   Handles the <code>StateEvent.ENTER_COMPLETE</code> notification from each sub-object, keeping track of
+   how many objects have finished.</div>
+</td><td class="summaryTableOwnerCol">StateController</td>
+</tr>
+<tr class="">
+<td class="summaryTablePaddingCol">&nbsp;</td><td class="summaryTableInheritanceCol">&nbsp;</td><td class="summaryTableSignatureCol">
+<div class="summarySignature">
+<a class="signatureLink" href="#enterSubObjects()">enterSubObjects</a>():void</div>
+<div class="summaryTableDescription">
+   Calls <code>enter()</code> on all of the items in the <code>_subObjectList</code>.</div>
+</td><td class="summaryTableOwnerCol">StateController</td>
+</tr>
+<tr class="">
+<td class="summaryTablePaddingCol">&nbsp;</td><td class="summaryTableInheritanceCol">&nbsp;</td><td class="summaryTableSignatureCol">
+<div class="summarySignature">
+<a class="signatureLink" href="#exitComplete()">exitComplete</a>(e:<a href="stateEvents/StateEvent.html">StateEvent</a>):void</div>
+<div class="summaryTableDescription">
+   Handles the <code>StateEvent.EXIT_COMPLETE</code> event from each sub object, keeping track of
+   how many objects have finished.</div>
+</td><td class="summaryTableOwnerCol">StateController</td>
+</tr>
+<tr class="">
+<td class="summaryTablePaddingCol">&nbsp;</td><td class="summaryTableInheritanceCol">&nbsp;</td><td class="summaryTableSignatureCol">
+<div class="summarySignature">
+<a class="signatureLink" href="#exitSubObjects()">exitSubObjects</a>():void</div>
+<div class="summaryTableDescription">
+   Calls <code>exit()</code> on all of the items in the <code>_subObjectList</code>.</div>
+</td><td class="summaryTableOwnerCol">StateController</td>
+</tr>
+<tr class="">
+<td class="summaryTablePaddingCol">&nbsp;</td><td class="summaryTableInheritanceCol">&nbsp;</td><td class="summaryTableSignatureCol">
+<div class="summarySignature">
+<a class="signatureLink" href="#handleDisableComplete()">handleDisableComplete</a>(e:<a href="stateEvents/StateEvent.html">StateEvent</a>):void</div>
+<div class="summaryTableDescription">
+   Calls <code>disableComplete()</code> which handles a <code>StateEvent.DISABLE_COMPLETE</code> event when a
+   sub-object has finished disabling.</div>
+</td><td class="summaryTableOwnerCol">StateController</td>
+</tr>
+<tr class="">
+<td class="summaryTablePaddingCol">&nbsp;</td><td class="summaryTableInheritanceCol">&nbsp;</td><td class="summaryTableSignatureCol">
+<div class="summarySignature">
+<a class="signatureLink" href="#handleEnableComplete()">handleEnableComplete</a>(e:<a href="stateEvents/StateEvent.html">StateEvent</a>):void</div>
+<div class="summaryTableDescription">
+   Calls <code>enableComplete</code> which handles the <code>StateEvent.ENABLE_COMPLETE</code> event for each sub object.</div>
+</td><td class="summaryTableOwnerCol">StateController</td>
+</tr>
+<tr class="">
+<td class="summaryTablePaddingCol">&nbsp;</td><td class="summaryTableInheritanceCol">&nbsp;</td><td class="summaryTableSignatureCol">
+<div class="summarySignature">
+<a class="signatureLink" href="#handleEnterComplete()">handleEnterComplete</a>(e:<a href="stateEvents/StateEvent.html">StateEvent</a>):void</div>
+<div class="summaryTableDescription">
+   Calls <code>enterComplete()</code> which handles the <code>StateEvent.ENTER_COMPLETE</code> notification for each sub-object.</div>
+</td><td class="summaryTableOwnerCol">StateController</td>
+</tr>
+<tr class="">
+<td class="summaryTablePaddingCol">&nbsp;</td><td class="summaryTableInheritanceCol">&nbsp;</td><td class="summaryTableSignatureCol">
+<div class="summarySignature">
+<a class="signatureLink" href="#handleExitComplete()">handleExitComplete</a>(e:<a href="stateEvents/StateEvent.html">StateEvent</a>):void</div>
+<div class="summaryTableDescription">
+   Calls <code>exitComplete()</code> which handles the <code>StateEvent.EXIT_COMPLETE</code> notification from each sub-object.</div>
+</td><td class="summaryTableOwnerCol">StateController</td>
+</tr>
+<tr class="">
+<td class="summaryTablePaddingCol">&nbsp;</td><td class="summaryTableInheritanceCol">&nbsp;</td><td class="summaryTableSignatureCol">
+<div class="summarySignature">
+<a class="signatureLink" href="#notifyDisableComplete()">notifyDisableComplete</a>(e:<a href="stateEvents/StateEvent.html">StateEvent</a>):void</div>
+<div class="summaryTableDescription">
+   A convenience method for notifying of a DISABLE_COMPLETE.</div>
+</td><td class="summaryTableOwnerCol">StateController</td>
+</tr>
+<tr class="">
+<td class="summaryTablePaddingCol">&nbsp;</td><td class="summaryTableInheritanceCol">&nbsp;</td><td class="summaryTableSignatureCol">
+<div class="summarySignature">
+<a class="signatureLink" href="#notifyEnableComplete()">notifyEnableComplete</a>(e:<a href="stateEvents/StateEvent.html">StateEvent</a>):void</div>
+<div class="summaryTableDescription">
+   A convenience method for notifying of a ENABLE_COMPLETE.</div>
+</td><td class="summaryTableOwnerCol">StateController</td>
+</tr>
+<tr class="">
+<td class="summaryTablePaddingCol">&nbsp;</td><td class="summaryTableInheritanceCol">&nbsp;</td><td class="summaryTableSignatureCol">
+<div class="summarySignature">
+<a class="signatureLink" href="#notifyEnterComplete()">notifyEnterComplete</a>(e:<a href="stateEvents/StateEvent.html">StateEvent</a>):void</div>
+<div class="summaryTableDescription">
+   A convenience method for notifying of a ENTER_COMPLETE.</div>
+</td><td class="summaryTableOwnerCol">StateController</td>
+</tr>
+<tr class="">
+<td class="summaryTablePaddingCol">&nbsp;</td><td class="summaryTableInheritanceCol">&nbsp;</td><td class="summaryTableSignatureCol">
+<div class="summarySignature">
+<a class="signatureLink" href="#notifyExitComplete()">notifyExitComplete</a>(e:<a href="stateEvents/StateEvent.html">StateEvent</a>):void</div>
+<div class="summaryTableDescription">
+   A convenience method for notifying of a EXIT_COMPLETE.</div>
+</td><td class="summaryTableOwnerCol">StateController</td>
+</tr>
+</table>
+</div>
+<a name="eventSummary"></a>
+<div class="summarySection">
+<div class="summaryTableTitle">Events</div>
+<table id="summaryTableEvent" class="summaryTable " cellpadding="3" cellspacing="0">
+<tr>
+<th>&nbsp;</th><th colspan="2">Event</th><th>Summary</th><th class="summaryTableOwnerCol">Defined&nbsp;by</th>
+</tr>
+<tr class="">
+<td class="summaryTablePaddingCol">&nbsp;</td><td class="summaryTableInheritanceCol">&nbsp;</td><td class="summaryTableSignatureCol">
+<div class="summarySignature">
+<a class="signatureLink" href="#event:DISABLE_COMPLETE">DISABLE_COMPLETE</a>
+</div>
+</td><td class="summaryTableDescription summaryTableCol">
+ Dispatched when the disable procedure of this controller and all sub views have completed.</td><td class="summaryTableOwnerCol">StateController</td>
+</tr>
+<tr class="">
+<td class="summaryTablePaddingCol">&nbsp;</td><td class="summaryTableInheritanceCol">&nbsp;</td><td class="summaryTableSignatureCol">
+<div class="summarySignature">
+<a class="signatureLink" href="#event:ENABLE_COMPLETE">ENABLE_COMPLETE</a>
+</div>
+</td><td class="summaryTableDescription summaryTableCol">
+ Dispatched when the enable procedure of this controller and all sub views have completed.</td><td class="summaryTableOwnerCol">StateController</td>
+</tr>
+<tr class="">
+<td class="summaryTablePaddingCol">&nbsp;</td><td class="summaryTableInheritanceCol">&nbsp;</td><td class="summaryTableSignatureCol">
+<div class="summarySignature">
+<a class="signatureLink" href="#event:ENTER_COMPLETE">ENTER_COMPLETE</a>
+</div>
+</td><td class="summaryTableDescription summaryTableCol">
+ Dispatched when the enter procedure of this controller and all sub views have completed.</td><td class="summaryTableOwnerCol">StateController</td>
+</tr>
+<tr class="">
+<td class="summaryTablePaddingCol">&nbsp;</td><td class="summaryTableInheritanceCol">&nbsp;</td><td class="summaryTableSignatureCol">
+<div class="summarySignature">
+<a class="signatureLink" href="#event:EXIT_COMPLETE">EXIT_COMPLETE</a>
+</div>
+</td><td class="summaryTableDescription summaryTableCol">
+ Dispatched when the exit procedure of this controller and all sub views have completed.</td><td class="summaryTableOwnerCol">StateController</td>
+</tr>
+</table>
+</div>
+<script type="text/javascript" language="javascript">
+<!--
+showHideInherited();
+--></script>
+<div class="MainContent">
+<a name="propertyDetail"></a>
+<div class="detailSectionHeader">Property detail</div>
+<a name="_disableCount"></a>
+<table cellspacing="0" cellpadding="0" class="detailHeader">
+<tr>
+<td class="detailHeaderName">_disableCount</td><td class="detailHeaderType">property</td>
+</tr>
+</table>
+<div class="detailBody">
+<code>protected var _disableCount:int = 0</code>
+</div>
+<a name="_enableCount"></a>
+<table cellspacing="0" cellpadding="0" class="detailHeader">
+<tr>
+<td class="detailHeaderName">_enableCount</td><td class="detailHeaderType">property</td><td class="detailHeaderRule">&nbsp;</td>
+</tr>
+</table>
+<div class="detailBody">
+<code>protected var _enableCount:int = 0</code>
+</div>
+<a name="_enterCount"></a>
+<table cellspacing="0" cellpadding="0" class="detailHeader">
+<tr>
+<td class="detailHeaderName">_enterCount</td><td class="detailHeaderType">property</td><td class="detailHeaderRule">&nbsp;</td>
+</tr>
+</table>
+<div class="detailBody">
+<code>protected var _enterCount:int = 0</code>
+</div>
+<a name="_exitCount"></a>
+<table cellspacing="0" cellpadding="0" class="detailHeader">
+<tr>
+<td class="detailHeaderName">_exitCount</td><td class="detailHeaderType">property</td><td class="detailHeaderRule">&nbsp;</td>
+</tr>
+</table>
+<div class="detailBody">
+<code>protected var _exitCount:int = 0</code>
+</div>
+<a name="_subObjList"></a>
+<table cellspacing="0" cellpadding="0" class="detailHeader">
+<tr>
+<td class="detailHeaderName">_subObjList</td><td class="detailHeaderType">property</td><td class="detailHeaderRule">&nbsp;</td>
+</tr>
+</table>
+<div class="detailBody">
+<code>protected var _subObjList:Array</code>
+</div>
+<a name="subObjList"></a>
+<table cellspacing="0" cellpadding="0" class="detailHeader">
+<tr>
+<td class="detailHeaderName">subObjList</td><td class="detailHeaderType">property</td><td class="detailHeaderRule">&nbsp;</td>
+</tr>
+</table>
+<div class="detailBody">
+<code>subObjList:Array</code>&nbsp;&nbsp;[read-only]<p>
+   Returns the list of sub-objects
+   </p><span class="label">Implementation</span>
+<br>
+<code>&nbsp;&nbsp;&nbsp;&nbsp;public function get subObjList():Array</code>
+<br>
+</div>
+<a name="constructorDetail"></a>
+<div class="detailSectionHeader">Constructor detail</div>
+<a name="StateController()"></a>
+<table cellspacing="0" cellpadding="0" class="detailHeader">
+<tr>
+<td class="detailHeaderName">StateController</td><td class="detailHeaderParens">()</td><td class="detailHeaderType">constructor</td>
+</tr>
+</table>
+<div class="detailBody">
+<code>public function StateController()</code><p>
+   Creates a new <code>StateController</code> and sets up a new arraw for sub-objects
+   </p></div>
+<a name="methodDetail"></a>
+<div class="detailSectionHeader">Method detail</div>
+<a name="disable()"></a>
+<table cellspacing="0" cellpadding="0" class="detailHeader">
+<tr>
+<td class="detailHeaderName">disable</td><td class="detailHeaderParens">()</td><td class="detailHeaderType">method</td>
+</tr>
+</table>
+<div class="detailBody">
+<code>public function disable():void</code><p>
+   Calls <code>disableSubObjects()</code> when the controller is told to disable.
+   </p><p>
+   It was set up this way so that the <code>disableSubObjects</code> method could be overridden as needed.
+   </p>
+   </div>
+<a name="disableComplete()"></a>
+<table cellspacing="0" cellpadding="0" class="detailHeader">
+<tr>
+<td class="detailHeaderName">disableComplete</td><td class="detailHeaderParens">()</td><td class="detailHeaderType">method</td><td class="detailHeaderRule">&nbsp;</td>
+</tr>
+</table>
+<div class="detailBody">
+<code>protected function disableComplete(e:<a href="stateEvents/StateEvent.html">StateEvent</a>):void</code><p>
+    Handles a <code>StateEvent.DISABLE_COMPLETE</code> event when a
+   sub-object has finished disabling.  This keeps track of the number of sub-objects that have complete
+   being disabled.  When all sub-objects are finished, a <code>StateEvent.DISABLE_COMPLETE</code> event is dispatched.
+   </p><span class="label">Parameters</span>
+<table border="0" cellspacing="0" cellpadding="0">
+<tr>
+<td width="20px"></td><td><code><span class="label">e</span>:<a href="stateEvents/StateEvent.html">StateEvent</a></code></td>
+</tr>
+</table>
+</div>
+<a name="disableSubObjects()"></a>
+<table cellspacing="0" cellpadding="0" class="detailHeader">
+<tr>
+<td class="detailHeaderName">disableSubObjects</td><td class="detailHeaderParens">()</td><td class="detailHeaderType">method</td><td class="detailHeaderRule">&nbsp;</td>
+</tr>
+</table>
+<div class="detailBody">
+<code>protected function disableSubObjects():void</code><p>
+   Calls <code>disable()</code> on each sub object in the <code>_subObjectList</code>, and sets up
+   the proper listeners to keep track of the each sub-object's completion.
+   </p></div>
+<a name="enable()"></a>
+<table cellspacing="0" cellpadding="0" class="detailHeader">
+<tr>
+<td class="detailHeaderName">enable</td><td class="detailHeaderParens">()</td><td class="detailHeaderType">method</td><td class="detailHeaderRule">&nbsp;</td>
+</tr>
+</table>
+<div class="detailBody">
+<code>public function enable():void</code><p>
+   Calls <code>enableSubObjects()</code> when the controller is told to disable.
+   </p><p>
+   It was set up this way so that the <code>enableSubObjects</code> method could be overridden as needed.
+   </p>
+   </div>
+<a name="enableComplete()"></a>
+<table cellspacing="0" cellpadding="0" class="detailHeader">
+<tr>
+<td class="detailHeaderName">enableComplete</td><td class="detailHeaderParens">()</td><td class="detailHeaderType">method</td><td class="detailHeaderRule">&nbsp;</td>
+</tr>
+</table>
+<div class="detailBody">
+<code>protected function enableComplete(e:<a href="stateEvents/StateEvent.html">StateEvent</a>):void</code><p>
+   Handles the <code>StateEvent.ENABLE_COMPLETE</code> event for each sub object, keeping track of
+   how many objects have finished.  When each sub-object has finished, a <code>StateEvent.ENTER_COMPLETE</code> event is dispatched.
+   </p><span class="label">Parameters</span>
+<table border="0" cellspacing="0" cellpadding="0">
+<tr>
+<td width="20px"></td><td><code><span class="label">e</span>:<a href="stateEvents/StateEvent.html">StateEvent</a></code></td>
+</tr>
+</table>
+</div>
+<a name="enableSubObjects()"></a>
+<table cellspacing="0" cellpadding="0" class="detailHeader">
+<tr>
+<td class="detailHeaderName">enableSubObjects</td><td class="detailHeaderParens">()</td><td class="detailHeaderType">method</td><td class="detailHeaderRule">&nbsp;</td>
+</tr>
+</table>
+<div class="detailBody">
+<code>protected function enableSubObjects():void</code><p>
+   Calls <code>enable()</code> on each sub object in the <code>_subObjectList</code>, and sets up
+   the proper listeners to keep track of the each sub-object's completion.
+   </p></div>
+<a name="enter()"></a>
+<table cellspacing="0" cellpadding="0" class="detailHeader">
+<tr>
+<td class="detailHeaderName">enter</td><td class="detailHeaderParens">()</td><td class="detailHeaderType">method</td><td class="detailHeaderRule">&nbsp;</td>
+</tr>
+</table>
+<div class="detailBody">
+<code>public function enter():void</code><p>
+   Calls <code>enterSubObjects()</code> when the controller is told to enter.
+   </p><p>
+   It was set up this way so that the <code>enterSubObjects</code> method could be overridden as needed.
+   </p>
+   
+   <p>
+<span class="label">See also</span>
+</p>
+<div class="seeAlso">
+<a href="../fsm/StateController.html#enterSubObjects()" target="">enterSubObjects()</a>
+</div>
+</div>
+<a name="enterComplete()"></a>
+<table cellspacing="0" cellpadding="0" class="detailHeader">
+<tr>
+<td class="detailHeaderName">enterComplete</td><td class="detailHeaderParens">()</td><td class="detailHeaderType">method</td><td class="detailHeaderRule">&nbsp;</td>
+</tr>
+</table>
+<div class="detailBody">
+<code>protected function enterComplete(e:<a href="stateEvents/StateEvent.html">StateEvent</a>):void</code><p>
+   Handles the <code>StateEvent.ENTER_COMPLETE</code> notification from each sub-object, keeping track of
+   how many objects have finished.  When each sub-object has finished, a <code>StateEvent.ENTER_COMPLETE</code> event is dispatched.
+   </p><span class="label">Parameters</span>
+<table border="0" cellspacing="0" cellpadding="0">
+<tr>
+<td width="20px"></td><td><code><span class="label">e</span>:<a href="stateEvents/StateEvent.html">StateEvent</a></code></td>
+</tr>
+</table>
+</div>
+<a name="enterSubObjects()"></a>
+<table cellspacing="0" cellpadding="0" class="detailHeader">
+<tr>
+<td class="detailHeaderName">enterSubObjects</td><td class="detailHeaderParens">()</td><td class="detailHeaderType">method</td><td class="detailHeaderRule">&nbsp;</td>
+</tr>
+</table>
+<div class="detailBody">
+<code>protected function enterSubObjects():void</code><p>
+   Calls <code>enter()</code> on all of the items in the <code>_subObjectList</code>.  It also sets
+   up the proper listeners to keep track of each sub object's completion.
+   
+   </p><p>
+<span class="label">See also</span>
+</p>
+<div class="seeAlso">
+<a href="../fsm/StateController.html#_subObjectList" target="">_subObjectList</a>
+</div>
+</div>
+<a name="exit()"></a>
+<table cellspacing="0" cellpadding="0" class="detailHeader">
+<tr>
+<td class="detailHeaderName">exit</td><td class="detailHeaderParens">()</td><td class="detailHeaderType">method</td><td class="detailHeaderRule">&nbsp;</td>
+</tr>
+</table>
+<div class="detailBody">
+<code>public function exit():void</code><p>
+   Calls <code>exitSubObjects()</code> when the controller is told to exit.
+   </p><p>
+   It was set up this way so that the <code>exitSubObjects</code> method could be overridden as needed.
+   </p>
+   </div>
+<a name="exitComplete()"></a>
+<table cellspacing="0" cellpadding="0" class="detailHeader">
+<tr>
+<td class="detailHeaderName">exitComplete</td><td class="detailHeaderParens">()</td><td class="detailHeaderType">method</td><td class="detailHeaderRule">&nbsp;</td>
+</tr>
+</table>
+<div class="detailBody">
+<code>protected function exitComplete(e:<a href="stateEvents/StateEvent.html">StateEvent</a>):void</code><p>
+   Handles the <code>StateEvent.EXIT_COMPLETE</code> event from each sub object, keeping track of
+   how many objects have finished.  When each sub-object has finished, a <code>StateEvent.EXIT_COMPLETE</code> event is dispatched.
+   </p><span class="label">Parameters</span>
+<table border="0" cellspacing="0" cellpadding="0">
+<tr>
+<td width="20px"></td><td><code><span class="label">e</span>:<a href="stateEvents/StateEvent.html">StateEvent</a></code></td>
+</tr>
+</table>
+</div>
+<a name="exitSubObjects()"></a>
+<table cellspacing="0" cellpadding="0" class="detailHeader">
+<tr>
+<td class="detailHeaderName">exitSubObjects</td><td class="detailHeaderParens">()</td><td class="detailHeaderType">method</td><td class="detailHeaderRule">&nbsp;</td>
+</tr>
+</table>
+<div class="detailBody">
+<code>protected function exitSubObjects():void</code><p>
+   Calls <code>exit()</code> on all of the items in the <code>_subObjectList</code>.  It also sets
+   up the proper listeners to keep track of each sub object's completion.
+   
+   </p><p>
+<span class="label">See also</span>
+</p>
+<div class="seeAlso">
+<a href="../fsm/StateController.html#_subObjectList" target="">_subObjectList</a>
+</div>
+</div>
+<a name="handleDisableComplete()"></a>
+<table cellspacing="0" cellpadding="0" class="detailHeader">
+<tr>
+<td class="detailHeaderName">handleDisableComplete</td><td class="detailHeaderParens">()</td><td class="detailHeaderType">method</td><td class="detailHeaderRule">&nbsp;</td>
+</tr>
+</table>
+<div class="detailBody">
+<code>protected function handleDisableComplete(e:<a href="stateEvents/StateEvent.html">StateEvent</a>):void</code><p>
+   Calls <code>disableComplete()</code> which handles a <code>StateEvent.DISABLE_COMPLETE</code> event when a
+   sub-object has finished disabling.
+   </p><span class="label">Parameters</span>
+<table border="0" cellspacing="0" cellpadding="0">
+<tr>
+<td width="20px"></td><td><code><span class="label">e</span>:<a href="stateEvents/StateEvent.html">StateEvent</a></code></td>
+</tr>
+</table>
+<p>
+<span class="label">See also</span>
+</p>
+<div class="seeAlso">
+<a href="../fsm/StateController.html#disableComplete()" target="">disableComplete()</a>
+</div>
+</div>
+<a name="handleEnableComplete()"></a>
+<table cellspacing="0" cellpadding="0" class="detailHeader">
+<tr>
+<td class="detailHeaderName">handleEnableComplete</td><td class="detailHeaderParens">()</td><td class="detailHeaderType">method</td><td class="detailHeaderRule">&nbsp;</td>
+</tr>
+</table>
+<div class="detailBody">
+<code>protected function handleEnableComplete(e:<a href="stateEvents/StateEvent.html">StateEvent</a>):void</code><p>
+   Calls <code>enableComplete</code> which handles the <code>StateEvent.ENABLE_COMPLETE</code> event for each sub object.
+   </p><span class="label">Parameters</span>
+<table border="0" cellspacing="0" cellpadding="0">
+<tr>
+<td width="20px"></td><td><code><span class="label">e</span>:<a href="stateEvents/StateEvent.html">StateEvent</a></code></td>
+</tr>
+</table>
+<p>
+<span class="label">See also</span>
+</p>
+<div class="seeAlso">
+<a href="../fsm/StateController.html#enableComplete()" target="">enableComplete()</a>
+</div>
+</div>
+<a name="handleEnterComplete()"></a>
+<table cellspacing="0" cellpadding="0" class="detailHeader">
+<tr>
+<td class="detailHeaderName">handleEnterComplete</td><td class="detailHeaderParens">()</td><td class="detailHeaderType">method</td><td class="detailHeaderRule">&nbsp;</td>
+</tr>
+</table>
+<div class="detailBody">
+<code>protected function handleEnterComplete(e:<a href="stateEvents/StateEvent.html">StateEvent</a>):void</code><p>
+   Calls <code>enterComplete()</code> which handles the <code>StateEvent.ENTER_COMPLETE</code> notification for each sub-object.
+   </p><span class="label">Parameters</span>
+<table border="0" cellspacing="0" cellpadding="0">
+<tr>
+<td width="20px"></td><td><code><span class="label">e</span>:<a href="stateEvents/StateEvent.html">StateEvent</a></code></td>
+</tr>
+</table>
+<p>
+<span class="label">See also</span>
+</p>
+<div class="seeAlso">
+<a href="../fsm/StateController.html#enterComplete()" target="">enterComplete()</a>
+</div>
+</div>
+<a name="handleExitComplete()"></a>
+<table cellspacing="0" cellpadding="0" class="detailHeader">
+<tr>
+<td class="detailHeaderName">handleExitComplete</td><td class="detailHeaderParens">()</td><td class="detailHeaderType">method</td><td class="detailHeaderRule">&nbsp;</td>
+</tr>
+</table>
+<div class="detailBody">
+<code>protected function handleExitComplete(e:<a href="stateEvents/StateEvent.html">StateEvent</a>):void</code><p>
+   Calls <code>exitComplete()</code> which handles the <code>StateEvent.EXIT_COMPLETE</code> notification from each sub-object.
+   </p><span class="label">Parameters</span>
+<table border="0" cellspacing="0" cellpadding="0">
+<tr>
+<td width="20px"></td><td><code><span class="label">e</span>:<a href="stateEvents/StateEvent.html">StateEvent</a></code></td>
+</tr>
+</table>
+</div>
+<a name="notifyDisableComplete()"></a>
+<table cellspacing="0" cellpadding="0" class="detailHeader">
+<tr>
+<td class="detailHeaderName">notifyDisableComplete</td><td class="detailHeaderParens">()</td><td class="detailHeaderType">method</td><td class="detailHeaderRule">&nbsp;</td>
+</tr>
+</table>
+<div class="detailBody">
+<code>protected function notifyDisableComplete(e:<a href="stateEvents/StateEvent.html">StateEvent</a>):void</code><p>
+   A convenience method for notifying of a DISABLE_COMPLETE.
+   This can be overridden to suit the needs of the project.
+   
+   </p><p>Dispatches a <code>StateEvent.DISABLE_COMPLETE</code> event.  If overridden, please make sure this event is still dispatched.</p>
+   <span class="label">Parameters</span>
+<table border="0" cellspacing="0" cellpadding="0">
+<tr>
+<td width="20px"></td><td><code><span class="label">e</span>:<a href="stateEvents/StateEvent.html">StateEvent</a></code></td>
+</tr>
+</table>
+</div>
+<a name="notifyEnableComplete()"></a>
+<table cellspacing="0" cellpadding="0" class="detailHeader">
+<tr>
+<td class="detailHeaderName">notifyEnableComplete</td><td class="detailHeaderParens">()</td><td class="detailHeaderType">method</td><td class="detailHeaderRule">&nbsp;</td>
+</tr>
+</table>
+<div class="detailBody">
+<code>protected function notifyEnableComplete(e:<a href="stateEvents/StateEvent.html">StateEvent</a>):void</code><p>
+   A convenience method for notifying of a ENABLE_COMPLETE.
+   This can be overridden to suit the needs of the project.
+   
+   </p><p>Dispatches a <code>StateEvent.ENABLE_COMPLETE</code> event.  If overridden, please make sure this event is still dispatched.</p>
+   
+   <span class="label">Parameters</span>
+<table border="0" cellspacing="0" cellpadding="0">
+<tr>
+<td width="20px"></td><td><code><span class="label">e</span>:<a href="stateEvents/StateEvent.html">StateEvent</a></code></td>
+</tr>
+</table>
+</div>
+<a name="notifyEnterComplete()"></a>
+<table cellspacing="0" cellpadding="0" class="detailHeader">
+<tr>
+<td class="detailHeaderName">notifyEnterComplete</td><td class="detailHeaderParens">()</td><td class="detailHeaderType">method</td><td class="detailHeaderRule">&nbsp;</td>
+</tr>
+</table>
+<div class="detailBody">
+<code>protected function notifyEnterComplete(e:<a href="stateEvents/StateEvent.html">StateEvent</a>):void</code><p>
+   A convenience method for notifying of a ENTER_COMPLETE.
+   This can be overridden to suit the needs of the project.
+   
+   </p><p>Dispatches a <code>StateEvent.ENTER_COMPLETE</code> event.  If overridden, please make sure this event is still dispatched.</p>
+   
+   <span class="label">Parameters</span>
+<table border="0" cellspacing="0" cellpadding="0">
+<tr>
+<td width="20px"></td><td><code><span class="label">e</span>:<a href="stateEvents/StateEvent.html">StateEvent</a></code></td>
+</tr>
+</table>
+</div>
+<a name="notifyExitComplete()"></a>
+<table cellspacing="0" cellpadding="0" class="detailHeader">
+<tr>
+<td class="detailHeaderName">notifyExitComplete</td><td class="detailHeaderParens">()</td><td class="detailHeaderType">method</td><td class="detailHeaderRule">&nbsp;</td>
+</tr>
+</table>
+<div class="detailBody">
+<code>protected function notifyExitComplete(e:<a href="stateEvents/StateEvent.html">StateEvent</a>):void</code><p>
+   A convenience method for notifying of a EXIT_COMPLETE.
+   This can be overridden to suit the needs of the project.
+   
+   </p><p>Dispatches a <code>StateEvent.EXIT_COMPLETE</code> event.  If overridden, please make sure this event is still dispatched.</p>
+   
+   <span class="label">Parameters</span>
+<table border="0" cellspacing="0" cellpadding="0">
+<tr>
+<td width="20px"></td><td><code><span class="label">e</span>:<a href="stateEvents/StateEvent.html">StateEvent</a></code></td>
+</tr>
+</table>
+</div>
+<a name="registerSubObject()"></a>
+<table cellspacing="0" cellpadding="0" class="detailHeader">
+<tr>
+<td class="detailHeaderName">registerSubObject</td><td class="detailHeaderParens">()</td><td class="detailHeaderType">method</td><td class="detailHeaderRule">&nbsp;</td>
+</tr>
+</table>
+<div class="detailBody">
+<code>public function registerSubObject(newController:<a href="interfaces/IState.html">IState</a>):void</code><p>
+   Adds objects to the <code>_subObjectList</code> for control by this controller.
+   <B>There is currently no checking for duplicates in the list</B>
+   
+   </p><span class="label">Parameters</span>
+<table border="0" cellspacing="0" cellpadding="0">
+<tr>
+<td width="20px"></td><td><code><span class="label">newController</span>:<a href="interfaces/IState.html">IState</a></code> &mdash; a compliant sub object
+   </td>
+</tr>
+</table>
+</div>
+<a name="reset()"></a>
+<table cellspacing="0" cellpadding="0" class="detailHeader">
+<tr>
+<td class="detailHeaderName">reset</td><td class="detailHeaderParens">()</td><td class="detailHeaderType">method</td><td class="detailHeaderRule">&nbsp;</td>
+</tr>
+</table>
+<div class="detailBody">
+<code>public function reset():void</code><p>
+   </p></div>
+<a name="toString()"></a>
+<table cellspacing="0" cellpadding="0" class="detailHeader">
+<tr>
+<td class="detailHeaderName">toString</td><td class="detailHeaderParens">()</td><td class="detailHeaderType">method</td><td class="detailHeaderRule">&nbsp;</td>
+</tr>
+</table>
+<div class="detailBody">
+<code>public override function toString():String</code><p>
+   Traces the name of this controller class
+   </p><p></p>
+<span class="label">Returns</span>
+<table border="0" cellspacing="0" cellpadding="0">
+<tr>
+<td width="20"></td><td><code>String</code> &mdash; returns the name of this controller's class as a string.
+   </td>
+</tr>
+</table>
+</div>
+<a name="unregisterSubObject()"></a>
+<table cellspacing="0" cellpadding="0" class="detailHeader">
+<tr>
+<td class="detailHeaderName">unregisterSubObject</td><td class="detailHeaderParens">()</td><td class="detailHeaderType">method</td><td class="detailHeaderRule">&nbsp;</td>
+</tr>
+</table>
+<div class="detailBody">
+<code>public function unregisterSubObject(oldController:<a href="interfaces/IState.html">IState</a>):void</code><p>
+   Removes oldController from list of objects that are controlled by this controller.
+   If that object is not found in the list, a warning will be traced out.
+      </p><span class="label">Parameters</span>
+<table border="0" cellspacing="0" cellpadding="0">
+<tr>
+<td width="20px"></td><td><code><span class="label">oldController</span>:<a href="interfaces/IState.html">IState</a></code> &mdash; an IState object that will be removed from the list.
+   </td>
+</tr>
+</table>
+</div>
+<a name="update()"></a>
+<table cellspacing="0" cellpadding="0" class="detailHeader">
+<tr>
+<td class="detailHeaderName">update</td><td class="detailHeaderParens">()</td><td class="detailHeaderType">method</td><td class="detailHeaderRule">&nbsp;</td>
+</tr>
+</table>
+<div class="detailBody">
+<code>public function update():void</code><p>
+   Calls <code>update</code> on all of the sub-objects.
+   </p></div>
+<div class="detailSectionHeader">Event detail</div>
+<a name="event:DISABLE_COMPLETE"></a>
+<table cellspacing="0" cellpadding="0" class="detailHeader">
+<tr>
+<td class="detailHeaderName">DISABLE_COMPLETE</td><td class="detailHeaderType">event&nbsp;</td>
+</tr>
+</table>
+<div class="detailBody">
+<span class="label">Event object type: </span><a href="stateEvents/StateEvent.html"><code>com.jac.fsm.stateEvents.StateEvent</code></a>
+<br>
+<p></p><p>
+ Dispatched when the disable procedure of this controller and all sub views have completed.
+ 
+ </p><p>
+<span class="label">See also</span>
+</p>
+<div class="seeAlso">
+<a href="../fsm/StateController.html#disableComplete()" target="">disableComplete()</a>
+</div>
+</div>
+<a name="event:ENABLE_COMPLETE"></a>
+<table cellspacing="0" cellpadding="0" class="detailHeader">
+<tr>
+<td class="detailHeaderName">ENABLE_COMPLETE</td><td class="detailHeaderType">event&nbsp;</td><td class="detailHeaderRule">&nbsp;</td>
+</tr>
+</table>
+<div class="detailBody">
+<span class="label">Event object type: </span><a href="stateEvents/StateEvent.html"><code>com.jac.fsm.stateEvents.StateEvent</code></a>
+<br>
+<p></p><p>
+ Dispatched when the enable procedure of this controller and all sub views have completed.
+ 
+ </p><p>
+<span class="label">See also</span>
+</p>
+<div class="seeAlso">
+<a href="../fsm/StateController.html#enableComplete()" target="">enableComplete()</a>
+</div>
+</div>
+<a name="event:ENTER_COMPLETE"></a>
+<table cellspacing="0" cellpadding="0" class="detailHeader">
+<tr>
+<td class="detailHeaderName">ENTER_COMPLETE</td><td class="detailHeaderType">event&nbsp;</td><td class="detailHeaderRule">&nbsp;</td>
+</tr>
+</table>
+<div class="detailBody">
+<span class="label">Event object type: </span><a href="stateEvents/StateEvent.html"><code>com.jac.fsm.stateEvents.StateEvent</code></a>
+<br>
+<p></p><p>
+ Dispatched when the enter procedure of this controller and all sub views have completed.
+ 
+ </p><p>
+<span class="label">See also</span>
+</p>
+<div class="seeAlso">
+<a href="../fsm/StateController.html#enterComplete()" target="">enterComplete()</a>
+</div>
+</div>
+<a name="event:EXIT_COMPLETE"></a>
+<table cellspacing="0" cellpadding="0" class="detailHeader">
+<tr>
+<td class="detailHeaderName">EXIT_COMPLETE</td><td class="detailHeaderType">event&nbsp;</td><td class="detailHeaderRule">&nbsp;</td>
+</tr>
+</table>
+<div class="detailBody">
+<span class="label">Event object type: </span><a href="stateEvents/StateEvent.html"><code>com.jac.fsm.stateEvents.StateEvent</code></a>
+<br>
+<p></p><p>
+ Dispatched when the exit procedure of this controller and all sub views have completed.
+ 
+ </p><p>
+<span class="label">See also</span>
+</p>
+<div class="seeAlso">
+<a href="../fsm/StateController.html#exitComplete()" target="">exitComplete()</a>
+</div>
+</div>
+<br>
+<br>
+<hr>
+<br>
+<p></p>
+<center class="copyright">DartsApp</center>
+</div>
+</body>
+</html>
+<!--DartsApp-->

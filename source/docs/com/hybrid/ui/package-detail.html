@@ -1,0 +1,88 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+<head>
+<META http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<link rel="stylesheet" href="../../../style.css" type="text/css" media="screen">
+<link rel="stylesheet" href="../../../print.css" type="text/css" media="print">
+<title>com.hybrid.ui Summary</title>
+</head>
+<body>
+<script type="text/javascript" language="javascript" src="../../../asdoc.js"></script><script type="text/javascript" language="javascript" src="../../../cookies.js"></script><script type="text/javascript" language="javascript">
+<!--
+				asdocTitle = 'com.hybrid.ui Package - API Documentation';
+				var baseRef = '../../../';
+				window.onload = configPage;
+			--></script>
+<table style="display:none" id="titleTable" cellspacing="0" cellpadding="0" class="titleTable">
+<tr>
+<td align="left" class="titleTableTitle">API Documentation</td><td align="right" class="titleTableTopNav"><a onclick="loadClassListFrame('../../../all-classes.html')" href="../../../package-summary.html">All&nbsp;Packages</a>&nbsp;|&nbsp;<a onclick="loadClassListFrame('../../../all-classes.html')" href="../../../class-summary.html">All&nbsp;Classes</a>&nbsp;|&nbsp;<a onclick="loadClassListFrame('../../../index-list.html')" href="../../../all-index-A.html">Index</a>&nbsp;|&nbsp;<a href="../../../index.html?com/hybrid/ui/package-detail.html&amp;com/hybrid/ui/class-list.html" id="framesLink1">Frames</a><a onclick="parent.location=document.location" href="" style="display:none" id="noFramesLink1">No&nbsp;Frames</a></td><td rowspan="3" align="right" class="titleTableLogo"><img alt="Adobe Logo" title="Adobe Logo" class="logoImage" src="../../../images/logo.jpg"></td>
+</tr>
+<tr class="titleTableRow2">
+<td align="left" id="subTitle" class="titleTableSubTitle">Package&nbsp;com.hybrid.ui</td><td align="right" id="subNav" class="titleTableSubNav"><a href="package-detail.html#classSummary">Classes</a></td>
+</tr>
+<tr class="titleTableRow3">
+<td colspan="2">&nbsp;</td>
+</tr>
+</table>
+<script type="text/javascript" language="javascript">
+<!--
+if (!isEclipse() || window.name != ECLIPSE_FRAME_NAME) {titleBar_setSubTitle("Package com.hybrid.ui"); titleBar_setSubNav(false,false,false,false,false,false,false,false,false,false,false,false,true,false);}
+--></script>
+<div class="MainContent">
+<br>
+<br>
+<hr>
+<a name="classSummary"></a>
+<div class="summaryTableTitle">Classes</div>
+<table class="summaryTable" cellspacing="0" cellpadding="3">
+<tr>
+<th>&nbsp;</th><th width="30%">Class</th><th width="70%">Description</th>
+</tr>
+<tr class="prow1">
+<td class="summaryTablePaddingCol">&nbsp;</td><td class="summaryTableSecondCol"><a href="ToolTip.html">ToolTip</a></td><td class="summaryTableLastCol">
+  Public Setters:
+  
+   tipWidth     Number    Set the width of the tooltip
+   titleFormat    TextFormat   Format for the title of the tooltip
+    stylesheet    StyleSheet   StyleSheet object
+   contentFormat   TextFormat   Format for the bodycopy of the tooltip
+   titleEmbed    Boolean    Allow font embed for the title
+   contentEmbed   Boolean    Allow font embed for the content
+   align     String    left, right, center
+   delay     Number    Time in milliseconds to delay the display of the tooltip
+   hook     Boolean    Displays a hook on the bottom of the tooltip
+   hookSize    Number    Size of the hook
+   cornerRadius   Number    Corner radius of the tooltip, same for all 4 sides
+   colors     Array    Array of 2 color values ( [0xXXXXXX, 0xXXXXXX] ); 
+   autoSize    Boolean    Will autosize the fields and size of the tip with no wrapping or multi-line capabilities, 
+                helpful with 1 word items like "Play" or "Pause"
+    border     Number    Color Value: 0xFFFFFF
+   borderSize    Number    Size Of Border
+   buffer     Number    text buffer
+    bgAlpha     Number    0 - 1, transparency setting for the background of the ToolTip
+    Example:
+  
+    var tf:TextFormat = new TextFormat();
+   tf.bold = true;
+   tf.size = 12;
+   tf.color = 0xff0000;
+   
+   var tt:ToolTip = new ToolTip();
+   tt.hook = true;
+   tt.hookSize = 20;
+   tt.cornerRadius = 20;
+   tt.align = "center";
+   tt.titleFormat = tf;
+   tt.show( DisplayObject, "Title Of This ToolTip", "Some Copy that would go below the ToolTip Title" );
+      </td>
+</tr>
+</table>
+<p></p>
+<div>
+<p></p>
+<center class="copyright">DartsApp</center>
+</div>
+</div>
+</body>
+</html>
+<!--DartsApp-->

@@ -1,0 +1,1144 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+<head>
+<META http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<link rel="stylesheet" href="../../../style.css" type="text/css" media="screen">
+<link rel="stylesheet" href="../../../print.css" type="text/css" media="print">
+<meta content="SoundManager,com.jac.soundManager.SoundManager,_fadeVol,_instance,_isMuted,_isPaused,_soundControllerList,_volume,isMuted,isPaused,volume,addSoundController,fadeVolume,forceVolume,getInstance,getSoundControllerByID,mute,pause,play,removeSoundControllerByID,resume,setFadeVol,setVolume,stop,toggleMute,togglePause,unMute,volumeFadeComplete,volumeFadeStart,volumeFadeUpdate" name="keywords">
+<title>com.jac.soundManager.SoundManager</title>
+</head>
+<body>
+<script type="text/javascript" language="javascript" src="../../../asdoc.js"></script><script type="text/javascript" language="javascript" src="../../../cookies.js"></script><script type="text/javascript" language="javascript">
+<!--
+				asdocTitle = 'SoundManager - API Documentation';
+				var baseRef = '../../../';
+				window.onload = configPage;
+			--></script>
+<table style="display:none" id="titleTable" cellspacing="0" cellpadding="0" class="titleTable">
+<tr>
+<td align="left" class="titleTableTitle">API Documentation</td><td align="right" class="titleTableTopNav"><a onclick="loadClassListFrame('../../../all-classes.html')" href="../../../package-summary.html">All&nbsp;Packages</a>&nbsp;|&nbsp;<a onclick="loadClassListFrame('../../../all-classes.html')" href="../../../class-summary.html">All&nbsp;Classes</a>&nbsp;|&nbsp;<a onclick="loadClassListFrame('../../../index-list.html')" href="../../../all-index-A.html">Index</a>&nbsp;|&nbsp;<a href="../../../index.html?com/jac/soundManager/SoundManager.html&amp;com/jac/soundManager/class-list.html" id="framesLink1">Frames</a><a onclick="parent.location=document.location" href="" style="display:none" id="noFramesLink1">No&nbsp;Frames</a></td><td rowspan="3" align="right" class="titleTableLogo"><img alt="Adobe Logo" title="Adobe Logo" class="logoImage" src="../../../images/logo.jpg"></td>
+</tr>
+<tr class="titleTableRow2">
+<td align="left" id="subTitle" class="titleTableSubTitle">Class&nbsp;SoundManager</td><td align="right" id="subNav" class="titleTableSubNav"><a href="#propertySummary">Properties</a>&nbsp;| <a href="#methodSummary">Methods</a>&nbsp;| <a href="#eventSummary">Events</a></td>
+</tr>
+<tr class="titleTableRow3">
+<td colspan="2">&nbsp;</td>
+</tr>
+</table>
+<script type="text/javascript" language="javascript">
+<!--
+if (!isEclipse() || window.name != ECLIPSE_FRAME_NAME) {titleBar_setSubTitle("Class SoundManager"); titleBar_setSubNav(false,true,false,false,true,false,true,false,false,false,false,false,false,false);}
+--></script>
+<div class="MainContent">
+<table cellspacing="0" cellpadding="0" class="classHeaderTable">
+<tr>
+<td class="classHeaderTableLabel">Package</td><td><a onclick="javascript:loadClassListFrame('class-list.html')" href="package-detail.html">com.jac.soundManager</a></td>
+</tr>
+<tr>
+<td class="classHeaderTableLabel">Class</td><td class="classSignature">public class SoundManager</td>
+</tr>
+<tr>
+<td class="classHeaderTableLabel">Inheritance</td><td class="inheritanceList">SoundManager <img class="inheritArrow" alt="Inheritance" title="Inheritance" src="../../../images/inherit-arrow.gif"> flash.events.EventDispatcher</td>
+</tr>
+</table>
+<p></p>
+  This object is used to manage a list of SoundController objects. Methods called on the SoundManager 
+  will be applied to all of the contained SoundControllers.
+  
+  There are three key objects to use this manager
+  <ul>
+  <li>SoundManager - the "global" controller that calls methods on its list of SoundControllers.</li>
+  <li>SoundController - A controller for a group of SMSound objects.  The SoundController is used
+        to manipulate individual SMSounds as well as groups of SMSounds.</li>
+  <li>SMSound - The actual sound object.  This handles managing the sound, soundTransforms, soundChannels, and
+      all other low level flash sound behaviours.  This should (but isn't required to) be controlled from
+      a SoundController</li>
+  </ul>
+  
+  <p>All of these objects can work together or individually.  A SMSound can be created and used on its own.
+  Likewise the SoundController does not need the SoundManager to function.
+  To add/remove sound controllers please see addSoundController and removeSoundControllerByID</p>
+  
+  <p>The SoundManager class is of the Singleton pattern.</p>
+  
+  To get a reference to it, please use
+  <p><code>var _soundManager:SoundManager = SoundManager.getInstance();</code></p>
+  
+  <p>To create more than one sound manager, simply extends this class and create a new singleton.</p>
+  <p></p>
+<br>
+<hr>
+</div>
+<a name="propertySummary"></a>
+<div class="summarySection">
+<div class="summaryTableTitle">Public Properties</div>
+<table id="summaryTableProperty" class="summaryTable " cellpadding="3" cellspacing="0">
+<tr>
+<th>&nbsp;</th><th colspan="2">Property</th><th class="summaryTableOwnerCol">Defined&nbsp;by</th>
+</tr>
+<tr class="">
+<td class="summaryTablePaddingCol">&nbsp;</td><td class="summaryTableInheritanceCol">&nbsp;</td><td class="summaryTableSignatureCol"><a class="signatureLink" href="#_instance">_instance</a> : <a href="../soundManager/SoundManager.html">SoundManager</a>
+<div class="summaryTableDescription">[static]</div>
+</td><td class="summaryTableOwnerCol">SoundManager</td>
+</tr>
+<tr class="">
+<td class="summaryTablePaddingCol">&nbsp;</td><td class="summaryTableInheritanceCol">&nbsp;</td><td class="summaryTableSignatureCol"><a class="signatureLink" href="#isMuted">isMuted</a> : Boolean<div class="summaryTableDescription">[read-only]
+   Returns the muted state of the SoundManager.</div>
+</td><td class="summaryTableOwnerCol">SoundManager</td>
+</tr>
+<tr class="">
+<td class="summaryTablePaddingCol">&nbsp;</td><td class="summaryTableInheritanceCol">&nbsp;</td><td class="summaryTableSignatureCol"><a class="signatureLink" href="#isPaused">isPaused</a> : Boolean<div class="summaryTableDescription">[read-only]
+   Returns the pause state of the SoundManager.</div>
+</td><td class="summaryTableOwnerCol">SoundManager</td>
+</tr>
+<tr class="">
+<td class="summaryTablePaddingCol">&nbsp;</td><td class="summaryTableInheritanceCol">&nbsp;</td><td class="summaryTableSignatureCol"><a class="signatureLink" href="#volume">volume</a> : Number<div class="summaryTableDescription">
+   Returns the current volume of the SoundManager
+   <p>Sets the volume of the SoundManager, by calling setVolume()</p>
+   </div>
+</td><td class="summaryTableOwnerCol">SoundManager</td>
+</tr>
+</table>
+</div>
+<a name="protectedPropertySummary"></a>
+<div class="summarySection">
+<div class="summaryTableTitle">Protected Properties</div>
+<table id="summaryTableProtectedProperty" class="summaryTable " cellpadding="3" cellspacing="0">
+<tr>
+<th>&nbsp;</th><th colspan="2">Property</th><th class="summaryTableOwnerCol">Defined&nbsp;by</th>
+</tr>
+<tr class="">
+<td class="summaryTablePaddingCol">&nbsp;</td><td class="summaryTableInheritanceCol">&nbsp;</td><td class="summaryTableSignatureCol"><a class="signatureLink" href="#_fadeVol">_fadeVol</a> : Object<div class="summaryTableDescription"></div>
+</td><td class="summaryTableOwnerCol">SoundManager</td>
+</tr>
+<tr class="">
+<td class="summaryTablePaddingCol">&nbsp;</td><td class="summaryTableInheritanceCol">&nbsp;</td><td class="summaryTableSignatureCol"><a class="signatureLink" href="#_isMuted">_isMuted</a> : Boolean = false<div class="summaryTableDescription"></div>
+</td><td class="summaryTableOwnerCol">SoundManager</td>
+</tr>
+<tr class="">
+<td class="summaryTablePaddingCol">&nbsp;</td><td class="summaryTableInheritanceCol">&nbsp;</td><td class="summaryTableSignatureCol"><a class="signatureLink" href="#_isPaused">_isPaused</a> : Boolean = false<div class="summaryTableDescription"></div>
+</td><td class="summaryTableOwnerCol">SoundManager</td>
+</tr>
+<tr class="">
+<td class="summaryTablePaddingCol">&nbsp;</td><td class="summaryTableInheritanceCol">&nbsp;</td><td class="summaryTableSignatureCol"><a class="signatureLink" href="#_soundControllerList">_soundControllerList</a> : Array<div class="summaryTableDescription"></div>
+</td><td class="summaryTableOwnerCol">SoundManager</td>
+</tr>
+<tr class="">
+<td class="summaryTablePaddingCol">&nbsp;</td><td class="summaryTableInheritanceCol">&nbsp;</td><td class="summaryTableSignatureCol"><a class="signatureLink" href="#_volume">_volume</a> : Number = 1<div class="summaryTableDescription"></div>
+</td><td class="summaryTableOwnerCol">SoundManager</td>
+</tr>
+</table>
+</div>
+<a name="methodSummary"></a>
+<div class="summarySection">
+<div class="summaryTableTitle">Public Methods</div>
+<table id="summaryTableMethod" class="summaryTable " cellpadding="3" cellspacing="0">
+<tr>
+<th>&nbsp;</th><th colspan="2">Method</th><th class="summaryTableOwnerCol">Defined&nbsp;by</th>
+</tr>
+<tr class="">
+<td class="summaryTablePaddingCol">&nbsp;</td><td class="summaryTableInheritanceCol">&nbsp;</td><td class="summaryTableSignatureCol">
+<div class="summarySignature">
+<a class="signatureLink" href="#SoundManager()">SoundManager</a>(pvt:SoundManagerEnforcer)</div>
+<div class="summaryTableDescription">
+   Does the initial creation and init of the SoundManager
+   </div>
+</td><td class="summaryTableOwnerCol">SoundManager</td>
+</tr>
+<tr class="">
+<td class="summaryTablePaddingCol">&nbsp;</td><td class="summaryTableInheritanceCol">&nbsp;</td><td class="summaryTableSignatureCol">
+<div class="summarySignature">
+<a class="signatureLink" href="#addSoundController()">addSoundController</a>(controller:<a href="SoundController.html">SoundController</a>):<a href="../soundManager/SoundController.html">SoundController</a>
+</div>
+<div class="summaryTableDescription">
+   Adds a SoundController to the list of controllers to be managed by this SoundManager
+   
+   </div>
+</td><td class="summaryTableOwnerCol">SoundManager</td>
+</tr>
+<tr class="">
+<td class="summaryTablePaddingCol">&nbsp;</td><td class="summaryTableInheritanceCol">&nbsp;</td><td class="summaryTableSignatureCol">
+<div class="summarySignature">
+<a class="signatureLink" href="#fadeVolume()">fadeVolume</a>(endPercent:Number, duration:Number, curve:* = null):void</div>
+<div class="summaryTableDescription">
+   This will fade the volume of the SoundManager over a given time.</div>
+</td><td class="summaryTableOwnerCol">SoundManager</td>
+</tr>
+<tr class="">
+<td class="summaryTablePaddingCol">&nbsp;</td><td class="summaryTableInheritanceCol">&nbsp;</td><td class="summaryTableSignatureCol">
+<div class="summarySignature">
+<a class="signatureLink" href="#forceVolume()">forceVolume</a>(vol:Number):void</div>
+<div class="summaryTableDescription">
+   This will force the volume of all managed SoundControllers and SMSounds to the passed in volume.</div>
+</td><td class="summaryTableOwnerCol">SoundManager</td>
+</tr>
+<tr class="">
+<td class="summaryTablePaddingCol">&nbsp;</td><td class="summaryTableInheritanceCol">&nbsp;</td><td class="summaryTableSignatureCol">
+<div class="summarySignature">
+<a class="signatureLink" href="#getInstance()">getInstance</a>():<a href="../soundManager/SoundManager.html">SoundManager</a>
+</div>
+<div class="summaryTableDescription">[static]
+   Returns a reference to the SoundManager singleton.</div>
+</td><td class="summaryTableOwnerCol">SoundManager</td>
+</tr>
+<tr class="">
+<td class="summaryTablePaddingCol">&nbsp;</td><td class="summaryTableInheritanceCol">&nbsp;</td><td class="summaryTableSignatureCol">
+<div class="summarySignature">
+<a class="signatureLink" href="#getSoundControllerByID()">getSoundControllerByID</a>(controllerID:String):<a href="../soundManager/SoundController.html">SoundController</a>
+</div>
+<div class="summaryTableDescription">
+   Function getSoundControllerByID
+   Returns a reference to a SoundController object that has the passed in ID
+   
+   </div>
+</td><td class="summaryTableOwnerCol">SoundManager</td>
+</tr>
+<tr class="">
+<td class="summaryTablePaddingCol">&nbsp;</td><td class="summaryTableInheritanceCol">&nbsp;</td><td class="summaryTableSignatureCol">
+<div class="summarySignature">
+<a class="signatureLink" href="#mute()">mute</a>():void</div>
+<div class="summaryTableDescription">
+   This will mute the SoundManager.</div>
+</td><td class="summaryTableOwnerCol">SoundManager</td>
+</tr>
+<tr class="">
+<td class="summaryTablePaddingCol">&nbsp;</td><td class="summaryTableInheritanceCol">&nbsp;</td><td class="summaryTableSignatureCol">
+<div class="summarySignature">
+<a class="signatureLink" href="#pause()">pause</a>():void</div>
+<div class="summaryTableDescription">
+   This will call SoundController.pauseAllSounds() on each managed SoundController
+   The most likely result of this is pausing all sounds in the SoundController.</div>
+</td><td class="summaryTableOwnerCol">SoundManager</td>
+</tr>
+<tr class="">
+<td class="summaryTablePaddingCol">&nbsp;</td><td class="summaryTableInheritanceCol">&nbsp;</td><td class="summaryTableSignatureCol">
+<div class="summarySignature">
+<a class="signatureLink" href="#play()">play</a>():void</div>
+<div class="summaryTableDescription">
+   This will call SoundController.playAllSounds() on each managed SoundController.</div>
+</td><td class="summaryTableOwnerCol">SoundManager</td>
+</tr>
+<tr class="">
+<td class="summaryTablePaddingCol">&nbsp;</td><td class="summaryTableInheritanceCol">&nbsp;</td><td class="summaryTableSignatureCol">
+<div class="summarySignature">
+<a class="signatureLink" href="#removeSoundControllerByID()">removeSoundControllerByID</a>(soundControllerID:String):Boolean</div>
+<div class="summaryTableDescription">
+   Removes a SoundController from this SoundManager
+   
+   </div>
+</td><td class="summaryTableOwnerCol">SoundManager</td>
+</tr>
+<tr class="">
+<td class="summaryTablePaddingCol">&nbsp;</td><td class="summaryTableInheritanceCol">&nbsp;</td><td class="summaryTableSignatureCol">
+<div class="summarySignature">
+<a class="signatureLink" href="#resume()">resume</a>():void</div>
+<div class="summaryTableDescription">
+   Function: resume
+   This will call resumeAllSounds() on each managed SoundController
+   The most likely result of this, is resuming any paused sound in the SoundController.</div>
+</td><td class="summaryTableOwnerCol">SoundManager</td>
+</tr>
+<tr class="">
+<td class="summaryTablePaddingCol">&nbsp;</td><td class="summaryTableInheritanceCol">&nbsp;</td><td class="summaryTableSignatureCol">
+<div class="summarySignature">
+<a class="signatureLink" href="#setVolume()">setVolume</a>(vol:Number):void</div>
+<div class="summaryTableDescription">
+   This will set the volume of the SoundManager.</div>
+</td><td class="summaryTableOwnerCol">SoundManager</td>
+</tr>
+<tr class="">
+<td class="summaryTablePaddingCol">&nbsp;</td><td class="summaryTableInheritanceCol">&nbsp;</td><td class="summaryTableSignatureCol">
+<div class="summarySignature">
+<a class="signatureLink" href="#stop()">stop</a>():void</div>
+<div class="summaryTableDescription">
+   This will call SoundController.stopAllSounds() on each managed SoundController.</div>
+</td><td class="summaryTableOwnerCol">SoundManager</td>
+</tr>
+<tr class="">
+<td class="summaryTablePaddingCol">&nbsp;</td><td class="summaryTableInheritanceCol">&nbsp;</td><td class="summaryTableSignatureCol">
+<div class="summarySignature">
+<a class="signatureLink" href="#toggleMute()">toggleMute</a>():Boolean</div>
+<div class="summaryTableDescription">
+   This will toggle the muted state of the SoundManager
+   
+   </div>
+</td><td class="summaryTableOwnerCol">SoundManager</td>
+</tr>
+<tr class="">
+<td class="summaryTablePaddingCol">&nbsp;</td><td class="summaryTableInheritanceCol">&nbsp;</td><td class="summaryTableSignatureCol">
+<div class="summarySignature">
+<a class="signatureLink" href="#togglePause()">togglePause</a>():Boolean</div>
+<div class="summaryTableDescription">
+   This will toggle the pause state of the SoundManager.</div>
+</td><td class="summaryTableOwnerCol">SoundManager</td>
+</tr>
+<tr class="">
+<td class="summaryTablePaddingCol">&nbsp;</td><td class="summaryTableInheritanceCol">&nbsp;</td><td class="summaryTableSignatureCol">
+<div class="summarySignature">
+<a class="signatureLink" href="#unMute()">unMute</a>():void</div>
+<div class="summaryTableDescription">
+   This will turn off the muting on this SoundManager and return the sound to the set volume.</div>
+</td><td class="summaryTableOwnerCol">SoundManager</td>
+</tr>
+</table>
+</div>
+<a name="protectedMethodSummary"></a>
+<div class="summarySection">
+<div class="summaryTableTitle">Protected Methods</div>
+<table id="summaryTableProtectedMethod" class="summaryTable " cellpadding="3" cellspacing="0">
+<tr>
+<th>&nbsp;</th><th colspan="2">Method</th><th class="summaryTableOwnerCol">Defined&nbsp;by</th>
+</tr>
+<tr class="">
+<td class="summaryTablePaddingCol">&nbsp;</td><td class="summaryTableInheritanceCol">&nbsp;</td><td class="summaryTableSignatureCol">
+<div class="summarySignature">
+<a class="signatureLink" href="#setFadeVol()">setFadeVol</a>(vol:Number):void</div>
+<div class="summaryTableDescription">
+   This is called on every update during a fadeVolume() call.</div>
+</td><td class="summaryTableOwnerCol">SoundManager</td>
+</tr>
+<tr class="">
+<td class="summaryTablePaddingCol">&nbsp;</td><td class="summaryTableInheritanceCol">&nbsp;</td><td class="summaryTableSignatureCol">
+<div class="summarySignature">
+<a class="signatureLink" href="#volumeFadeComplete()">volumeFadeComplete</a>():void</div>
+<div class="summaryTableDescription">
+   Called when a volume fade finishes.</div>
+</td><td class="summaryTableOwnerCol">SoundManager</td>
+</tr>
+<tr class="">
+<td class="summaryTablePaddingCol">&nbsp;</td><td class="summaryTableInheritanceCol">&nbsp;</td><td class="summaryTableSignatureCol">
+<div class="summarySignature">
+<a class="signatureLink" href="#volumeFadeStart()">volumeFadeStart</a>():void</div>
+<div class="summaryTableDescription">
+   Called when a volume fade starts.</div>
+</td><td class="summaryTableOwnerCol">SoundManager</td>
+</tr>
+<tr class="">
+<td class="summaryTablePaddingCol">&nbsp;</td><td class="summaryTableInheritanceCol">&nbsp;</td><td class="summaryTableSignatureCol">
+<div class="summarySignature">
+<a class="signatureLink" href="#volumeFadeUpdate()">volumeFadeUpdate</a>():void</div>
+<div class="summaryTableDescription">
+   Called on every update of a volume fade.</div>
+</td><td class="summaryTableOwnerCol">SoundManager</td>
+</tr>
+</table>
+</div>
+<a name="eventSummary"></a>
+<div class="summarySection">
+<div class="summaryTableTitle">Events</div>
+<table id="summaryTableEvent" class="summaryTable " cellpadding="3" cellspacing="0">
+<tr>
+<th>&nbsp;</th><th colspan="2">Event</th><th>Summary</th><th class="summaryTableOwnerCol">Defined&nbsp;by</th>
+</tr>
+<tr class="">
+<td class="summaryTablePaddingCol">&nbsp;</td><td class="summaryTableInheritanceCol">&nbsp;</td><td class="summaryTableSignatureCol">
+<div class="summarySignature">
+<a class="signatureLink" href="#event:MUTE">MUTE</a>
+</div>
+</td><td class="summaryTableDescription summaryTableCol">
+ Dispatched when mute() is called on this SoundManager.</td><td class="summaryTableOwnerCol">SoundManager</td>
+</tr>
+<tr class="">
+<td class="summaryTablePaddingCol">&nbsp;</td><td class="summaryTableInheritanceCol">&nbsp;</td><td class="summaryTableSignatureCol">
+<div class="summarySignature">
+<a class="signatureLink" href="#event:PAUSE">PAUSE</a>
+</div>
+</td><td class="summaryTableDescription summaryTableCol">
+ Dispatched when pause() is called on this SoundManager.</td><td class="summaryTableOwnerCol">SoundManager</td>
+</tr>
+<tr class="">
+<td class="summaryTablePaddingCol">&nbsp;</td><td class="summaryTableInheritanceCol">&nbsp;</td><td class="summaryTableSignatureCol">
+<div class="summarySignature">
+<a class="signatureLink" href="#event:PLAY">PLAY</a>
+</div>
+</td><td class="summaryTableDescription summaryTableCol">
+ Dispatched when play() is called on this SoundManager.</td><td class="summaryTableOwnerCol">SoundManager</td>
+</tr>
+<tr class="">
+<td class="summaryTablePaddingCol">&nbsp;</td><td class="summaryTableInheritanceCol">&nbsp;</td><td class="summaryTableSignatureCol">
+<div class="summarySignature">
+<a class="signatureLink" href="#event:RESUME">RESUME</a>
+</div>
+</td><td class="summaryTableDescription summaryTableCol">
+ Dispatched when resume() is called on this SoundManager.</td><td class="summaryTableOwnerCol">SoundManager</td>
+</tr>
+<tr class="">
+<td class="summaryTablePaddingCol">&nbsp;</td><td class="summaryTableInheritanceCol">&nbsp;</td><td class="summaryTableSignatureCol">
+<div class="summarySignature">
+<a class="signatureLink" href="#event:STOP">STOP</a>
+</div>
+</td><td class="summaryTableDescription summaryTableCol">
+ Dispatched when stop() is called on this SoundManager.</td><td class="summaryTableOwnerCol">SoundManager</td>
+</tr>
+<tr class="">
+<td class="summaryTablePaddingCol">&nbsp;</td><td class="summaryTableInheritanceCol">&nbsp;</td><td class="summaryTableSignatureCol">
+<div class="summarySignature">
+<a class="signatureLink" href="#event:UNMUTE">UNMUTE</a>
+</div>
+</td><td class="summaryTableDescription summaryTableCol">
+ Dispatched when unMute() is called on this SoundManager.</td><td class="summaryTableOwnerCol">SoundManager</td>
+</tr>
+<tr class="">
+<td class="summaryTablePaddingCol">&nbsp;</td><td class="summaryTableInheritanceCol">&nbsp;</td><td class="summaryTableSignatureCol">
+<div class="summarySignature">
+<a class="signatureLink" href="#event:VOLUME_CHANGE">VOLUME_CHANGE</a>
+</div>
+</td><td class="summaryTableDescription summaryTableCol">
+ Dispatched when setVolume() or forceVolume() is called on this SoundManager.</td><td class="summaryTableOwnerCol">SoundManager</td>
+</tr>
+<tr class="">
+<td class="summaryTablePaddingCol">&nbsp;</td><td class="summaryTableInheritanceCol">&nbsp;</td><td class="summaryTableSignatureCol">
+<div class="summarySignature">
+<a class="signatureLink" href="#event:VOLUME_FADE_COMPLETE">VOLUME_FADE_COMPLETE</a>
+</div>
+</td><td class="summaryTableDescription summaryTableCol">
+ Dispatched when a volume fade has completed on this SoundManager.</td><td class="summaryTableOwnerCol">SoundManager</td>
+</tr>
+<tr class="">
+<td class="summaryTablePaddingCol">&nbsp;</td><td class="summaryTableInheritanceCol">&nbsp;</td><td class="summaryTableSignatureCol">
+<div class="summarySignature">
+<a class="signatureLink" href="#event:VOLUME_FADE_START">VOLUME_FADE_START</a>
+</div>
+</td><td class="summaryTableDescription summaryTableCol">
+ Dispatched each time fadeVolume() is called on this SoundManager (once per call).</td><td class="summaryTableOwnerCol">SoundManager</td>
+</tr>
+<tr class="">
+<td class="summaryTablePaddingCol">&nbsp;</td><td class="summaryTableInheritanceCol">&nbsp;</td><td class="summaryTableSignatureCol">
+<div class="summarySignature">
+<a class="signatureLink" href="#event:VOLUME_FADE_UPDATE">VOLUME_FADE_UPDATE</a>
+</div>
+</td><td class="summaryTableDescription summaryTableCol">
+ Dispatched on each volume fade update.</td><td class="summaryTableOwnerCol">SoundManager</td>
+</tr>
+</table>
+</div>
+<script type="text/javascript" language="javascript">
+<!--
+showHideInherited();
+--></script>
+<div class="MainContent">
+<a name="propertyDetail"></a>
+<div class="detailSectionHeader">Property detail</div>
+<a name="_fadeVol"></a>
+<table cellspacing="0" cellpadding="0" class="detailHeader">
+<tr>
+<td class="detailHeaderName">_fadeVol</td><td class="detailHeaderType">property</td>
+</tr>
+</table>
+<div class="detailBody">
+<code>protected var _fadeVol:Object</code>
+</div>
+<a name="_instance"></a>
+<table cellspacing="0" cellpadding="0" class="detailHeader">
+<tr>
+<td class="detailHeaderName">_instance</td><td class="detailHeaderType">property</td><td class="detailHeaderRule">&nbsp;</td>
+</tr>
+</table>
+<div class="detailBody">
+<code>public static var _instance:<a href="../soundManager/SoundManager.html">SoundManager</a></code>
+</div>
+<a name="_isMuted"></a>
+<table cellspacing="0" cellpadding="0" class="detailHeader">
+<tr>
+<td class="detailHeaderName">_isMuted</td><td class="detailHeaderType">property</td><td class="detailHeaderRule">&nbsp;</td>
+</tr>
+</table>
+<div class="detailBody">
+<code>protected var _isMuted:Boolean = false</code>
+</div>
+<a name="isMuted"></a>
+<table cellspacing="0" cellpadding="0" class="detailHeader">
+<tr>
+<td class="detailHeaderName">isMuted</td><td class="detailHeaderType">property</td><td class="detailHeaderRule">&nbsp;</td>
+</tr>
+</table>
+<div class="detailBody">
+<code>isMuted:Boolean</code>&nbsp;&nbsp;[read-only]<p>
+   Returns the muted state of the SoundManager.  <code>TRUE</code> if muted, <code>FALSE</code>, if not.
+   </p><span class="label">Implementation</span>
+<br>
+<code>&nbsp;&nbsp;&nbsp;&nbsp;public function get isMuted():Boolean</code>
+<br>
+</div>
+<a name="_isPaused"></a>
+<table cellspacing="0" cellpadding="0" class="detailHeader">
+<tr>
+<td class="detailHeaderName">_isPaused</td><td class="detailHeaderType">property</td><td class="detailHeaderRule">&nbsp;</td>
+</tr>
+</table>
+<div class="detailBody">
+<code>protected var _isPaused:Boolean = false</code>
+</div>
+<a name="isPaused"></a>
+<table cellspacing="0" cellpadding="0" class="detailHeader">
+<tr>
+<td class="detailHeaderName">isPaused</td><td class="detailHeaderType">property</td><td class="detailHeaderRule">&nbsp;</td>
+</tr>
+</table>
+<div class="detailBody">
+<code>isPaused:Boolean</code>&nbsp;&nbsp;[read-only]<p>
+   Returns the pause state of the SoundManager. <code>TRUE</code> if paused, <code>FALSE</code>, if not.
+   </p><span class="label">Implementation</span>
+<br>
+<code>&nbsp;&nbsp;&nbsp;&nbsp;public function get isPaused():Boolean</code>
+<br>
+</div>
+<a name="_soundControllerList"></a>
+<table cellspacing="0" cellpadding="0" class="detailHeader">
+<tr>
+<td class="detailHeaderName">_soundControllerList</td><td class="detailHeaderType">property</td><td class="detailHeaderRule">&nbsp;</td>
+</tr>
+</table>
+<div class="detailBody">
+<code>protected var _soundControllerList:Array</code>
+</div>
+<a name="_volume"></a>
+<table cellspacing="0" cellpadding="0" class="detailHeader">
+<tr>
+<td class="detailHeaderName">_volume</td><td class="detailHeaderType">property</td><td class="detailHeaderRule">&nbsp;</td>
+</tr>
+</table>
+<div class="detailBody">
+<code>protected var _volume:Number = 1</code>
+</div>
+<a name="volume"></a>
+<table cellspacing="0" cellpadding="0" class="detailHeader">
+<tr>
+<td class="detailHeaderName">volume</td><td class="detailHeaderType">property</td><td class="detailHeaderRule">&nbsp;</td>
+</tr>
+</table>
+<div class="detailBody">
+<code>volume:Number</code>&nbsp;&nbsp;[read-write]<p>
+   Returns the current volume of the SoundManager
+   </p><p>Sets the volume of the SoundManager, by calling setVolume()</p>
+   <span class="label">Implementation</span>
+<br>
+<code>&nbsp;&nbsp;&nbsp;&nbsp;public function get volume():Number</code>
+<br>
+<code>&nbsp;&nbsp;&nbsp;&nbsp;public function set volume(value:Number):void</code>
+<br>
+</div>
+<a name="constructorDetail"></a>
+<div class="detailSectionHeader">Constructor detail</div>
+<a name="SoundManager()"></a>
+<table cellspacing="0" cellpadding="0" class="detailHeader">
+<tr>
+<td class="detailHeaderName">SoundManager</td><td class="detailHeaderParens">()</td><td class="detailHeaderType">constructor</td>
+</tr>
+</table>
+<div class="detailBody">
+<code>public function SoundManager(pvt:SoundManagerEnforcer)</code><p>
+   Does the initial creation and init of the SoundManager
+   </p><span class="label">Parameters</span>
+<table border="0" cellspacing="0" cellpadding="0">
+<tr>
+<td width="20px"></td><td><code><span class="label">pvt</span>:SoundManagerEnforcer</code></td>
+</tr>
+</table>
+</div>
+<a name="methodDetail"></a>
+<div class="detailSectionHeader">Method detail</div>
+<a name="addSoundController()"></a>
+<table cellspacing="0" cellpadding="0" class="detailHeader">
+<tr>
+<td class="detailHeaderName">addSoundController</td><td class="detailHeaderParens">()</td><td class="detailHeaderType">method</td>
+</tr>
+</table>
+<div class="detailBody">
+<code>public function addSoundController(controller:<a href="SoundController.html">SoundController</a>):<a href="../soundManager/SoundController.html">SoundController</a></code><p>
+   Adds a SoundController to the list of controllers to be managed by this SoundManager
+   
+   </p><span class="label">Parameters</span>
+<table border="0" cellspacing="0" cellpadding="0">
+<tr>
+<td width="20px"></td><td><code><span class="label">controller</span>:<a href="SoundController.html">SoundController</a></code> &mdash; the SoundController object you want to be managed by this SoundManager
+   </td>
+</tr>
+</table>
+<p></p>
+<span class="label">Returns</span>
+<table border="0" cellspacing="0" cellpadding="0">
+<tr>
+<td width="20"></td><td><code><a href="../soundManager/SoundController.html">SoundController</a></code> &mdash; 
+                        A reference to the added SoundController <p>Returns null if the ID already exists in the list if managed SoundControllers</p>
+   
+                        
+                     </td>
+</tr>
+</table>
+</div>
+<a name="fadeVolume()"></a>
+<table cellspacing="0" cellpadding="0" class="detailHeader">
+<tr>
+<td class="detailHeaderName">fadeVolume</td><td class="detailHeaderParens">()</td><td class="detailHeaderType">method</td><td class="detailHeaderRule">&nbsp;</td>
+</tr>
+</table>
+<div class="detailBody">
+<code>public function fadeVolume(endPercent:Number, duration:Number, curve:* = null):void</code><p>
+   This will fade the volume of the SoundManager over a given time.
+   This will also stop any tweens from a previous fadeVolume() on this SoundManager before the new fade is started.
+   
+   </p><span class="label">Parameters</span>
+<table border="0" cellspacing="0" cellpadding="0">
+<tr>
+<td width="20px"></td><td><code><span class="label">endPercent</span>:Number</code> &mdash; The final volume the SoundManger should reach.
+   </td>
+</tr>
+<tr>
+<td class="paramSpacer">&nbsp;</td>
+</tr>
+<tr>
+<td width="20px"></td><td><code><span class="label">duration</span>:Number</code> &mdash; The amount of time in seconds the fade should take to finish.
+   </td>
+</tr>
+<tr>
+<td class="paramSpacer">&nbsp;</td>
+</tr>
+<tr>
+<td width="20px"></td><td><code><span class="label">curve</span>:*</code> (default = <code>null</code>)<code></code> &mdash;  A TweenLite/Max curve definition to tween the volume by.
+   </td>
+</tr>
+</table>
+</div>
+<a name="forceVolume()"></a>
+<table cellspacing="0" cellpadding="0" class="detailHeader">
+<tr>
+<td class="detailHeaderName">forceVolume</td><td class="detailHeaderParens">()</td><td class="detailHeaderType">method</td><td class="detailHeaderRule">&nbsp;</td>
+</tr>
+</table>
+<div class="detailBody">
+<code>public function forceVolume(vol:Number):void</code><p>
+   This will force the volume of all managed SoundControllers and SMSounds to the passed in volume.
+   Please note that this will override any other volume modifications currently applied to the objects.
+   This will also stop any tweens from a fadeVolume() on this SoundManager before the volume is set.
+   
+   </p><p><b>Chances are pretty good that you want to use setVolume() in most cases.</b></p>
+   
+   <p>Dispatches a <code>SMSoundVolumeEvent.VOLUME_CHANGE</code> event.</p>
+   
+   <span class="label">Parameters</span>
+<table border="0" cellspacing="0" cellpadding="0">
+<tr>
+<td width="20px"></td><td><code><span class="label">vol</span>:Number</code> &mdash; A volume to force all sounds to, 0-1.  This number is not clamped at this level, however it may be clamped further down the chain.
+   
+   </td>
+</tr>
+</table>
+<p>
+<span class="label">See also</span>
+</p>
+<div class="seeAlso">
+<a href="../soundManager/SoundManager.html#setVolume()" target="">setVolume()</a>
+</div>
+</div>
+<a name="getInstance()"></a>
+<table cellspacing="0" cellpadding="0" class="detailHeader">
+<tr>
+<td class="detailHeaderName">getInstance</td><td class="detailHeaderParens">()</td><td class="detailHeaderType">method</td><td class="detailHeaderRule">&nbsp;</td>
+</tr>
+</table>
+<div class="detailBody">
+<code>public static function getInstance():<a href="../soundManager/SoundManager.html">SoundManager</a></code><p>
+   Returns a reference to the SoundManager singleton.
+   </p><p></p>
+<span class="label">Returns</span>
+<table border="0" cellspacing="0" cellpadding="0">
+<tr>
+<td width="20"></td><td><code><a href="../soundManager/SoundManager.html">SoundManager</a></code></td>
+</tr>
+</table>
+</div>
+<a name="getSoundControllerByID()"></a>
+<table cellspacing="0" cellpadding="0" class="detailHeader">
+<tr>
+<td class="detailHeaderName">getSoundControllerByID</td><td class="detailHeaderParens">()</td><td class="detailHeaderType">method</td><td class="detailHeaderRule">&nbsp;</td>
+</tr>
+</table>
+<div class="detailBody">
+<code>public function getSoundControllerByID(controllerID:String):<a href="../soundManager/SoundController.html">SoundController</a></code><p>
+   Function getSoundControllerByID
+   Returns a reference to a SoundController object that has the passed in ID
+   
+   </p><span class="label">Parameters</span>
+<table border="0" cellspacing="0" cellpadding="0">
+<tr>
+<td width="20px"></td><td><code><span class="label">controllerID</span>:String</code> &mdash; the ID of a managed SoundController
+   </td>
+</tr>
+</table>
+<p></p>
+<span class="label">Returns</span>
+<table border="0" cellspacing="0" cellpadding="0">
+<tr>
+<td width="20"></td><td><code><a href="../soundManager/SoundController.html">SoundController</a></code> &mdash; 
+                         A reference to the SoundController that has the passed in ID This will return null, if no controller is found.
+   
+   
+                        
+                     </td>
+</tr>
+</table>
+<p>
+<span class="label">See also</span>
+</p>
+<div class="seeAlso">
+<a href="../soundManager/SoundController.html" target="">SoundController</a>
+</div>
+</div>
+<a name="mute()"></a>
+<table cellspacing="0" cellpadding="0" class="detailHeader">
+<tr>
+<td class="detailHeaderName">mute</td><td class="detailHeaderParens">()</td><td class="detailHeaderType">method</td><td class="detailHeaderRule">&nbsp;</td>
+</tr>
+</table>
+<div class="detailBody">
+<code>public function mute():void</code><p>
+   This will mute the SoundManager. (thus muting all SoundControllers)
+   </p><p>Dispatches a <code>SMSoundEvent.MUTE</code> event.</p>
+   </div>
+<a name="pause()"></a>
+<table cellspacing="0" cellpadding="0" class="detailHeader">
+<tr>
+<td class="detailHeaderName">pause</td><td class="detailHeaderParens">()</td><td class="detailHeaderType">method</td><td class="detailHeaderRule">&nbsp;</td>
+</tr>
+</table>
+<div class="detailBody">
+<code>public function pause():void</code><p>
+   This will call SoundController.pauseAllSounds() on each managed SoundController
+   The most likely result of this is pausing all sounds in the SoundController.
+   </p><p>Dispatches a <code>SMSoundEvent.PAUSE</code> event.</p>
+   
+   <p>
+<span class="label">See also</span>
+</p>
+<div class="seeAlso">
+<a href="../soundManager/SoundController.html#pauseAllSounds()" target="">pauseAllSounds()</a>
+<br>
+<a href="../soundManager/SoundManager.html#togglePause()" target="">togglePause()</a>
+<br>
+<a href="../soundManager/SoundManager.html#resume()" target="">resume()</a>
+</div>
+</div>
+<a name="play()"></a>
+<table cellspacing="0" cellpadding="0" class="detailHeader">
+<tr>
+<td class="detailHeaderName">play</td><td class="detailHeaderParens">()</td><td class="detailHeaderType">method</td><td class="detailHeaderRule">&nbsp;</td>
+</tr>
+</table>
+<div class="detailBody">
+<code>public function play():void</code><p>
+   This will call SoundController.playAllSounds() on each managed SoundController.
+   The most likely result of this is playing all sounds in the app, at the same time.
+   
+   </p><p>Dispatches a <code>SMSoundEvent.PLAY</code> event.</p>
+   </div>
+<a name="removeSoundControllerByID()"></a>
+<table cellspacing="0" cellpadding="0" class="detailHeader">
+<tr>
+<td class="detailHeaderName">removeSoundControllerByID</td><td class="detailHeaderParens">()</td><td class="detailHeaderType">method</td><td class="detailHeaderRule">&nbsp;</td>
+</tr>
+</table>
+<div class="detailBody">
+<code>public function removeSoundControllerByID(soundControllerID:String):Boolean</code><p>
+   Removes a SoundController from this SoundManager
+   
+   </p><span class="label">Parameters</span>
+<table border="0" cellspacing="0" cellpadding="0">
+<tr>
+<td width="20px"></td><td><code><span class="label">soundControllerID</span>:String</code> &mdash; the ID of the SoundController to be removed from the control of this SoundManager.
+   </td>
+</tr>
+</table>
+<p></p>
+<span class="label">Returns</span>
+<table border="0" cellspacing="0" cellpadding="0">
+<tr>
+<td width="20"></td><td><code>Boolean</code> &mdash; TRUE if the SoundController was removed, FALSE otherwise.
+   </td>
+</tr>
+</table>
+</div>
+<a name="resume()"></a>
+<table cellspacing="0" cellpadding="0" class="detailHeader">
+<tr>
+<td class="detailHeaderName">resume</td><td class="detailHeaderParens">()</td><td class="detailHeaderType">method</td><td class="detailHeaderRule">&nbsp;</td>
+</tr>
+</table>
+<div class="detailBody">
+<code>public function resume():void</code><p>
+   Function: resume
+   This will call resumeAllSounds() on each managed SoundController
+   The most likely result of this, is resuming any paused sound in the SoundController.
+   </p><p>Dispatches a <code>SMSoundEvent.RESUME</code> event.</p>
+   
+   <p>
+<span class="label">See also</span>
+</p>
+<div class="seeAlso">
+<a href="../soundManager/SoundManager.html#pause()" target="">pause()</a>
+<br>
+<a href="../soundManager/SoundManager.html#togglePause()" target="">togglePause()</a>
+<br>
+<a href="../soundManager/SoundController.html#resumeAllSounds()" target="">resumeAllSounds()</a>
+</div>
+</div>
+<a name="setFadeVol()"></a>
+<table cellspacing="0" cellpadding="0" class="detailHeader">
+<tr>
+<td class="detailHeaderName">setFadeVol</td><td class="detailHeaderParens">()</td><td class="detailHeaderType">method</td><td class="detailHeaderRule">&nbsp;</td>
+</tr>
+</table>
+<div class="detailBody">
+<code>protected function setFadeVol(vol:Number):void</code><p>
+   This is called on every update during a fadeVolume() call.
+   It is used to notify the SoundControllers to check their volume.
+   </p><p><b>You should not need to use this method directly.</b></p>
+   
+   <span class="label">Parameters</span>
+<table border="0" cellspacing="0" cellpadding="0">
+<tr>
+<td width="20px"></td><td><code><span class="label">vol</span>:Number</code> &mdash; the current volume of the fade.
+   </td>
+</tr>
+</table>
+</div>
+<a name="setVolume()"></a>
+<table cellspacing="0" cellpadding="0" class="detailHeader">
+<tr>
+<td class="detailHeaderName">setVolume</td><td class="detailHeaderParens">()</td><td class="detailHeaderType">method</td><td class="detailHeaderRule">&nbsp;</td>
+</tr>
+</table>
+<div class="detailBody">
+<code>public function setVolume(vol:Number):void</code><p>
+   This will set the volume of the SoundManager.
+   Lowering this 50% will essentially lower each SoundController 50% from their current volume, which in turn
+   lowers the SMSound 50% of its current volume.
+   This will also stop any tweens from a fadeVolume() on this SoundManager before the volume is set.
+   
+   </p><p>Dispatches a <code>SMSoundVolumeEvent.VOLUME_CHANGE</code> event.</p>
+   
+   <span class="label">Parameters</span>
+<table border="0" cellspacing="0" cellpadding="0">
+<tr>
+<td width="20px"></td><td><code><span class="label">vol</span>:Number</code> &mdash; A number from 0 - 1 that represents the new volume of the SoundManager. This number will be clamped to the 0-1 range.  If 1.5 is passed, the volume will be set to 1.
+   
+   </td>
+</tr>
+</table>
+<p>
+<span class="label">See also</span>
+</p>
+<div class="seeAlso">
+<a href="../soundManager/SoundManager.html#fadeVolume()" target="">fadeVolume()</a>
+<br>
+<a href="../soundManager/SoundManager.html#forceVolume()" target="">forceVolume()</a>
+</div>
+</div>
+<a name="stop()"></a>
+<table cellspacing="0" cellpadding="0" class="detailHeader">
+<tr>
+<td class="detailHeaderName">stop</td><td class="detailHeaderParens">()</td><td class="detailHeaderType">method</td><td class="detailHeaderRule">&nbsp;</td>
+</tr>
+</table>
+<div class="detailBody">
+<code>public function stop():void</code><p>
+   This will call SoundController.stopAllSounds() on each managed SoundController.
+   The most likely result of this is stopping all sounds in the SoundController.
+   </p><p>Dispatches a <code>SMSoundEvent.STOP</code> event.</p>
+   </div>
+<a name="toggleMute()"></a>
+<table cellspacing="0" cellpadding="0" class="detailHeader">
+<tr>
+<td class="detailHeaderName">toggleMute</td><td class="detailHeaderParens">()</td><td class="detailHeaderType">method</td><td class="detailHeaderRule">&nbsp;</td>
+</tr>
+</table>
+<div class="detailBody">
+<code>public function toggleMute():Boolean</code><p>
+   This will toggle the muted state of the SoundManager
+   
+   </p><p></p>
+<span class="label">Returns</span>
+<table border="0" cellspacing="0" cellpadding="0">
+<tr>
+<td width="20"></td><td><code>Boolean</code> &mdash; The muted state after the toggle.  TRUE if it is not muted, FALSE, if no longer muted.
+   </td>
+</tr>
+</table>
+</div>
+<a name="togglePause()"></a>
+<table cellspacing="0" cellpadding="0" class="detailHeader">
+<tr>
+<td class="detailHeaderName">togglePause</td><td class="detailHeaderParens">()</td><td class="detailHeaderType">method</td><td class="detailHeaderRule">&nbsp;</td>
+</tr>
+</table>
+<div class="detailBody">
+<code>public function togglePause():Boolean</code><p>
+   This will toggle the pause state of the SoundManager.
+   
+   </p><p></p>
+<span class="label">Returns</span>
+<table border="0" cellspacing="0" cellpadding="0">
+<tr>
+<td width="20"></td><td><code>Boolean</code> &mdash; The state of pause after the toggle completes.  TRUE if now paused, FALSE if now not paused.
+   
+   </td>
+</tr>
+</table>
+<p>
+<span class="label">See also</span>
+</p>
+<div class="seeAlso">
+<a href="../soundManager/SoundManager.html#pause()" target="">pause()</a>
+<br>
+<a href="../soundManager/SoundManager.html#resume()" target="">resume()</a>
+</div>
+</div>
+<a name="unMute()"></a>
+<table cellspacing="0" cellpadding="0" class="detailHeader">
+<tr>
+<td class="detailHeaderName">unMute</td><td class="detailHeaderParens">()</td><td class="detailHeaderType">method</td><td class="detailHeaderRule">&nbsp;</td>
+</tr>
+</table>
+<div class="detailBody">
+<code>public function unMute():void</code><p>
+   This will turn off the muting on this SoundManager and return the sound to the set volume.
+   </p><p>Dispatches a <code>SMSoundEvent.UNMUTE</code> event.</p>
+   </div>
+<a name="volumeFadeComplete()"></a>
+<table cellspacing="0" cellpadding="0" class="detailHeader">
+<tr>
+<td class="detailHeaderName">volumeFadeComplete</td><td class="detailHeaderParens">()</td><td class="detailHeaderType">method</td><td class="detailHeaderRule">&nbsp;</td>
+</tr>
+</table>
+<div class="detailBody">
+<code>protected function volumeFadeComplete():void</code><p>
+   Called when a volume fade finishes.
+   </p><p>Dispatches a <code>SMSoundFadeEvent.VOLUME_FADE_COMPLETE</code> event.</p>
+   </div>
+<a name="volumeFadeStart()"></a>
+<table cellspacing="0" cellpadding="0" class="detailHeader">
+<tr>
+<td class="detailHeaderName">volumeFadeStart</td><td class="detailHeaderParens">()</td><td class="detailHeaderType">method</td><td class="detailHeaderRule">&nbsp;</td>
+</tr>
+</table>
+<div class="detailBody">
+<code>protected function volumeFadeStart():void</code><p>
+   Called when a volume fade starts.
+   </p><p>Dispatches a <code>SMSoundFadeEvent.VOLUME_FADE_START</code> event.</p>
+   </div>
+<a name="volumeFadeUpdate()"></a>
+<table cellspacing="0" cellpadding="0" class="detailHeader">
+<tr>
+<td class="detailHeaderName">volumeFadeUpdate</td><td class="detailHeaderParens">()</td><td class="detailHeaderType">method</td><td class="detailHeaderRule">&nbsp;</td>
+</tr>
+</table>
+<div class="detailBody">
+<code>protected function volumeFadeUpdate():void</code><p>
+   Called on every update of a volume fade.
+   </p><p>Dispatches a <code>SMSoundFadeEvent.VOLUME_FADE_UPDATE</code> event.</p>
+   </div>
+<div class="detailSectionHeader">Event detail</div>
+<a name="event:MUTE"></a>
+<table cellspacing="0" cellpadding="0" class="detailHeader">
+<tr>
+<td class="detailHeaderName">MUTE</td><td class="detailHeaderType">event&nbsp;</td>
+</tr>
+</table>
+<div class="detailBody">
+<span class="label">Event object type: </span><a href="events/SMSoundEvent.html"><code>com.jac.soundManager.events.SMSoundEvent</code></a>
+<br>
+<p></p><p>
+ Dispatched when mute() is called on this SoundManager.
+ 
+ </p><p>
+<span class="label">See also</span>
+</p>
+<div class="seeAlso">
+<a href="../soundManager/SoundManager.html#mute()" target="">mute()</a>
+</div>
+</div>
+<a name="event:PAUSE"></a>
+<table cellspacing="0" cellpadding="0" class="detailHeader">
+<tr>
+<td class="detailHeaderName">PAUSE</td><td class="detailHeaderType">event&nbsp;</td><td class="detailHeaderRule">&nbsp;</td>
+</tr>
+</table>
+<div class="detailBody">
+<span class="label">Event object type: </span><a href="events/SMSoundEvent.html"><code>com.jac.soundManager.events.SMSoundEvent</code></a>
+<br>
+<p></p><p>
+ Dispatched when pause() is called on this SoundManager.
+ 
+ </p><p>
+<span class="label">See also</span>
+</p>
+<div class="seeAlso">
+<a href="../soundManager/SoundManager.html#pause()" target="">pause()</a>
+</div>
+</div>
+<a name="event:PLAY"></a>
+<table cellspacing="0" cellpadding="0" class="detailHeader">
+<tr>
+<td class="detailHeaderName">PLAY</td><td class="detailHeaderType">event&nbsp;</td><td class="detailHeaderRule">&nbsp;</td>
+</tr>
+</table>
+<div class="detailBody">
+<span class="label">Event object type: </span><a href="events/SMSoundEvent.html"><code>com.jac.soundManager.events.SMSoundEvent</code></a>
+<br>
+<p></p><p>
+ Dispatched when play() is called on this SoundManager.
+ 
+ </p><p>
+<span class="label">See also</span>
+</p>
+<div class="seeAlso">
+<a href="../soundManager/SoundManager.html#play()" target="">play()</a>
+</div>
+</div>
+<a name="event:RESUME"></a>
+<table cellspacing="0" cellpadding="0" class="detailHeader">
+<tr>
+<td class="detailHeaderName">RESUME</td><td class="detailHeaderType">event&nbsp;</td><td class="detailHeaderRule">&nbsp;</td>
+</tr>
+</table>
+<div class="detailBody">
+<span class="label">Event object type: </span><a href="events/SMSoundEvent.html"><code>com.jac.soundManager.events.SMSoundEvent</code></a>
+<br>
+<p></p><p>
+ Dispatched when resume() is called on this SoundManager.
+ 
+ </p><p>
+<span class="label">See also</span>
+</p>
+<div class="seeAlso">
+<a href="../soundManager/SoundManager.html#resume()" target="">resume()</a>
+</div>
+</div>
+<a name="event:STOP"></a>
+<table cellspacing="0" cellpadding="0" class="detailHeader">
+<tr>
+<td class="detailHeaderName">STOP</td><td class="detailHeaderType">event&nbsp;</td><td class="detailHeaderRule">&nbsp;</td>
+</tr>
+</table>
+<div class="detailBody">
+<span class="label">Event object type: </span><a href="events/SMSoundEvent.html"><code>com.jac.soundManager.events.SMSoundEvent</code></a>
+<br>
+<p></p><p>
+ Dispatched when stop() is called on this SoundManager.
+ 
+ </p><p>
+<span class="label">See also</span>
+</p>
+<div class="seeAlso">
+<a href="../soundManager/SoundManager.html#stop()" target="">stop()</a>
+</div>
+</div>
+<a name="event:UNMUTE"></a>
+<table cellspacing="0" cellpadding="0" class="detailHeader">
+<tr>
+<td class="detailHeaderName">UNMUTE</td><td class="detailHeaderType">event&nbsp;</td><td class="detailHeaderRule">&nbsp;</td>
+</tr>
+</table>
+<div class="detailBody">
+<span class="label">Event object type: </span><a href="events/SMSoundEvent.html"><code>com.jac.soundManager.events.SMSoundEvent</code></a>
+<br>
+<p></p><p>
+ Dispatched when unMute() is called on this SoundManager.
+ 
+ </p><p>
+<span class="label">See also</span>
+</p>
+<div class="seeAlso">
+<a href="../soundManager/SoundManager.html#unMute()" target="">unMute()</a>
+</div>
+</div>
+<a name="event:VOLUME_CHANGE"></a>
+<table cellspacing="0" cellpadding="0" class="detailHeader">
+<tr>
+<td class="detailHeaderName">VOLUME_CHANGE</td><td class="detailHeaderType">event&nbsp;</td><td class="detailHeaderRule">&nbsp;</td>
+</tr>
+</table>
+<div class="detailBody">
+<span class="label">Event object type: </span><a href="events/SMSoundVolumeEvent.html"><code>com.jac.soundManager.events.SMSoundVolumeEvent</code></a>
+<br>
+<p></p><p>
+ Dispatched when setVolume() or forceVolume() is called on this SoundManager.  This will also be dispatched on each volume update during a fadeVolume() call.
+ 
+ </p><p>
+<span class="label">See also</span>
+</p>
+<div class="seeAlso">
+<a href="../soundManager/SoundManager.html#setVolume()" target="">setVolume()</a>
+<br>
+<a href="../soundManager/SoundManager.html#forceVolume()" target="">forceVolume()</a>
+<br>
+<a href="../soundManager/SoundManager.html#fadeVolume()" target="">fadeVolume()</a>
+</div>
+</div>
+<a name="event:VOLUME_FADE_COMPLETE"></a>
+<table cellspacing="0" cellpadding="0" class="detailHeader">
+<tr>
+<td class="detailHeaderName">VOLUME_FADE_COMPLETE</td><td class="detailHeaderType">event&nbsp;</td><td class="detailHeaderRule">&nbsp;</td>
+</tr>
+</table>
+<div class="detailBody">
+<span class="label">Event object type: </span><a href="events/SMSoundFadeEvent.html"><code>com.jac.soundManager.events.SMSoundFadeEvent</code></a>
+<br>
+<p></p><p>
+ Dispatched when a volume fade has completed on this SoundManager.  Dispatched from the volumeFadeComplete() call.
+ 
+ </p><p>
+<span class="label">See also</span>
+</p>
+<div class="seeAlso">
+<a href="../soundManager/SoundManager.html#volumeFadeComplete()" target="">volumeFadeComplete()</a>
+</div>
+</div>
+<a name="event:VOLUME_FADE_START"></a>
+<table cellspacing="0" cellpadding="0" class="detailHeader">
+<tr>
+<td class="detailHeaderName">VOLUME_FADE_START</td><td class="detailHeaderType">event&nbsp;</td><td class="detailHeaderRule">&nbsp;</td>
+</tr>
+</table>
+<div class="detailBody">
+<span class="label">Event object type: </span><a href="events/SMSoundFadeEvent.html"><code>com.jac.soundManager.events.SMSoundFadeEvent</code></a>
+<br>
+<p></p><p>
+ Dispatched each time fadeVolume() is called on this SoundManager (once per call).
+ 
+ </p><p>
+<span class="label">See also</span>
+</p>
+<div class="seeAlso">
+<a href="../soundManager/SoundManager.html#fadeVolume()" target="">fadeVolume()</a>
+</div>
+</div>
+<a name="event:VOLUME_FADE_UPDATE"></a>
+<table cellspacing="0" cellpadding="0" class="detailHeader">
+<tr>
+<td class="detailHeaderName">VOLUME_FADE_UPDATE</td><td class="detailHeaderType">event&nbsp;</td><td class="detailHeaderRule">&nbsp;</td>
+</tr>
+</table>
+<div class="detailBody">
+<span class="label">Event object type: </span><a href="events/SMSoundFadeEvent.html"><code>com.jac.soundManager.events.SMSoundFadeEvent</code></a>
+<br>
+<p></p><p>
+ Dispatched on each volume fade update.  Dispatched from the volumeFadeUpdate() call.
+ 
+ </p><p>
+<span class="label">See also</span>
+</p>
+<div class="seeAlso">
+<a href="../soundManager/SoundManager.html#volumeFadeUpdate()" target="">volumeFadeUpdate()</a>
+</div>
+</div>
+<br>
+<br>
+<hr>
+<br>
+<p></p>
+<center class="copyright">DartsApp</center>
+</div>
+</body>
+</html>
+<!--DartsApp-->

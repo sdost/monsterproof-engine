@@ -1,0 +1,816 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+<head>
+<META http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<link rel="stylesheet" href="../../../style.css" type="text/css" media="screen">
+<link rel="stylesheet" href="../../../print.css" type="text/css" media="print">
+<meta content="BoredServices,com.bored.services.BoredServices,isLoggedIn,servicesObj,userProfile,addEventListener,dispatchEvent,getData,getGameInfo,getRootContainer,hasEventListener,hideLoginUI,removeEventListener,setData,setRootContainer,showAchievements,showLeaderboard,showLoginUI,showMainLoginUI,submitAchievementAcquired,submitScore,willTrigger" name="keywords">
+<title>com.bored.services.BoredServices</title>
+</head>
+<body>
+<script type="text/javascript" language="javascript" src="../../../asdoc.js"></script><script type="text/javascript" language="javascript" src="../../../cookies.js"></script><script type="text/javascript" language="javascript">
+<!--
+				asdocTitle = 'BoredServices - API Documentation';
+				var baseRef = '../../../';
+				window.onload = configPage;
+			--></script>
+<table style="display:none" id="titleTable" cellspacing="0" cellpadding="0" class="titleTable">
+<tr>
+<td align="left" class="titleTableTitle">API Documentation</td><td align="right" class="titleTableTopNav"><a onclick="loadClassListFrame('../../../all-classes.html')" href="../../../package-summary.html">All&nbsp;Packages</a>&nbsp;|&nbsp;<a onclick="loadClassListFrame('../../../all-classes.html')" href="../../../class-summary.html">All&nbsp;Classes</a>&nbsp;|&nbsp;<a onclick="loadClassListFrame('../../../index-list.html')" href="../../../all-index-A.html">Index</a>&nbsp;|&nbsp;<a href="../../../index.html?com/bored/services/BoredServices.html&amp;com/bored/services/class-list.html" id="framesLink1">Frames</a><a onclick="parent.location=document.location" href="" style="display:none" id="noFramesLink1">No&nbsp;Frames</a></td><td rowspan="3" align="right" class="titleTableLogo"><img alt="Adobe Logo" title="Adobe Logo" class="logoImage" src="../../../images/logo.jpg"></td>
+</tr>
+<tr class="titleTableRow2">
+<td align="left" id="subTitle" class="titleTableSubTitle">Class&nbsp;BoredServices</td><td align="right" id="subNav" class="titleTableSubNav"><a href="#propertySummary">Properties</a>&nbsp;| <a href="#methodSummary">Methods</a>&nbsp;| <a href="#eventSummary">Events</a></td>
+</tr>
+<tr class="titleTableRow3">
+<td colspan="2">&nbsp;</td>
+</tr>
+</table>
+<script type="text/javascript" language="javascript">
+<!--
+if (!isEclipse() || window.name != ECLIPSE_FRAME_NAME) {titleBar_setSubTitle("Class BoredServices"); titleBar_setSubNav(false,true,false,false,true,false,true,false,false,false,false,false,false,false);}
+--></script>
+<div class="MainContent">
+<table cellspacing="0" cellpadding="0" class="classHeaderTable">
+<tr>
+<td class="classHeaderTableLabel">Package</td><td><a onclick="javascript:loadClassListFrame('class-list.html')" href="package-detail.html">com.bored.services</a></td>
+</tr>
+<tr>
+<td class="classHeaderTableLabel">Class</td><td class="classSignature">public class BoredServices</td>
+</tr>
+</table>
+<p></p>
+  Static BoredServices Object.
+  <p></p>
+<br>
+<hr>
+</div>
+<a name="propertySummary"></a>
+<div class="summarySection">
+<div class="summaryTableTitle">Public Properties</div>
+<table id="summaryTableProperty" class="summaryTable " cellpadding="3" cellspacing="0">
+<tr>
+<th>&nbsp;</th><th colspan="2">Property</th><th class="summaryTableOwnerCol">Defined&nbsp;by</th>
+</tr>
+<tr class="">
+<td class="summaryTablePaddingCol">&nbsp;</td><td class="summaryTableInheritanceCol">&nbsp;</td><td class="summaryTableSignatureCol"><a class="signatureLink" href="#isLoggedIn">isLoggedIn</a> : Boolean<div class="summaryTableDescription">[static][read-only]
+   Determine whether the user is logged-in to the BoredServices or not.</div>
+</td><td class="summaryTableOwnerCol">BoredServices</td>
+</tr>
+<tr class="">
+<td class="summaryTablePaddingCol">&nbsp;</td><td class="summaryTableInheritanceCol">&nbsp;</td><td class="summaryTableSignatureCol"><a class="signatureLink" href="#servicesObj">servicesObj</a> : Object<div class="summaryTableDescription">[static]
+   This should be set directly from your document class after receiving the servicesObj from BoredServices.</div>
+</td><td class="summaryTableOwnerCol">BoredServices</td>
+</tr>
+<tr class="">
+<td class="summaryTablePaddingCol">&nbsp;</td><td class="summaryTableInheritanceCol">&nbsp;</td><td class="summaryTableSignatureCol"><a class="signatureLink" href="#userProfile">userProfile</a> : <a href="events/UserProfile.html">UserProfile</a>
+<div class="summaryTableDescription">[static][read-only]
+   Returns the UserProfile Object of the logged-in user.</div>
+</td><td class="summaryTableOwnerCol">BoredServices</td>
+</tr>
+</table>
+</div>
+<a name="methodSummary"></a>
+<div class="summarySection">
+<div class="summaryTableTitle">Public Methods</div>
+<table id="summaryTableMethod" class="summaryTable " cellpadding="3" cellspacing="0">
+<tr>
+<th>&nbsp;</th><th colspan="2">Method</th><th class="summaryTableOwnerCol">Defined&nbsp;by</th>
+</tr>
+<tr class="">
+<td class="summaryTablePaddingCol">&nbsp;</td><td class="summaryTableInheritanceCol">&nbsp;</td><td class="summaryTableSignatureCol">
+<div class="summarySignature">
+<a class="signatureLink" href="#addEventListener()">addEventListener</a>(type:String, listener:Function, useCapture:Boolean = false, priority:int = 0, useWeakReference:Boolean = false):void</div>
+<div class="summaryTableDescription">[static]
+   Registers an event listener object with an EventDispatcher object so that the listener receives notification of an event.</div>
+</td><td class="summaryTableOwnerCol">BoredServices</td>
+</tr>
+<tr class="">
+<td class="summaryTablePaddingCol">&nbsp;</td><td class="summaryTableInheritanceCol">&nbsp;</td><td class="summaryTableSignatureCol">
+<div class="summarySignature">
+<a class="signatureLink" href="#dispatchEvent()">dispatchEvent</a>(event:Event):Boolean</div>
+<div class="summaryTableDescription">[static]
+   Dispatches an event into the event flow.</div>
+</td><td class="summaryTableOwnerCol">BoredServices</td>
+</tr>
+<tr class="">
+<td class="summaryTablePaddingCol">&nbsp;</td><td class="summaryTableInheritanceCol">&nbsp;</td><td class="summaryTableSignatureCol">
+<div class="summarySignature">
+<a class="signatureLink" href="#getData()">getData</a>(a_key:String):void</div>
+<div class="summaryTableDescription">[static]
+   Gets user data specific to this current game.</div>
+</td><td class="summaryTableOwnerCol">BoredServices</td>
+</tr>
+<tr class="">
+<td class="summaryTablePaddingCol">&nbsp;</td><td class="summaryTableInheritanceCol">&nbsp;</td><td class="summaryTableSignatureCol">
+<div class="summarySignature">
+<a class="signatureLink" href="#getGameInfo()">getGameInfo</a>():void</div>
+<div class="summaryTableDescription">[static]
+   Requests the GameInfo Object associated with this game.</div>
+</td><td class="summaryTableOwnerCol">BoredServices</td>
+</tr>
+<tr class="">
+<td class="summaryTablePaddingCol">&nbsp;</td><td class="summaryTableInheritanceCol">&nbsp;</td><td class="summaryTableSignatureCol">
+<div class="summarySignature">
+<a class="signatureLink" href="#getRootContainer()">getRootContainer</a>():DisplayObjectContainer</div>
+<div class="summaryTableDescription">[static]
+   
+   </div>
+</td><td class="summaryTableOwnerCol">BoredServices</td>
+</tr>
+<tr class="">
+<td class="summaryTablePaddingCol">&nbsp;</td><td class="summaryTableInheritanceCol">&nbsp;</td><td class="summaryTableSignatureCol">
+<div class="summarySignature">
+<a class="signatureLink" href="#hasEventListener()">hasEventListener</a>(type:String):Boolean</div>
+<div class="summaryTableDescription">
+   Checks whether the EventDispatcher object has any listeners registered for a specific type of event.</div>
+</td><td class="summaryTableOwnerCol">BoredServices</td>
+</tr>
+<tr class="">
+<td class="summaryTablePaddingCol">&nbsp;</td><td class="summaryTableInheritanceCol">&nbsp;</td><td class="summaryTableSignatureCol">
+<div class="summarySignature">
+<a class="signatureLink" href="#hideLoginUI()">hideLoginUI</a>():void</div>
+<div class="summaryTableDescription">[static]
+   Hide the LoginUI (the login/register and mini-profile UI widget)
+   
+   </div>
+</td><td class="summaryTableOwnerCol">BoredServices</td>
+</tr>
+<tr class="">
+<td class="summaryTablePaddingCol">&nbsp;</td><td class="summaryTableInheritanceCol">&nbsp;</td><td class="summaryTableSignatureCol">
+<div class="summarySignature">
+<a class="signatureLink" href="#removeEventListener()">removeEventListener</a>(type:String, listener:Function, useCapture:Boolean = false):void</div>
+<div class="summaryTableDescription">[static]
+   Removes a listener from the EventDispatcher object.</div>
+</td><td class="summaryTableOwnerCol">BoredServices</td>
+</tr>
+<tr class="">
+<td class="summaryTablePaddingCol">&nbsp;</td><td class="summaryTableInheritanceCol">&nbsp;</td><td class="summaryTableSignatureCol">
+<div class="summarySignature">
+<a class="signatureLink" href="#setData()">setData</a>(a_key:String, a_data:*):void</div>
+<div class="summaryTableDescription">[static]
+   Saves user data specific to this current game.</div>
+</td><td class="summaryTableOwnerCol">BoredServices</td>
+</tr>
+<tr class="">
+<td class="summaryTablePaddingCol">&nbsp;</td><td class="summaryTableInheritanceCol">&nbsp;</td><td class="summaryTableSignatureCol">
+<div class="summarySignature">
+<a class="signatureLink" href="#setRootContainer()">setRootContainer</a>(a_displayObjCont:DisplayObjectContainer):void</div>
+<div class="summaryTableDescription">[static]
+   Set the root DisplayObjectContainer that contains the BoredServices UI.</div>
+</td><td class="summaryTableOwnerCol">BoredServices</td>
+</tr>
+<tr class="">
+<td class="summaryTablePaddingCol">&nbsp;</td><td class="summaryTableInheritanceCol">&nbsp;</td><td class="summaryTableSignatureCol">
+<div class="summarySignature">
+<a class="signatureLink" href="#showAchievements()">showAchievements</a>():void</div>
+<div class="summaryTableDescription">[static]
+   Show the all Achievements for this game.</div>
+</td><td class="summaryTableOwnerCol">BoredServices</td>
+</tr>
+<tr class="">
+<td class="summaryTablePaddingCol">&nbsp;</td><td class="summaryTableInheritanceCol">&nbsp;</td><td class="summaryTableSignatureCol">
+<div class="summarySignature">
+<a class="signatureLink" href="#showLeaderboard()">showLeaderboard</a>(a_scoreCode:String = null):void</div>
+<div class="summaryTableDescription">[static]
+   Shows the leaderboard for a specific score-code for this game.</div>
+</td><td class="summaryTableOwnerCol">BoredServices</td>
+</tr>
+<tr class="">
+<td class="summaryTablePaddingCol">&nbsp;</td><td class="summaryTableInheritanceCol">&nbsp;</td><td class="summaryTableSignatureCol">
+<div class="summarySignature">
+<a class="signatureLink" href="#showLoginUI()">showLoginUI</a>(a_options:Object = null):void</div>
+<div class="summaryTableDescription">[static]
+   Show the LoginUI (the login/register and mini-profile UI widget)
+   
+   </div>
+</td><td class="summaryTableOwnerCol">BoredServices</td>
+</tr>
+<tr class="">
+<td class="summaryTablePaddingCol">&nbsp;</td><td class="summaryTableInheritanceCol">&nbsp;</td><td class="summaryTableSignatureCol">
+<div class="summarySignature">
+<a class="signatureLink" href="#showMainLoginUI()">showMainLoginUI</a>():void</div>
+<div class="summaryTableDescription">[static]
+   Show the Main Login UI.</div>
+</td><td class="summaryTableOwnerCol">BoredServices</td>
+</tr>
+<tr class="">
+<td class="summaryTablePaddingCol">&nbsp;</td><td class="summaryTableInheritanceCol">&nbsp;</td><td class="summaryTableSignatureCol">
+<div class="summarySignature">
+<a class="signatureLink" href="#submitAchievementAcquired()">submitAchievementAcquired</a>(a_achievementScoreCode:String = null, a_showNewAchievementsPopup:Boolean = false):void</div>
+<div class="summaryTableDescription">[static]
+   Submit that an achievement was acquired.</div>
+</td><td class="summaryTableOwnerCol">BoredServices</td>
+</tr>
+<tr class="">
+<td class="summaryTablePaddingCol">&nbsp;</td><td class="summaryTableInheritanceCol">&nbsp;</td><td class="summaryTableSignatureCol">
+<div class="summarySignature">
+<a class="signatureLink" href="#submitScore()">submitScore</a>(a_score:*, a_showLeaderboardOnComplete:Boolean = true, a_scoreCode:String = null, a_showNewAchievementsPopup:Boolean = false):void</div>
+<div class="summaryTableDescription">[static]
+   Submit a score for a specific score-code.</div>
+</td><td class="summaryTableOwnerCol">BoredServices</td>
+</tr>
+<tr class="">
+<td class="summaryTablePaddingCol">&nbsp;</td><td class="summaryTableInheritanceCol">&nbsp;</td><td class="summaryTableSignatureCol">
+<div class="summarySignature">
+<a class="signatureLink" href="#willTrigger()">willTrigger</a>(type:String):Boolean</div>
+<div class="summaryTableDescription">
+   Checks whether an event listener is registered with this EventDispatcher object or any of its ancestors for the specified event type.</div>
+</td><td class="summaryTableOwnerCol">BoredServices</td>
+</tr>
+</table>
+</div>
+<a name="eventSummary"></a>
+<div class="summarySection">
+<div class="summaryTableTitle">Events</div>
+<table id="summaryTableEvent" class="summaryTable " cellpadding="3" cellspacing="0">
+<tr>
+<th>&nbsp;</th><th colspan="2">Event</th><th>Summary</th><th class="summaryTableOwnerCol">Defined&nbsp;by</th>
+</tr>
+<tr class="">
+<td class="summaryTablePaddingCol">&nbsp;</td><td class="summaryTableInheritanceCol">&nbsp;</td><td class="summaryTableSignatureCol">
+<div class="summarySignature">
+<a class="signatureLink" href="#event:GameInfoReadyEvent">GameInfoReadyEvent</a>
+</div>
+</td><td class="summaryTableDescription summaryTableCol">
+  Dispatched when GameInfo is available.</td><td class="summaryTableOwnerCol">BoredServices</td>
+</tr>
+<tr class="">
+<td class="summaryTablePaddingCol">&nbsp;</td><td class="summaryTableInheritanceCol">&nbsp;</td><td class="summaryTableSignatureCol">
+<div class="summarySignature">
+<a class="signatureLink" href="#event:LoggedInEvent">LoggedInEvent</a>
+</div>
+</td><td class="summaryTableDescription summaryTableCol">
+  Dispatched when the user is logged-in.</td><td class="summaryTableOwnerCol">BoredServices</td>
+</tr>
+<tr class="">
+<td class="summaryTablePaddingCol">&nbsp;</td><td class="summaryTableInheritanceCol">&nbsp;</td><td class="summaryTableSignatureCol">
+<div class="summarySignature">
+<a class="signatureLink" href="#event:NotLoggedInErrorEvent">NotLoggedInErrorEvent</a>
+</div>
+</td><td class="summaryTableDescription summaryTableCol">
+  Dispatched when an attempt to do something that requires login was attempted.</td><td class="summaryTableOwnerCol">BoredServices</td>
+</tr>
+<tr class="">
+<td class="summaryTablePaddingCol">&nbsp;</td><td class="summaryTableInheritanceCol">&nbsp;</td><td class="summaryTableSignatureCol">
+<div class="summarySignature">
+<a class="signatureLink" href="#event:SavedDataReceivedEvent">SavedDataReceivedEvent</a>
+</div>
+</td><td class="summaryTableDescription summaryTableCol">
+  Dispatched when data at a requested key is received.</td><td class="summaryTableOwnerCol">BoredServices</td>
+</tr>
+<tr class="">
+<td class="summaryTablePaddingCol">&nbsp;</td><td class="summaryTableInheritanceCol">&nbsp;</td><td class="summaryTableSignatureCol">
+<div class="summarySignature">
+<a class="signatureLink" href="#event:ScoreSubmissionCompleteEvent">ScoreSubmissionCompleteEvent</a>
+</div>
+</td><td class="summaryTableDescription summaryTableCol">
+  Dispatched when a score-submission is complete.</td><td class="summaryTableOwnerCol">BoredServices</td>
+</tr>
+</table>
+</div>
+<script type="text/javascript" language="javascript">
+<!--
+showHideInherited();
+--></script>
+<div class="MainContent">
+<a name="propertyDetail"></a>
+<div class="detailSectionHeader">Property detail</div>
+<a name="isLoggedIn"></a>
+<table cellspacing="0" cellpadding="0" class="detailHeader">
+<tr>
+<td class="detailHeaderName">isLoggedIn</td><td class="detailHeaderType">property</td>
+</tr>
+</table>
+<div class="detailBody">
+<code>isLoggedIn:Boolean</code>&nbsp;&nbsp;[read-only]<p>
+   Determine whether the user is logged-in to the BoredServices or not.
+   </p><span class="label">Implementation</span>
+<br>
+<code>&nbsp;&nbsp;&nbsp;&nbsp;public static function get isLoggedIn():Boolean</code>
+<br>
+</div>
+<a name="servicesObj"></a>
+<table cellspacing="0" cellpadding="0" class="detailHeader">
+<tr>
+<td class="detailHeaderName">servicesObj</td><td class="detailHeaderType">property</td><td class="detailHeaderRule">&nbsp;</td>
+</tr>
+</table>
+<div class="detailBody">
+<code>servicesObj:Object</code>&nbsp;&nbsp;[read-write]<p>
+   This should be set directly from your document class after receiving the servicesObj from BoredServices.
+   </p><span class="label">Implementation</span>
+<br>
+<code>&nbsp;&nbsp;&nbsp;&nbsp;public static function get servicesObj():Object</code>
+<br>
+<code>&nbsp;&nbsp;&nbsp;&nbsp;public function set servicesObj(value:Object):void</code>
+<br>
+</div>
+<a name="userProfile"></a>
+<table cellspacing="0" cellpadding="0" class="detailHeader">
+<tr>
+<td class="detailHeaderName">userProfile</td><td class="detailHeaderType">property</td><td class="detailHeaderRule">&nbsp;</td>
+</tr>
+</table>
+<div class="detailBody">
+<code>userProfile:<a href="events/UserProfile.html">UserProfile</a></code>&nbsp;&nbsp;[read-only]<p>
+   Returns the UserProfile Object of the logged-in user. If the user is not logged in, this value will be null.  Upon receiving the ObjectEvent.LOGGED_IN_EVENT, this value is valid.
+   </p><span class="label">Implementation</span>
+<br>
+<code>&nbsp;&nbsp;&nbsp;&nbsp;public static function get userProfile():<a href="events/UserProfile.html">UserProfile</a></code>
+<br>
+</div>
+<a name="methodDetail"></a>
+<div class="detailSectionHeader">Method detail</div>
+<a name="addEventListener()"></a>
+<table cellspacing="0" cellpadding="0" class="detailHeader">
+<tr>
+<td class="detailHeaderName">addEventListener</td><td class="detailHeaderParens">()</td><td class="detailHeaderType">method</td>
+</tr>
+</table>
+<div class="detailBody">
+<code>public static function addEventListener(type:String, listener:Function, useCapture:Boolean = false, priority:int = 0, useWeakReference:Boolean = false):void</code><p>
+   Registers an event listener object with an EventDispatcher object so that the listener receives notification of an event.
+   <br></br><br></br><b>NOTE:</b> This has the exact same functionality as the flash.events.EventDispatcher function by the same name.
+   
+   </p><span class="label">Parameters</span>
+<table border="0" cellspacing="0" cellpadding="0">
+<tr>
+<td width="20px"></td><td><code><span class="label">type</span>:String</code></td>
+</tr>
+<tr>
+<td class="paramSpacer">&nbsp;</td>
+</tr>
+<tr>
+<td width="20px"></td><td><code><span class="label">listener</span>:Function</code></td>
+</tr>
+<tr>
+<td class="paramSpacer">&nbsp;</td>
+</tr>
+<tr>
+<td width="20px"></td><td><code><span class="label">useCapture</span>:Boolean</code> (default = <code>false</code>)<code></code></td>
+</tr>
+<tr>
+<td class="paramSpacer">&nbsp;</td>
+</tr>
+<tr>
+<td width="20px"></td><td><code><span class="label">priority</span>:int</code> (default = <code>0</code>)<code></code></td>
+</tr>
+<tr>
+<td class="paramSpacer">&nbsp;</td>
+</tr>
+<tr>
+<td width="20px"></td><td><code><span class="label">useWeakReference</span>:Boolean</code> (default = <code>false</code>)<code></code></td>
+</tr>
+</table>
+<p>
+<span class="label">See also</span>
+</p>
+<div class="seeAlso">flash.events.EventDispatcher.addEventListener()</div>
+</div>
+<a name="dispatchEvent()"></a>
+<table cellspacing="0" cellpadding="0" class="detailHeader">
+<tr>
+<td class="detailHeaderName">dispatchEvent</td><td class="detailHeaderParens">()</td><td class="detailHeaderType">method</td><td class="detailHeaderRule">&nbsp;</td>
+</tr>
+</table>
+<div class="detailBody">
+<code>public static function dispatchEvent(event:Event):Boolean</code><p>
+   Dispatches an event into the event flow.
+   <br></br><br></br><b>NOTE:</b> This has the exact same functionality as the flash.events.EventDispatcher function by the same name.
+   
+   </p><span class="label">Parameters</span>
+<table border="0" cellspacing="0" cellpadding="0">
+<tr>
+<td width="20px"></td><td><code><span class="label">event</span>:Event</code></td>
+</tr>
+</table>
+<p></p>
+<span class="label">Returns</span>
+<table border="0" cellspacing="0" cellpadding="0">
+<tr>
+<td width="20"></td><td><code>Boolean</code></td>
+</tr>
+</table>
+<p>
+<span class="label">See also</span>
+</p>
+<div class="seeAlso">flash.events.dispatchEvent()</div>
+</div>
+<a name="getData()"></a>
+<table cellspacing="0" cellpadding="0" class="detailHeader">
+<tr>
+<td class="detailHeaderName">getData</td><td class="detailHeaderParens">()</td><td class="detailHeaderType">method</td><td class="detailHeaderRule">&nbsp;</td>
+</tr>
+</table>
+<div class="detailBody">
+<code>public static function getData(a_key:String):void</code><p>
+   Gets user data specific to this current game.
+   
+   </p><span class="label">Parameters</span>
+<table border="0" cellspacing="0" cellpadding="0">
+<tr>
+<td width="20px"></td><td><code><span class="label">a_key</span>:String</code> &mdash; String name associated with the data to pull.
+   </td>
+</tr>
+</table>
+</div>
+<a name="getGameInfo()"></a>
+<table cellspacing="0" cellpadding="0" class="detailHeader">
+<tr>
+<td class="detailHeaderName">getGameInfo</td><td class="detailHeaderParens">()</td><td class="detailHeaderType">method</td><td class="detailHeaderRule">&nbsp;</td>
+</tr>
+</table>
+<div class="detailBody">
+<code>public static function getGameInfo():void</code><p>
+   Requests the GameInfo Object associated with this game.
+   The GameInfo object is included in this dispatch of ObjectEvent.GAME_INFO_READY_EVT.
+   The 'obj' parameter of this dispatched ObjectEvent is an instance of a GameInfo object.
+   
+   </p><p>
+<span class="label">See also</span>
+</p>
+<div class="seeAlso">
+<a href="data/GameInfo.html" target="">com.bored.services.data.GameInfo</a>
+</div>
+</div>
+<a name="getRootContainer()"></a>
+<table cellspacing="0" cellpadding="0" class="detailHeader">
+<tr>
+<td class="detailHeaderName">getRootContainer</td><td class="detailHeaderParens">()</td><td class="detailHeaderType">method</td><td class="detailHeaderRule">&nbsp;</td>
+</tr>
+</table>
+<div class="detailBody">
+<code>public static function getRootContainer():DisplayObjectContainer</code><p>
+   
+   </p><p></p>
+<span class="label">Returns</span>
+<table border="0" cellspacing="0" cellpadding="0">
+<tr>
+<td width="20"></td><td><code>DisplayObjectContainer</code> &mdash; The container of the services UI.
+   </td>
+</tr>
+</table>
+</div>
+<a name="hasEventListener()"></a>
+<table cellspacing="0" cellpadding="0" class="detailHeader">
+<tr>
+<td class="detailHeaderName">hasEventListener</td><td class="detailHeaderParens">()</td><td class="detailHeaderType">method</td><td class="detailHeaderRule">&nbsp;</td>
+</tr>
+</table>
+<div class="detailBody">
+<code>public function hasEventListener(type:String):Boolean</code><p>
+   Checks whether the EventDispatcher object has any listeners registered for a specific type of event.
+   <br></br><br></br><b>NOTE:</b> This has the exact same functionality as the flash.events.EventDispatcher function by the same name.
+   
+   </p><span class="label">Parameters</span>
+<table border="0" cellspacing="0" cellpadding="0">
+<tr>
+<td width="20px"></td><td><code><span class="label">type</span>:String</code></td>
+</tr>
+</table>
+<p></p>
+<span class="label">Returns</span>
+<table border="0" cellspacing="0" cellpadding="0">
+<tr>
+<td width="20"></td><td><code>Boolean</code></td>
+</tr>
+</table>
+<p>
+<span class="label">See also</span>
+</p>
+<div class="seeAlso">flash.events.hasEventListener()</div>
+</div>
+<a name="hideLoginUI()"></a>
+<table cellspacing="0" cellpadding="0" class="detailHeader">
+<tr>
+<td class="detailHeaderName">hideLoginUI</td><td class="detailHeaderParens">()</td><td class="detailHeaderType">method</td><td class="detailHeaderRule">&nbsp;</td>
+</tr>
+</table>
+<div class="detailBody">
+<code>public static function hideLoginUI():void</code><p>
+   Hide the LoginUI (the login/register and mini-profile UI widget)
+   
+   </p></div>
+<a name="removeEventListener()"></a>
+<table cellspacing="0" cellpadding="0" class="detailHeader">
+<tr>
+<td class="detailHeaderName">removeEventListener</td><td class="detailHeaderParens">()</td><td class="detailHeaderType">method</td><td class="detailHeaderRule">&nbsp;</td>
+</tr>
+</table>
+<div class="detailBody">
+<code>public static function removeEventListener(type:String, listener:Function, useCapture:Boolean = false):void</code><p>
+   Removes a listener from the EventDispatcher object.
+   <br></br><br></br><b>NOTE:</b> This has the exact same functionality as the flash.events.EventDispatcher function by the same name.
+   
+   </p><span class="label">Parameters</span>
+<table border="0" cellspacing="0" cellpadding="0">
+<tr>
+<td width="20px"></td><td><code><span class="label">type</span>:String</code></td>
+</tr>
+<tr>
+<td class="paramSpacer">&nbsp;</td>
+</tr>
+<tr>
+<td width="20px"></td><td><code><span class="label">listener</span>:Function</code></td>
+</tr>
+<tr>
+<td class="paramSpacer">&nbsp;</td>
+</tr>
+<tr>
+<td width="20px"></td><td><code><span class="label">useCapture</span>:Boolean</code> (default = <code>false</code>)<code></code></td>
+</tr>
+</table>
+<p>
+<span class="label">See also</span>
+</p>
+<div class="seeAlso">flash.events.removeEventListener()</div>
+</div>
+<a name="setData()"></a>
+<table cellspacing="0" cellpadding="0" class="detailHeader">
+<tr>
+<td class="detailHeaderName">setData</td><td class="detailHeaderParens">()</td><td class="detailHeaderType">method</td><td class="detailHeaderRule">&nbsp;</td>
+</tr>
+</table>
+<div class="detailBody">
+<code>public static function setData(a_key:String, a_data:*):void</code><p>
+   Saves user data specific to this current game.
+   
+   </p><span class="label">Parameters</span>
+<table border="0" cellspacing="0" cellpadding="0">
+<tr>
+<td width="20px"></td><td><code><span class="label">a_key</span>:String</code> &mdash; String name associated with the a_data.
+   </td>
+</tr>
+<tr>
+<td class="paramSpacer">&nbsp;</td>
+</tr>
+<tr>
+<td width="20px"></td><td><code><span class="label">a_data</span>:*</code> &mdash; Data-object to save associated with a_key.
+   </td>
+</tr>
+</table>
+</div>
+<a name="setRootContainer()"></a>
+<table cellspacing="0" cellpadding="0" class="detailHeader">
+<tr>
+<td class="detailHeaderName">setRootContainer</td><td class="detailHeaderParens">()</td><td class="detailHeaderType">method</td><td class="detailHeaderRule">&nbsp;</td>
+</tr>
+</table>
+<div class="detailBody">
+<code>public static function setRootContainer(a_displayObjCont:DisplayObjectContainer):void</code><p>
+   Set the root DisplayObjectContainer that contains the BoredServices UI.
+   
+   </p><span class="label">Parameters</span>
+<table border="0" cellspacing="0" cellpadding="0">
+<tr>
+<td width="20px"></td><td><code><span class="label">a_displayObjCont</span>:DisplayObjectContainer</code> &mdash; Container for the services UI.
+   </td>
+</tr>
+</table>
+</div>
+<a name="showAchievements()"></a>
+<table cellspacing="0" cellpadding="0" class="detailHeader">
+<tr>
+<td class="detailHeaderName">showAchievements</td><td class="detailHeaderParens">()</td><td class="detailHeaderType">method</td><td class="detailHeaderRule">&nbsp;</td>
+</tr>
+</table>
+<div class="detailBody">
+<code>public static function showAchievements():void</code><p>
+   Show the all Achievements for this game.  If the user is logged-in, the user's current achievements are shown as acquired. If not logged-in,
+   all achievements are shown as not-acquired.
+   
+   </p></div>
+<a name="showLeaderboard()"></a>
+<table cellspacing="0" cellpadding="0" class="detailHeader">
+<tr>
+<td class="detailHeaderName">showLeaderboard</td><td class="detailHeaderParens">()</td><td class="detailHeaderType">method</td><td class="detailHeaderRule">&nbsp;</td>
+</tr>
+</table>
+<div class="detailBody">
+<code>public static function showLeaderboard(a_scoreCode:String = null):void</code><p>
+   Shows the leaderboard for a specific score-code for this game.
+   
+   </p><span class="label">Parameters</span>
+<table border="0" cellspacing="0" cellpadding="0">
+<tr>
+<td width="20px"></td><td><code><span class="label">a_scoreCode</span>:String</code> (default = <code>null</code>)<code></code> &mdash; If given, this is used to pull the leaderboard.  If not logged in, this is necessary in order to 
+          acquire a leaderboard.  This value is acquired from the bored.com CMS. </td>
+</tr>
+</table>
+</div>
+<a name="showLoginUI()"></a>
+<table cellspacing="0" cellpadding="0" class="detailHeader">
+<tr>
+<td class="detailHeaderName">showLoginUI</td><td class="detailHeaderParens">()</td><td class="detailHeaderType">method</td><td class="detailHeaderRule">&nbsp;</td>
+</tr>
+</table>
+<div class="detailBody">
+<code>public static function showLoginUI(a_options:Object = null):void</code><p>
+   Show the LoginUI (the login/register and mini-profile UI widget)
+   
+   </p><span class="label">Parameters</span>
+<table border="0" cellspacing="0" cellpadding="0">
+<tr>
+<td width="20px"></td><td><code><span class="label">a_options</span>:Object</code> (default = <code>null</code>)<code></code> &mdash; Object with the format {x:[Number], y:[Number]}
+         Any and all of the parameters in the object are optional.  They are each described, below:
+          x: [Number] x-position of the mini-UI (login widget)
+          y: [Number] y-position of the mini-UI (login widget)
+         </td>
+</tr>
+</table>
+</div>
+<a name="showMainLoginUI()"></a>
+<table cellspacing="0" cellpadding="0" class="detailHeader">
+<tr>
+<td class="detailHeaderName">showMainLoginUI</td><td class="detailHeaderParens">()</td><td class="detailHeaderType">method</td><td class="detailHeaderRule">&nbsp;</td>
+</tr>
+</table>
+<div class="detailBody">
+<code>public static function showMainLoginUI():void</code><p>
+   Show the Main Login UI.  This is the larger UI widget that shows the login/register buttons.
+   
+   </p></div>
+<a name="submitAchievementAcquired()"></a>
+<table cellspacing="0" cellpadding="0" class="detailHeader">
+<tr>
+<td class="detailHeaderName">submitAchievementAcquired</td><td class="detailHeaderParens">()</td><td class="detailHeaderType">method</td><td class="detailHeaderRule">&nbsp;</td>
+</tr>
+</table>
+<div class="detailBody">
+<code>public static function submitAchievementAcquired(a_achievementScoreCode:String = null, a_showNewAchievementsPopup:Boolean = false):void</code><p>
+   Submit that an achievement was acquired.  This call is only valid for ScoreDefinitions of type 'high' (high to low) or 'flag' (Boolean) with a target of '1'.
+   
+   </p><span class="label">Parameters</span>
+<table border="0" cellspacing="0" cellpadding="0">
+<tr>
+<td width="20px"></td><td><code><span class="label">a_achievementScoreCode</span>:String</code> (default = <code>null</code>)<code></code> &mdash;  The ScoreDefinition code for this achievement.  Received from the bored.com CMS. </td>
+</tr>
+<tr>
+<td class="paramSpacer">&nbsp;</td>
+</tr>
+<tr>
+<td width="20px"></td><td><code><span class="label">a_showNewAchievementsPopup</span>:Boolean</code> (default = <code>false</code>)<code></code> &mdash; If any new achievements were granted due to this submission, automatically show 
+             the new-achievements-acquired BoredServicesUI popup. </td>
+</tr>
+</table>
+</div>
+<a name="submitScore()"></a>
+<table cellspacing="0" cellpadding="0" class="detailHeader">
+<tr>
+<td class="detailHeaderName">submitScore</td><td class="detailHeaderParens">()</td><td class="detailHeaderType">method</td><td class="detailHeaderRule">&nbsp;</td>
+</tr>
+</table>
+<div class="detailBody">
+<code>public static function submitScore(a_score:*, a_showLeaderboardOnComplete:Boolean = true, a_scoreCode:String = null, a_showNewAchievementsPopup:Boolean = false):void</code><p>
+   Submit a score for a specific score-code. This can be used to submit achievement scores, as well as leaderboard-scores.
+   Upon score-submission completion, the ObjectEvent.SCORE_SUBMISSION_COMPLETE_EVT ObjectEvent is fired from here, whose 'obj' 
+   attribute contains an Array of the awarded achievements associated with this submitted score.
+   <br></br><br></br><b>NOTE:</b> The user must be logged-in in order to submit scores.
+   
+   </p><span class="label">Parameters</span>
+<table border="0" cellspacing="0" cellpadding="0">
+<tr>
+<td width="20px"></td><td><code><span class="label">a_score</span>:*</code> &mdash;      The score to submit.
+   </td>
+</tr>
+<tr>
+<td class="paramSpacer">&nbsp;</td>
+</tr>
+<tr>
+<td width="20px"></td><td><code><span class="label">a_showLeaderboardOnComplete</span>:Boolean</code> (default = <code>true</code>)<code></code> &mdash; Upon score completion, display the BoredServicesUI leaderboard. </td>
+</tr>
+<tr>
+<td class="paramSpacer">&nbsp;</td>
+</tr>
+<tr>
+<td width="20px"></td><td><code><span class="label">a_scoreCode</span>:String</code> (default = <code>null</code>)<code></code> &mdash;     The score-code (for this game) to submit the score to. </td>
+</tr>
+<tr>
+<td class="paramSpacer">&nbsp;</td>
+</tr>
+<tr>
+<td width="20px"></td><td><code><span class="label">a_showNewAchievementsPopup</span>:Boolean</code> (default = <code>false</code>)<code></code> &mdash;  If there are any achievements acquired due to this score submission,
+              display the BoredServicesUI achievement-acquired popup. </td>
+</tr>
+</table>
+<p>
+<span class="label">See also</span>
+</p>
+<div class="seeAlso">showNewAchievementsOnScoreSubmission()</div>
+</div>
+<a name="willTrigger()"></a>
+<table cellspacing="0" cellpadding="0" class="detailHeader">
+<tr>
+<td class="detailHeaderName">willTrigger</td><td class="detailHeaderParens">()</td><td class="detailHeaderType">method</td><td class="detailHeaderRule">&nbsp;</td>
+</tr>
+</table>
+<div class="detailBody">
+<code>public function willTrigger(type:String):Boolean</code><p>
+   Checks whether an event listener is registered with this EventDispatcher object or any of its ancestors for the specified event type.
+   <br></br><br></br><b>NOTE:</b> This has the exact same functionality as the flash.events.EventDispatcher function by the same name.
+   
+   </p><span class="label">Parameters</span>
+<table border="0" cellspacing="0" cellpadding="0">
+<tr>
+<td width="20px"></td><td><code><span class="label">type</span>:String</code></td>
+</tr>
+</table>
+<p></p>
+<span class="label">Returns</span>
+<table border="0" cellspacing="0" cellpadding="0">
+<tr>
+<td width="20"></td><td><code>Boolean</code></td>
+</tr>
+</table>
+<p>
+<span class="label">See also</span>
+</p>
+<div class="seeAlso">flash.events.willTrigger()</div>
+</div>
+<div class="detailSectionHeader">Event detail</div>
+<a name="event:GameInfoReadyEvent"></a>
+<table cellspacing="0" cellpadding="0" class="detailHeader">
+<tr>
+<td class="detailHeaderName">GameInfoReadyEvent</td><td class="detailHeaderType">event&nbsp;</td>
+</tr>
+</table>
+<div class="detailBody">
+<span class="label">Event object type: </span><a href="events/ObjectEvent.html"><code>com.bored.services.events.ObjectEvent</code></a>
+<br>
+<span class="label">ObjectEvent.type property = </span><a href="events/ObjectEvent.html#GAME_INFO_READY_EVT"><code>com.bored.services.events.ObjectEvent.GAME_INFO_READY_EVT</code></a>
+<br><p>
+  Dispatched when GameInfo is available.
+  </p><p>
+   </p></div>
+<a name="event:LoggedInEvent"></a>
+<table cellspacing="0" cellpadding="0" class="detailHeader">
+<tr>
+<td class="detailHeaderName">LoggedInEvent</td><td class="detailHeaderType">event&nbsp;</td><td class="detailHeaderRule">&nbsp;</td>
+</tr>
+</table>
+<div class="detailBody">
+<span class="label">Event object type: </span><a href="events/ObjectEvent.html"><code>com.bored.services.events.ObjectEvent</code></a>
+<br>
+<span class="label">ObjectEvent.type property = </span><a href="events/ObjectEvent.html#LOGGED_IN_EVENT"><code>com.bored.services.events.ObjectEvent.LOGGED_IN_EVENT</code></a>
+<br><p>
+  Dispatched when the user is logged-in.
+  </p></div>
+<a name="event:NotLoggedInErrorEvent"></a>
+<table cellspacing="0" cellpadding="0" class="detailHeader">
+<tr>
+<td class="detailHeaderName">NotLoggedInErrorEvent</td><td class="detailHeaderType">event&nbsp;</td><td class="detailHeaderRule">&nbsp;</td>
+</tr>
+</table>
+<div class="detailBody">
+<span class="label">Event object type: </span><a href="events/ObjectEvent.html"><code>com.bored.services.events.ObjectEvent</code></a>
+<br>
+<span class="label">ObjectEvent.type property = </span><a href="events/ObjectEvent.html#NOT_LOGGED_IN_ERROR_EVT"><code>com.bored.services.events.ObjectEvent.NOT_LOGGED_IN_ERROR_EVT</code></a>
+<br><p>
+  Dispatched when an attempt to do something that requires login was attempted. 
+  The 'obj' property of this event is filled with the name of the failed request ('submitScore', 'getGameInfo', 'showAchievements', or 'showLeaderboard')
+  </p><p>
+   </p></div>
+<a name="event:SavedDataReceivedEvent"></a>
+<table cellspacing="0" cellpadding="0" class="detailHeader">
+<tr>
+<td class="detailHeaderName">SavedDataReceivedEvent</td><td class="detailHeaderType">event&nbsp;</td><td class="detailHeaderRule">&nbsp;</td>
+</tr>
+</table>
+<div class="detailBody">
+<span class="label">Event object type: </span><a href="events/DataReceivedEvent.html"><code>com.bored.services.events.DataReceivedEvent</code></a>
+<br>
+<span class="label">DataReceivedEvent.type property = </span><a href="events/DataReceivedEvent.html#SAVED_DATA_RECEIVED_EVT"><code>com.bored.services.events.DataReceivedEvent.SAVED_DATA_RECEIVED_EVT</code></a>
+<br><p>
+  Dispatched when data at a requested key is received.
+  </p><p>
+   </p></div>
+<a name="event:ScoreSubmissionCompleteEvent"></a>
+<table cellspacing="0" cellpadding="0" class="detailHeader">
+<tr>
+<td class="detailHeaderName">ScoreSubmissionCompleteEvent</td><td class="detailHeaderType">event&nbsp;</td><td class="detailHeaderRule">&nbsp;</td>
+</tr>
+</table>
+<div class="detailBody">
+<span class="label">Event object type: </span><a href="events/ObjectEvent.html"><code>com.bored.services.events.ObjectEvent</code></a>
+<br>
+<span class="label">ObjectEvent.type property = </span><a href="events/ObjectEvent.html#SCORE_SUBMISSION_COMPLETE_EVT"><code>com.bored.services.events.ObjectEvent.SCORE_SUBMISSION_COMPLETE_EVT</code></a>
+<br><p>
+  Dispatched when a score-submission is complete. It's 'obj' parameter contains an Array of newly-awarded Achievements (if any were awarded).
+  </p><p>
+   </p><p>
+<span class="label">See also</span>
+</p>
+<div class="seeAlso">
+<a href="data/Achievement.html" target="">com.bored.services.data.Achievement</a>
+</div>
+</div>
+<br>
+<br>
+<hr>
+<br>
+<p></p>
+<center class="copyright">DartsApp</center>
+</div>
+</body>
+</html>
+<!--DartsApp-->
