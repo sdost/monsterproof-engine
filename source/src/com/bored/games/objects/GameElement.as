@@ -9,7 +9,7 @@
 	 * ...
 	 * @author sam
 	 */
-	public class GameElement
+	public class GameElement extends MovieClip
 	{	
 		protected var _actions:Vector.<Action>;
 		protected var _actionsQueued:Vector.<Action>;
