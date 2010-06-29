@@ -65,7 +65,19 @@
 					action.finished = true;
 				}
 			}
-		}
+		}//end deactivateAction()
+		
+		public function removeAction(a_name:String):void
+		{
+			for each ( var action:Action in _actions )
+			{
+				if ( action.actionName == a_name)
+				{
+					var ind:uint = _actions.indexOf(action);
+					_actions.splice(ind, 1);
+				}
+			}
+		}//end removeAction()
 		
 		public function update(t:Number = 0):void
 		{
