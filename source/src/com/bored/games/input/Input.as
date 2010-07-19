@@ -17,8 +17,11 @@
 package com.bored.games.input
 {	
 	
+	import com.tadSrc.tadClasses.DOMExEvent;
+	import com.tadSrc.tadClasses.DOMExEventDispatcher;
 	import flash.display.*;
 	import flash.events.*;
+	import flash.external.ExternalInterface;
 	
 	
 	public class Input{
@@ -64,8 +67,15 @@ package com.bored.games.input
 			
 			mouse.graphics.lineStyle(0.1, 0, 100);
 			mouse.graphics.moveTo(0,0);
-			mouse.graphics.lineTo(0,0.1);
+			mouse.graphics.lineTo(0, 0.1);
 			
+			externalInterfaceAvailable = ExternalInterface.available;
+			
+			if (externalInterfaceAvailable)
+			{
+				domexMouseMoveEvent = new DOMExEventDispatcher("document.onmousemove", ["clientX", "clientY"], 1100);
+				domexMouseMoveEvent.addEventListener(DOMExEvent.DOMEX_EVENT, mouseMove);
+			}
 		}
 		
 		
@@ -146,10 +156,10 @@ package com.bored.games.input
 		//======================
 		// mouseMove listener
 		//======================
-		public function mouseMove(e:MouseEvent):void{
+		public function mouseMove(e:* = null):void{
 			
 			// Fix mouse release not being registered from mouse going off stage
-			if (mouseDown != e.buttonDown){
+			if ((e as MouseEvent != null) && mouseDown != e.buttonDown){
 				mouseDown = e.buttonDown;
 				mouseReleased = !e.buttonDown;
 				mousePressed = e.buttonDown;
@@ -157,8 +167,11 @@ package com.bored.games.input
 				mouseDragY = 0;
 			}
 			
-			mouseX = e.stageX - m_stageMc.x;
-			mouseY = e.stageY - m_stageMc.y;
+			var m_x:Number = (e as MouseEvent != null) ? e.stageX : (e.eventPropertiesArray[0]);
+			var m_y:Number = (e as MouseEvent != null) ? e.stageY : (e.eventPropertiesArray[1]);
+			
+			mouseX = m_x - m_stageMc.x;
+			mouseY = m_y - m_stageMc.y;
 			// Store offset
 			mouseOffsetX = mouseX - mouse.x;
 			mouseOffsetY = mouseY - mouse.y;
@@ -375,6 +388,11 @@ package com.bored.games.input
 		static public var mouseDragX:Number = 0;
 		static public var mouseDragY:Number = 0;
 		static public var mouse:Sprite = new Sprite();
+		
+		// external interface states
+		static public var externalInterfaceAvailable:Boolean;
+		
+		static private var domexMouseMoveEvent:DOMExEventDispatcher;
 		
 		// stage
 		static public var m_stageMc:Sprite;
