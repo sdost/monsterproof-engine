@@ -19,6 +19,7 @@ package com.sven.text
 			var tf:TextFormat = new TextFormat(a_font.fontName, 18, 0xFFFFFF);
 			var t:TextField = new TextField();
 			t.autoSize = TextFieldAutoSize.LEFT;
+			t.embedFonts = true;
 			
 			var bmf:BitmapFont = new BitmapFont();
 			
