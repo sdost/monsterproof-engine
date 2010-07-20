@@ -17,6 +17,7 @@
 package com.bored.games.input
 {	
 	
+	import com.tadSrc.tadClasses.DOMEx;
 	import com.tadSrc.tadClasses.DOMExEvent;
 	import com.tadSrc.tadClasses.DOMExEventDispatcher;
 	import flash.display.*;
@@ -66,7 +67,7 @@ package com.bored.games.input
 			stageMc.stage.addEventListener(Event.MOUSE_LEAVE, mouseLeave, false, 0, true);
 			
 			mouse.graphics.lineStyle(0.1, 0, 100);
-			mouse.graphics.moveTo(0,0);
+			mouse.graphics.moveTo(0, 0);
 			mouse.graphics.lineTo(0, 0.1);
 			
 			externalInterfaceAvailable = ExternalInterface.available;
@@ -167,8 +168,13 @@ package com.bored.games.input
 				mouseDragY = 0;
 			}
 			
-			var m_x:Number = (e as MouseEvent != null) ? e.stageX : (e.eventPropertiesArray[0]);
-			var m_y:Number = (e as MouseEvent != null) ? e.stageY : (e.eventPropertiesArray[1]);
+			if ( ExternalInterface.available )
+			{
+				var obj:Object = ExternalInterface.call("function(){var xOffset = document.getElementById('flashParent').offsetLeft;var yOffset = document.getElementById('flashParent').offsetTop; return { x: xOffset, y: yOffset };}");
+			}
+			
+			var m_x:Number = (e as MouseEvent != null) ? e.stageX : (e.eventPropertiesArray[0] - obj.x);
+			var m_y:Number = (e as MouseEvent != null) ? e.stageY : (e.eventPropertiesArray[1] - obj.y);
 			
 			mouseX = m_x - m_stageMc.x;
 			mouseY = m_y - m_stageMc.y;
