@@ -1,14 +1,14 @@
 ﻿package com.sven.containers 
 {
+	import flash.display.MovieClip;
 	import flash.display.Shape;
-	import flash.display.Sprite;
 	import flash.events.Event;
 	
 	/**
 	 * ...
 	 * @author sam
 	 */
-	public class Panel extends Sprite
+	public class Panel extends MovieClip
 	{
 		public function Panel() 
 		{
