@@ -12,11 +12,11 @@ package com.sven.text
 	 */
 	public class GameWord extends GameElement
 	{
-		private var _chars:Vector.<GameChar>;
-		private var _font:BitmapFont;
+		protected var _chars:Vector.<GameChar>;
+		protected var _font:BitmapFont;
 		
-		private var _wordWidth:Number;
-		private var _wordHeight:Number;
+		protected var _wordWidth:Number;
+		protected var _wordHeight:Number;
 		
 		public function GameWord(a_str:String, a_font:BitmapFont) 
 		{
