@@ -10,9 +10,6 @@
 	import flash.utils.Proxy;
     import flash.utils.flash_proxy;
 	import flash.utils.getDefinitionByName;
-	
-	import mx.events.PropertyChangeEvent;
-    import mx.events.PropertyChangeEventKind;
 		
 	use namespace flash_proxy;
 	
@@ -173,8 +170,6 @@
 			try {
 				var oldValue:* = _settings[name];
 				_settings[name] = value;
-				var kind:String = PropertyChangeEventKind.UPDATE;
-				dispatchEvent(new PropertyChangeEvent(PropertyChangeEvent.PROPERTY_CHANGE, false, false, kind, name, oldValue, value, this));
 			} catch ( e:Error ) {
 				trace("setProperty(" +name+", "+value+") failed.");
 			}
