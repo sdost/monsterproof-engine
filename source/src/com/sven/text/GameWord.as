@@ -18,9 +18,13 @@ package com.sven.text
 		protected var _wordWidth:Number;
 		protected var _wordHeight:Number;
 		
+		private var _centered:Boolean;
+		
 		public function GameWord(a_str:String, a_font:BitmapFont) 
 		{
 			super();
+			
+			_centered = false;
 			
 			this.width = 0;
 			this.height = 0;
@@ -68,6 +72,16 @@ package com.sven.text
 			}
 		}//end set text()
 		
+		public function set centered(a_centered:Boolean):void
+		{
+			_centered = a_centered;
+		}//end set centered()
+		
+		public function get centered():Boolean
+		{
+			return _centered;
+		}//end get centered()
+		
 		override public function update(t:Number = 0):void 
 		{
 			super.update(t);
@@ -78,7 +92,7 @@ package com.sven.text
 			}
 		}//end update()
 		
-		public function draw(a_bmd:BitmapData, a_color:uint, a_scale:Number = 1.0):void
+		public function draw(a_bmd:BitmapData, a_color:uint = 0xFFFFFF, a_scale:Number = 1.0, a_alpha:Number = 1.0):void
 		{
 			var glyph:BitmapData;
 			
@@ -86,12 +100,13 @@ package com.sven.text
 			
 			for ( var i:uint = 0; i < _chars.length; i++ )
 			{				
-				glyph = _font.retrieveGlyph(_chars[i].charCode);
+				glyph = _font.retrieveGlyph(_chars[i].charCode);				
 				bmd.copyPixels(glyph, glyph.rect, new Point(_chars[i].x, _chars[i].y), null, null, true);
 			}
 			
 			var colTrans:ColorTransform = new ColorTransform();
 			colTrans.color = a_color;
+			colTrans.alphaMultiplier = a_alpha;
 			
 			bmd.colorTransform(bmd.rect, colTrans);
 			
@@ -102,7 +117,14 @@ package com.sven.text
 			scaleMatrix.scale(a_scale, a_scale);
 			scaledBitmapData.draw(bmd, scaleMatrix);
 			
-			a_bmd.copyPixels(scaledBitmapData, scaledBitmapData.rect, new Point(x, y), null, null, true);
+			var p:Point = new Point(x, y);
+			if (_centered)
+			{
+				p.x -= newWidth / 2;
+				p.y -= newHeight / 2;
+			}
+			
+			a_bmd.copyPixels(scaledBitmapData, scaledBitmapData.rect, p, null, null, true);
 			
 			bmd.dispose();
 			bmd = null;
