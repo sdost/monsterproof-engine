@@ -1,0 +1,198 @@
+﻿<project name="Flare" default="build" basedir=".">
+
+	<!-- set global properties for this build -->
+	<property file="user.properties" />
+	<property file="build.properties" />
+	<property name="FLEX_HOME" location="${flex.home}"/>
+
+	<!-- <import file="${fge.ant.include}/bootstrap.xml"/> -->
+	
+	<target name="config">		
+		<condition property="flex.config.debug" value="true" else="false">
+			<equals arg1="${mode}" arg2="Debug" casesensitive="false"/>
+		</condition>	
+		<union id="srcresources">
+				<fileset dir="${src}" includes="**/*.as"/>
+		</union>
+		<!-- <flex-config/> -->
+	</target>
+	
+	<target name="config.game.swc"  depends="config">
+		<uptodate property="game.swc.uptodate">
+			<srcresources refid="srcresources"/>
+			<mapper type="merge" to="${dist}/${mode}/rsl/Game.swc/library.swf"/>
+		</uptodate>		
+	</target>
+	
+	<target name="config.main.swf" depends="config">
+		<uptodate property="main.swf.uptodate">
+			<srcresources refid="srcresources"/>
+			<mapper type="merge" to="${dist}/${mode}/Main.swf"/>
+		</uptodate>		
+	</target>
+	
+	<target name="config.preloader.swf" depends="config">
+		<uptodate property="preloader.swf.uptodate">
+			<srcresources refid="srcresources"/>
+			<mapper type="merge" to="${dist}/${mode}/Preloader.swf"/>
+		</uptodate>		
+	</target>
+	
+	<target name="dist-template" description="Copy Dist Template">
+		<copy todir="${dist}/${mode}">
+			<fileset dir="${dist-template}"/>
+		</copy>
+	</target>
+
+	<target name="debug" description="Debug in Flash IDE" depends="compile,content">
+		<debug 	movie="${dist}/${mode}/Main.swf"
+				stage.width="${program.stage.width}"
+				stage.height="${program.stage.height}"
+				frame-rate="${program.framerate}"
+				bgcolor="${program.stage.bgcolor}"
+				use-network="${flex.config.use-network}"
+				target-player="${flex.config.target-player.major}" />
+	</target>
+
+	<target name="test" description="Test Movie" depends="compile,content">
+		<test movie="${dist}/${mode}/Main.swf"/>
+	</target>
+
+	<target name="package" description="Package as ZIP" depends="build,dist-template">
+		<tstamp>
+			<format property="build.timestamp" pattern="yyyy-MM-dd"/>
+		</tstamp>
+		<mkdir dir="${obj}"/>
+		<buildnumber file="${obj}/build.number" />
+		<zip destfile="${dist}/${mode}/${ant.project.name}-${mode}-${build.timestamp}-${build.number}.zip" basedir="${dist}/${mode}"/>
+	</target>
+
+	<target name="compile.game.swc" description = "Compile Game.swc" depends="config.game.swc" unless="${game.swc.uptodate}">
+		<!--
+		<compRsl 	name="Game.swc"
+					libs="${game.swc.libs}"
+					fge.libs="${game.swc.libs.fge}"
+					sources="${game.swc.sources}"/>
+		-->
+	</target>
+
+	<target name="compile.main.swf" description="Compile Main.swf" depends="embedded,config.main.swf" unless="${main.swf.uptodate}">
+		<!--<compApp 	name="Main.swf"
+					filespec="${src}/${program.filespec}"
+					libs="${program.libs}"
+					fge.libs="${program.libs.fge}"
+					stage.width="${program.stage.width}"
+					stage.height="${program.stage.height}"
+					frame-rate="${program.framerate}"
+					bgcolor="${program.stage.bgcolor}"
+					max-execution-time="${program.max-execution-time}"
+					max-recursion-depth="${program.max-recursion-depth}"/>-->
+	</target>
+	
+	<target name="compile.preloader.swf" description="Compile Preloader.swf" depends="embedded,config.preloader.swf" unless="${preloader.swf.uptodate}">
+		<!--<compApp 	name="Preloader.swf"
+					filespec="${src}/${preloader.filespec}"
+					libs="${program.libs}"
+					fge.libs="${program.libs.fge}"
+					stage.width="${program.stage.width}"
+					stage.height="${program.stage.height}"
+					frame-rate="${program.framerate}"
+					bgcolor="${program.stage.bgcolor}"
+					max-execution-time="${program.max-execution-time}"
+					max-recursion-depth="${program.max-recursion-depth}"/>-->
+	</target>
+	
+	<target name="compile" depends="compile.game.swc,compile.main.swf,compile.preloader.swf" description="Compile Code"/>
+	
+	<target name="config.content">
+		<uptodate property="content.uptodate">
+			<srcfiles dir="${content}" excludes="embedded/**" includes="**/*.fla,**/*.xml,**/*.txt,**/*.mp3,**/*.png,**/*.jpg,**/*.m4a,**/*.f4v,**/*.flv" />
+			<firstmatchmapper>
+				<globmapper from="*.txt" to="${dist}/${mode}/content/*.txt"/>
+				<globmapper from="*.fla" to="${dist}/${mode}/content/*.swf"/>
+				<!--Any OXML that you don't want to encode, you need to specify here if you 
+				want uptodate to track it properly.  Otherwise you can just rename it .xml and take the .o part off
+				<globmapper from="sample_object_2.o.xml" to="${dist}/${mode}/content/sample_object_2.o.xml"/>
+				-->
+				<globmapper from="*.o.xml" to="${dist}/${mode}/content/*.fcz"/>
+				<globmapper from="*.xml" to="${dist}/${mode}/content/*.xml"/>
+				<globmapper from="*.mp3" to="${dist}/${mode}/content/*.mp3"/>
+				<globmapper from="*.m4a" to="${dist}/${mode}/content/*.m4a"/>
+				<globmapper from="*.png" to="${dist}/${mode}/content/*.png"/>
+				<globmapper from="*.jpg" to="${dist}/${mode}/content/*.jpg"/>
+				<globmapper from="*.f4v" to="${dist}/${mode}/content/*.f4v"/>
+				<globmapper from="*.flv" to="${dist}/${mode}/content/*.flv"/>
+			</firstmatchmapper>
+		</uptodate>
+	</target>
+
+	<target name="content" description="Publish Content" depends="compile.game.swc, config, config.content" unless="${content.uptodate}">
+		<delete dir="${obj}/${mode}/content"/>
+		<mkdir dir="${obj}/${mode}/content"/>
+		<mkdir dir="${dist}/${mode}/content"/>
+		<!--Publish FLAs-->
+		<!--<publishFlas
+				indir="${content}"
+				objdir="${obj}/${mode}/content"
+				outdir="${dist}/${mode}/content"
+				includes="${fla.content.include}"
+				excludes="${fla.content.exclude}"
+				target-player="${flex.config.target-player.major}"
+				use-network="${flex.config.use-network}"
+				sound.event.format="${fla.sound.event.format}"
+				sound.event.compress="${fla.sound.event.compress}"
+				sound.stream.format="${fla.sound.stream.format}"
+				sound.stream.compress="${fla.sound.stream.compress}"
+				libs="${fla.libs}"
+				external-libs="${fla.external-libs}" />-->
+		<!--Compile object xml-->
+		<oxmlc indir="${content}" outdir="${dist}/${mode}/content"  compress="1" includes="${content.compile.include}"/>
+		<!--Copy MP3s, XML, text, and images to dist-->
+		<copy todir="${dist}/${mode}/content">
+			<fileset dir="${content}" includes="${content.copy.include}" excludes="${content.copy.exclude}"/>
+		</copy>
+	</target>
+	
+	<target name="config.vfs">
+		<!--<uptodate property="vfs.uptodate">
+			<srcresources>
+				<fileset dir="${dist}/${mode}" excludes="VFS.fcz"/>
+			</srcresources>
+			<mapper type="merge" to="${dist}/${mode}/VFS.fcz"/>
+		</uptodate>		-->
+	</target>
+	
+	<target name="vfs" description="Update VFS" depends="content,config.vfs" unless="vfs.uptodate">
+		<!--<vfsc 	indir="${dist}/${mode}" 
+				outfile="${dist}/${mode}/VFS.fcz"
+				logfile="${obj}/${mode}/vfsc.log"
+				typemanifest="${config}/filetypes.xml"/>-->
+	</target>
+
+	<target name="clean" description="Clean Dist and Obj">
+		<delete dir="${obj}/${mode}"/>
+		<delete dir="${dist}/${mode}"/>
+	</target>
+
+	<target name="clean.content" description="Clean Content">
+		<delete dir="${dist}/${mode}/content"/>
+	</target>
+	
+	<target name="embedded" description="Publish FLAs for Embedding">
+		<mkdir dir="${obj}/${mode}/content"/>
+		<!--<publishFlas
+			target-player="${flex.config.target-player.major}"
+			use-network="${flex.config.use-network}"
+			sound.event.format="${fla.sound.event.format}"
+			sound.event.compress="${fla.sound.event.compress}"
+			sound.stream.format="${fla.sound.stream.format}"
+			sound.stream.compress="${fla.sound.stream.compress}" 
+			includes="${fla.embedded.include}"
+			excludes="${fla.embedded.exclude}"
+			indir="${content}"
+			objdir="${obj}/${mode}/content"
+			outdir="${content}"/>-->  
+	</target>
+
+	<target name="build" depends="compile,vfs" description="Compile and Publish Content"/>
+</project>

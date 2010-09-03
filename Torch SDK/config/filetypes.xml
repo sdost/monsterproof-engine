@@ -1,0 +1,42 @@
+<?xml version="1.0"?>
+<data>
+	<types>
+		<entry expression="content/*.sound.swf">
+			<loader type="com.filament.fge.content.loaders::SoundBankLoader"/>
+		</entry>
+		<entry expression="content/shared/*.swf">
+			<loader type="com.filament.fge.content.loaders::DisplayObjectLoader">
+				<appDomain>current</appDomain>
+			</loader>
+		</entry>
+		<entry expression="content/*.{swf,png,jpg}">
+			<loader type="com.filament.fge.content.loaders::DisplayObjectLoader"/>
+		</entry>
+		<entry expression="content/*.fcz">
+			<loader type="com.filament.fge.content.loaders::AMFLoader">
+				<compressed>true</compressed>
+			</loader>
+		</entry>
+		<entry expression="content/*.mp3">
+			<loader type="com.filament.fge.content.loaders::SoundLoader"/>
+		</entry>
+		<entry expression="content/*.m4a">
+			<loader type="com.filament.fge.content.loaders::SoundLoader">
+				<format>other</format>
+			</loader>
+		</entry>
+		<entry expression="content/*.xml">
+			<loader type="com.filament.fge.content.loaders::XMLLoader"/>
+		</entry>
+		<entry expression="rsl/*.swf">
+			<loader type="com.filament.fge.content.loaders::DisplayObjectLoader">
+				<appDomain>current</appDomain>
+			</loader>
+		</entry>
+		<entry expression="rsl/*.fcz">
+			<loader type="com.filament.fge.content.loaders::AMFLoader">
+				<compressed>true</compressed>
+			</loader>
+		</entry>
+	</types>
+</data>

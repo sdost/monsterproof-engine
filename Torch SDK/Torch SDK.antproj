@@ -1,0 +1,37 @@
+<AntProject>
+	<BuildFile>config/build.xml</BuildFile>
+	<BuildTarget>build</BuildTarget>
+	<TestTarget>test</TestTarget>
+	<Targets>
+		<Target Name="config">
+		  <Hidden>true</Hidden>
+		</Target>
+		<Target Name="config.content">
+		  <Hidden>true</Hidden>
+		</Target>
+		<Target Name="config.main.swf">
+		  <Hidden>true</Hidden>
+		</Target>
+		<Target Name="config.game.swc">
+		  <Hidden>true</Hidden>
+		</Target>
+		<Target Name="compile.game.swc">
+		  <Hidden>true</Hidden>
+		</Target>
+		<Target Name="compile.main.swf">
+		  <Hidden>true</Hidden>
+		</Target>
+		<Target Name="embedded">
+		  <Hidden>true</Hidden>
+		</Target>
+		<Target Name="config.vfs">
+		  <Hidden>true</Hidden>
+		</Target>
+		<Target Name="vfs">
+		  <Hidden>true</Hidden>
+		</Target>
+		<Target Name="content">
+		  <!--Shortcut>Control Alt C</Shortcut-->
+		</Target>
+	</Targets>
+</AntProject>
