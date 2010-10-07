@@ -17,9 +17,9 @@
 package com.bored.games.input
 {	
 	
-	import com.tadSrc.tadClasses.DOMEx;
-	import com.tadSrc.tadClasses.DOMExEvent;
-	import com.tadSrc.tadClasses.DOMExEventDispatcher;
+	import com.tadSrc.tadsClasses.DOMEx;
+	import com.tadSrc.tadsClasses.DOMExEvent;
+	import com.tadSrc.tadsClasses.DOMExEventDispatcher;
 	import flash.display.*;
 	import flash.events.*;
 	import flash.external.ExternalInterface;

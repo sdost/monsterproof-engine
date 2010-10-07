@@ -1,5 +1,6 @@
 ﻿package com.bored.services 
 {
+	import com.bored.services.client.GameClient;
 	import com.bored.services.data.Achievement;
 	import com.bored.services.data.GameInfo;
 	import com.bored.services.events.DataReceivedEvent;
@@ -106,6 +107,20 @@
 			}
 			
 		}//end set servicesObj()
+		
+		private static function sendMultiplayerStart(a_evt:Event):void
+		{
+			trace("BoredServices::sendMultiplayerStart() --> " + _servicesObj.gameClient);
+			
+			dispatchEvent(new ObjectEvent(ObjectEvent.MULTPLAYER_GAME_START_EVT, _servicesObj.gameClient));
+		}//end sendMultiplayerStart()
+		
+		private static function sendMultiplayerFail(a_evt:Event):void
+		{
+			trace("BoredServices::sendMultiplayerFail() --> " + _servicesObj.gameClient);
+			
+			dispatchEvent(new ObjectEvent(ObjectEvent.MULTPLAYER_GAME_FAIL_EVT, _servicesObj.gameClient));
+		}//end sendMultiplayerStart()
 		
 		/**
 		 * Set the root DisplayObjectContainer that contains the BoredServices UI.
@@ -238,6 +253,30 @@
 			
 		}//end onGetDataComplete()
 		
+		public static function getUserInfo(a_id:String):void
+		{
+			if (_servicesObj)
+			{
+				_servicesObj.addEventListener(DataReceivedEvent.SAVED_DATA_RECEIVED_EVT, onGetDataComplete, false, 0, true);
+				_servicesObj.getData(a_key);
+			}
+			
+		}//end getData()
+		
+		/**
+		 * @private
+		 * @param	objEvt:	[ObjectEvent] This event contains an attribute 'obj' of the received user game-data.
+		 */
+		private static function onGetUserInfoComplete(objEvt:*):void
+		{
+			var recdObj:Object = objEvt.obj;
+			var keyRequest:String = recdObj ? recdObj.key : null;
+			var dataAcquired:* = recdObj ? recdObj.data : null;
+			
+			BoredServices.dispatchEvent(new DataReceivedEvent(DataReceivedEvent.SAVED_DATA_RECEIVED_EVT, keyRequest, dataAcquired));
+			
+		}//end onGetDataComplete()
+		
 		/**
 		 * Show the all Achievements for this game.  If the user is logged-in, the user's current achievements are shown as acquired. If not logged-in,
 		 * all achievements are shown as not-acquired.
@@ -272,6 +311,32 @@
 			}
 			
 		}//end showLeaderboard()
+		
+		public static function loginChat(a_un:String = null, a_pass:String = null, a_tok:String = null):void
+		{
+			if ( _servicesObj )
+			{
+				if ( a_un == null ) a_un = "";
+				if ( a_pass == null ) a_pass = "";
+				if ( a_tok == null ) a_tok = "";
+				
+				_servicesObj.loginGS(a_un, a_pass, a_tok);
+			}
+		}//end loginChat()
+		
+		public static function showGameLobby(a_gameID:int):void
+		{
+			if ( _servicesObj )
+			{
+				_servicesObj.addEventListener("m_p", sendMultiplayerStart, false, 0, true);
+				_servicesObj.addEventListener("d", sendMultiplayerFail, false, 0, true);
+				_servicesObj.addEventListener("err", sendMultiplayerFail, false, 0, true);
+				
+				_servicesObj.multiplayerGameID = a_gameID;
+				
+				_servicesObj.showLobby();
+			}
+		}//end loginChat()
 		
 		/**
 		 * Submit that an achievement was acquired.  This call is only valid for ScoreDefinitions of type 'high' (high to low) or 'flag' (Boolean) with a target of '1'.
@@ -423,6 +488,32 @@
 		}//end isLoggedIn()
 		
 		/**
+		 * Show the Chat UI.
+		 * 
+		 */
+		public static function showChatUI():void
+		{
+			if (_servicesObj)
+			{
+				_servicesObj.enableChatUI();
+			}
+			
+		}//end showMainLoginUI()
+		
+		/**
+		 * Hide the Chat UI
+		 * 
+		 */
+		public static function hideChatUI():void
+		{
+			if (_servicesObj)
+			{
+				_servicesObj.disableChatUI();
+			}
+			
+		}//end hideLoginUI()
+		
+		/**
 		 * Returns the UserProfile Object of the logged-in user. If the user is not logged in, this value will be null.  Upon receiving the ObjectEvent.LOGGED_IN_EVENT, this value is valid.
 		 */
 		public static function get userProfile():UserProfile
@@ -433,13 +524,13 @@
 			{
 				var userObj:Object = _servicesObj.userProfile;
 				_userProfile = new UserProfile();
-				_userProfile.avatarUrl = userObj.getValue("avatar_url");
+				_userProfile.avatarUrl = userObj.valueOf("avatar_url");
 			}
 			
 			return _userProfile;
 			
 		}//end get userProfile()
-		
+	
 		/**
 		 * Registers an event listener object with an EventDispatcher object so that the listener receives notification of an event.
 		 * <br></br><br></br><b>NOTE:</b> This has the exact same functionality as the flash.events.EventDispatcher function by the same name.
@@ -519,6 +610,8 @@
 		 */
 		private static function redispatch(a_evt:Event):void
 		{
+			trace("BoredServices::redispatch(" + a_evt + ")");
+			
 			BoredServices.dispatchEvent(a_evt);
 			
 		}//end redispatch()

@@ -1,0 +1,3 @@
+<target name="flex-config">
+	<taskdef resource="flexTasks.tasks" classpath="${flex.home}/ant/lib/flexTasks.jar" />
+</target>

@@ -169,7 +169,7 @@
 			<arg line="--skip-win-hidden --no3 --out=${swc.build.dir}\linecount.txt src" />
 		</exec>
 		
-		<compc output="${swc.build.dir}/${swc.name}" include-classes="${src.classes}">
+		<compc output="${swc.build.dir}/${swc.name}" include-classes="${src.classes}" debug="${compile.code.debug}">
 			
 			<source-path path-element="${src.dir}"/>
 			
@@ -247,14 +247,15 @@
 	
 	<!-- Build the documentation -->
 	<target name="documentation" depends="doCompileSwc, checkConditions" if="do.build.docs">
-		<exec executable="${asdoc.exe}">
-			<arg line="-doc-sources+='${src.dir}'" />
-			<arg line="-source-path+='${src.dir}'" />
-			<arg line="-l+='${swcIncludeAll.lib}'" />
-		<!-- <arg line="-l+='${swcCompileAgainst.lib}'" /> -->
-			<arg line="-output='${doc.output.dir}'" />
-			<arg line="-footer '${docs.footer}'"/>
-		</exec>
+		<!--
+		<asdoc output="${doc.output.dir}" lenient="true" failonerror="false" footer="${docs.footer}">
+			<compiler.source-path path-element="${src.dir}" />
+			<doc-sources path-element="${src.dir}" />
+			<compiler.include-libraries dir="${swcIncludeAll.lib}" append="true">
+				<include name="*.swc" />
+			</compiler.include-libraries>
+		</asdoc>
+		-->
 	</target>
 	
 	<target name="checkConditions">

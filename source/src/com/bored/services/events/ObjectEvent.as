@@ -30,6 +30,22 @@
 		public static const NOT_LOGGED_IN_ERROR_EVT:String = "NotLoggedInErrorEvent";
 		
 		/**
+		 * @eventType MultiplayerGameStartEvent
+		 */
+		public static const MULTPLAYER_GAME_START_EVT:String = "MultiplayerGameStartEvent";
+		
+		/**
+		 * @eventType MultiplayerGameFailEvent
+		 */
+		public static const MULTPLAYER_GAME_FAIL_EVT:String = "MultiplayerGameFailEvent";
+		
+		/**
+		 * @eventType GetUserInfoEvent
+		 */
+		public static const GET_USER_INFO_EVT:String = "GetUserInfoEvent";
+		
+		
+		/**
 		 * @private
 		 */
 		private var _obj:Object;
