@@ -258,7 +258,7 @@
 			if (_servicesObj)
 			{
 				_servicesObj.addEventListener(DataReceivedEvent.SAVED_DATA_RECEIVED_EVT, onGetDataComplete, false, 0, true);
-				_servicesObj.getData(a_key);
+				_servicesObj.getData(a_id);
 			}
 			
 		}//end getData()
@@ -321,6 +321,14 @@
 				if ( a_tok == null ) a_tok = "";
 				
 				_servicesObj.loginGS(a_un, a_pass, a_tok);
+			}
+		}//end loginChat()
+		
+		public static function logoutChat():void
+		{
+			if ( _servicesObj )
+			{
+				_servicesObj.logoutGS();
 			}
 		}//end loginChat()
 		
@@ -495,7 +503,7 @@
 		{
 			if (_servicesObj)
 			{
-				_servicesObj.enableChatUI();
+				_servicesObj.chatEnabled = true;
 			}
 			
 		}//end showMainLoginUI()
@@ -508,7 +516,7 @@
 		{
 			if (_servicesObj)
 			{
-				_servicesObj.disableChatUI();
+				_servicesObj.chatEnabled = false;
 			}
 			
 		}//end hideLoginUI()
