@@ -27,6 +27,7 @@
     <option optimize="False" />
     <option showActionScriptWarnings="True" />
     <option showBindingWarnings="True" />
+    <option showInvalidCSS="True" />
     <option showDeprecationWarnings="True" />
     <option showUnusedTypeSelectorWarnings="True" />
     <option strict="True" />
@@ -68,6 +69,7 @@
     <element path="swfLibs_includeAll\Achievements.swc" />
     <element path="swfLibs_includeAll\gsclient.swc" />
     <element path="swfLibs_includeAll\FileLoader.swc" />
+    <element path="swcLibs_includeAll\DeveloperBoredGameServices.swc" />
   </libraryPaths>
   <!-- External Libraries -->
   <externalLibraryPaths>
@@ -80,6 +82,7 @@
   <!-- Intrinsic Libraries -->
   <intrinsics>
     <element path="Library\AS3\frameworks\Flex3" />
+    <element path="C:\projects\inassets\projects\ALL_SVN_HEAD\bored.com\branches\projects\as3\ExposedBoredGameServicesAPI\src" />
   </intrinsics>
   <!-- Assets to embed into the output SWF -->
   <library>
