@@ -253,16 +253,6 @@
 			
 		}//end onGetDataComplete()
 		
-		public static function getUserInfo(a_id:String):void
-		{
-			if (_servicesObj)
-			{
-				_servicesObj.addEventListener(DataReceivedEvent.SAVED_DATA_RECEIVED_EVT, onGetDataComplete, false, 0, true);
-				_servicesObj.getData(a_id);
-			}
-			
-		}//end getData()
-		
 		/**
 		 * @private
 		 * @param	objEvt:	[ObjectEvent] This event contains an attribute 'obj' of the received user game-data.
@@ -524,20 +514,32 @@
 		/**
 		 * Returns the UserProfile Object of the logged-in user. If the user is not logged in, this value will be null.  Upon receiving the ObjectEvent.LOGGED_IN_EVENT, this value is valid.
 		 */
-		public static function get userProfile():UserProfile
+		public static function get userProfile():*
 		{
-			var userProfile:UserProfile;
-			
 			if (!_userProfile && _servicesObj && _servicesObj.userProfile)
 			{
-				var userObj:Object = _servicesObj.userProfile;
-				_userProfile = new UserProfile();
-				_userProfile.avatarUrl = userObj.valueOf("avatar_url");
+				return _servicesObj.userProfile;
 			}
 			
-			return _userProfile;
+			return null;
 			
 		}//end get userProfile()
+		
+		
+		public static function getUserProfileByName(a_id:String):void
+		{
+			if ( _servicesObj.userProfile && a_id == _servicesObj.userProfile.valueOf("screen_name") )
+			{
+				redispatchUserInfoObj(new ObjectEvent(ObjectEvent.GET_USER_INFO_EVT, userProfile));
+			}
+			else
+			{
+				_servicesObj.getUserProfileByName(a_id);
+				_servicesObj.addEventListener(ObjectEvent.GET_USER_INFO_EVT, redispatchUserInfoObj, false, 0, true);
+			}
+		}//end getUserProfile()
+		
+		
 	
 		/**
 		 * Registers an event listener object with an EventDispatcher object so that the listener receives notification of an event.
@@ -640,6 +642,18 @@
 			BoredServices.dispatchEvent(objEvt);
 			
 		}//end redispatchGameInfoObj()
+		
+		/**
+		 * @private
+		 */
+		private static function redispatchUserInfoObj(a_evt:Event):void
+		{
+			var objEvt:ObjectEvent = new ObjectEvent(ObjectEvent.GET_USER_INFO_EVT);
+			
+			objEvt.obj = (a_evt as Object).obj;
+			
+			BoredServices.dispatchEvent(objEvt);	
+		}//end redispatchUserInfoObj()
 		
 		/**
 		 * @private

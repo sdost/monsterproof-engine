@@ -1,5 +1,6 @@
 ﻿package com.bored.services.events 
 {
+	import flash.display.BitmapData;
 	
 	/**
 	 * This class is used to represent the UserProfile of the logged-in user.
@@ -11,7 +12,7 @@
 		/**
 		 * The full-path url of the avatar-image chosen by this user in his/her profile.
 		 */
-		public var avatarUrl:String;
+		public var avatarBMD:BitmapData;
 		
 		public function UserProfile() 
 		{

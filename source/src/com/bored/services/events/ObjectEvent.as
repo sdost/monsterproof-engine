@@ -42,7 +42,7 @@
 		/**
 		 * @eventType GetUserInfoEvent
 		 */
-		public static const GET_USER_INFO_EVT:String = "GetUserInfoEvent";
+		public static const GET_USER_INFO_EVT:String = "UserInfoReadyEvent";
 		
 		
 		/**
