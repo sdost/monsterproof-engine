@@ -69,7 +69,6 @@
     <element path="swfLibs_includeAll\Achievements.swc" />
     <element path="swfLibs_includeAll\gsclient.swc" />
     <element path="swfLibs_includeAll\FileLoader.swc" />
-    <element path="swcLibs_includeAll\DeveloperBoredGameServices.swc" />
   </libraryPaths>
   <!-- External Libraries -->
   <externalLibraryPaths>
