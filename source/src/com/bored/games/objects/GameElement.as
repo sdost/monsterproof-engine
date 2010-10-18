@@ -18,12 +18,19 @@ package com.bored.games.objects
             _actionsActive = new ActionList();
         }// end function
 
-        public function addAction(a_action:Action) : void
+        public function addAction(a_action:Action) : Action
         {
+			var node:*;
             if (!this.checkForActionNamed(a_action.actionName))
             {
-                _actions.append(a_action);
+                node = _actions.append(a_action);
             }
+			else
+			{
+				node = _actions.nodeOf(a_action.actionName);
+			}
+			
+			return node.val;
         }// end function
 
         public function checkForActionNamed(a_name:String) : Boolean
@@ -43,7 +50,7 @@ package com.bored.games.objects
 
         public function deactivateAction(a_name:String) : void
         {
-            var node:* = this._actions.nodeOf(a_name);
+            var node:* = _actions.nodeOf(a_name);
             if (node)
             {
                 node.val.finished = true;
@@ -63,7 +70,7 @@ package com.bored.games.objects
             _iterator = new SLLIterator(_actionsActive);
             while(_iterator.hasNext())
             {
-                action = this._iterator.next();
+                action = _iterator.next();
                 if (action.finished)
                 {
                     _actionsActive.remove(action);
@@ -145,11 +152,11 @@ class ActionList extends SLL
 	
 	override public function nodeOf(x:Object, from:SLLNode = null):SLLNode 
 	{		
-		var node = from == null ? head : from;
+		var node:SLLNode = from == null ? head : from;
 		
 		while (_valid(node))
 		{
-			if (node.val.actionName == x.actionName) break;
+			if (node.val.actionName == x) break;
 			node = node.next;
 		}
 		return node;

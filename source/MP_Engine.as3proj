@@ -48,6 +48,11 @@
   </includeLibraries>
   <!-- SWC Libraries -->
   <libraryPaths>
+    <element path="swcLibs_includeAll\analytics.swc" />
+    <element path="swcLibs_includeAll\analytics_flash.swc" />
+    <element path="swcLibs_includeAll\AS3_Corelib.swc" />
+    <element path="swcLibs_includeAll\InAssetsUtils.swc" />
+    <element path="swcLibs_includeAll\UIComponents.swc" />
     <element path="swfLibs_includeAll\GameplayScreen.swc" />
     <element path="swfLibs_includeAll\HUDAssets.swc" />
     <element path="swfLibs_includeAll\StoryAssets.swc" />
@@ -57,6 +62,7 @@
     <element path="swfLibs_includeAll\TitleScreen.swc" />
     <element path="swfLibs_includeAll\DartUVs.swc" />
     <element path="swfLibs_includeAll\Confirm_Screen.swc" />
+    <element path="swcLibs_includeAll\greensock.swc" />
     <element path="swfLibs_includeAll\MonsterproofLogo.swc" />
     <element path="swfLibs_includeAll\GamestoreScreen.swc" />
     <element path="swfLibs_includeAll\Sounds.swc" />
