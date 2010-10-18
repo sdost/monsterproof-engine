@@ -1,4 +1,4 @@
-﻿package com.bored.games.actions 
+package com.bored.games.actions 
 {
 	import com.bored.games.objects.GameElement;
 	/**

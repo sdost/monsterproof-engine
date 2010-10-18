@@ -1,4 +1,4 @@
-﻿package com.bored.services 
+package com.bored.services 
 {
 	import flash.events.EventDispatcher;
 	import flash.net.SharedObject;

@@ -1,4 +1,4 @@
-﻿package com.bored.games 
+package com.bored.games 
 {
 	import flash.utils.getTimer;
 	
