@@ -1,5 +1,6 @@
 package com.bored.games.objects
 {
+	import de.polygonal.ds.SLLNode;
     import flash.display.MovieClip;
 	import de.polygonal.ds.SLLIterator;
 	import com.bored.games.actions.Action;
@@ -20,22 +21,16 @@ package com.bored.games.objects
 
         public function addAction(a_action:Action) : Action
         {
-			var node:*;
-            if (!this.checkForActionNamed(a_action.actionName))
+			var node:* = _actions.nodeOf(a_action.actionName);
+			
+            if (!node)
             {
+				// no action currently with this name, so, we add the new one.
                 node = _actions.append(a_action);
             }
-			else
-			{
-				node = _actions.nodeOf(a_action.actionName);
-			}
 			
 			return node.val;
-        }// end function
-
-        public function checkForActionNamed(a_name:String) : Boolean
-        {
-            return _actions.contains(a_name);
+			
         }// end function
 
         public function activateAction(a_name:String) : void
