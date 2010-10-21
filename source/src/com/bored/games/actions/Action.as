@@ -84,6 +84,11 @@ package com.bored.games.actions
 			return _finished;
 		}//end finished()
 		
+		public function toString():String
+		{
+			return "[Action _actionName: " + this._actionName + " _finished: " + this._finished + "]";
+		}//end toString()
+		
 	}//end Action
 
 }//end com.bored.games.actions

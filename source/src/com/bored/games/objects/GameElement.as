@@ -3,16 +3,36 @@ package com.bored.games.objects
     import flash.display.MovieClip;
 	import de.polygonal.ds.SLLIterator;
 	import com.bored.games.actions.Action;
+	import flash.utils.getQualifiedClassName;
 
     public class GameElement extends MovieClip
     {
-        protected var _actions:ActionList;
-        protected var _actionsQueued:ActionList;
-        protected var _actionsActive:ActionList;
-        protected var _iterator:SLLIterator;
+        private var _actions:ActionList;
+        private var _actionsQueued:ActionList;
+        private var _actionsActive:ActionList;
+        private var _iterator:SLLIterator;
+		
+		private var _id:String;
+		
+		private static var constructionCounts:Array = new Array();
 
         public function GameElement()
         {
+			var className:String = getQualifiedClassName(this);
+			
+			className = className.slice(className.lastIndexOf("::") + 2);
+			
+			if ( constructionCounts[className] )
+			{
+				constructionCounts[className]++;
+			}
+			else
+			{
+				constructionCounts[className] = 1;
+			}
+			
+			_id = className + "_" + constructionCounts[className];
+			
             _actions = new ActionList();
             _actionsQueued = new ActionList();
             _actionsActive = new ActionList();
@@ -56,6 +76,16 @@ package com.bored.games.objects
                 node.val.finished = true;
             }
         }// end function
+		
+		public function get actions():Array
+		{
+			return _actions.toArray();
+		}//end get actions()
+		
+		public function get activeActions():Array
+		{
+			return _actionsActive.toArray();
+		}//end get activeActions()
 
         public function removeAction(a_name:String) : void
         {
@@ -91,9 +121,20 @@ package com.bored.games.objects
             _actionsQueued.clear(true);
             _actionsActive.clear(true);
         }// end function
+		
+		public function get objectId():String
+		{
+			return _id;
+		}//end get objectId()
+		
+		override public function toString():String
+		{
+			return "[GameElement: " + this.objectId + "]";			
+		}//end toString()
 
-    }
-}
+    }//end GameElement
+	
+}//end package
 
 import de.polygonal.ds.SLL;
 import de.polygonal.ds.SLLNode;
@@ -148,7 +189,7 @@ class ActionList extends SLL
 		}
 		
 		return size() < s;
-	}
+	}//end remove()
 	
 	override public function nodeOf(x:Object, from:SLLNode = null):SLLNode 
 	{		
@@ -160,5 +201,11 @@ class ActionList extends SLL
 			node = node.next;
 		}
 		return node;
-	}
-}
+	}//end nodeOf()
+	
+	override public function contains(x:Object):Boolean 
+	{
+		return super.contains(x);
+	}//end contains()
+	
+}//end ActionList
